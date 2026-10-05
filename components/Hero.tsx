@@ -1,3 +1,7 @@
+import Image from 'next/image';
+
+import { Button } from '@/components/ui/button';
+
 export default function Hero() {
   return (
     <section className="bg-[#FFFFFF] px-4 py-16 md:py-24">
@@ -21,28 +25,44 @@ export default function Hero() {
 
         {/* CTA Group */}
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-lg bg-[#FCA311] px-8 py-4 font-bold text-[#000000] hover:brightness-95"
+          <Button
+            render={<a href="#contact" />}
+            className="bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold px-8 py-6 text-lg rounded-lg"
           >
             Request Early Access
-          </a>
-          <a
-            href="https://app.madrasio.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-lg bg-[#14213D] px-8 py-4 font-bold text-[#FFFFFF]"
+          </Button>
+          <Button
+            render={
+              <a
+                href="https://app.madrasio.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
+            className="bg-[#14213D] hover:bg-[#14213D]/90 text-[#FFFFFF] font-bold px-8 py-6 text-lg rounded-lg"
           >
             Sign In to App
-          </a>
+          </Button>
         </div>
 
         {/* Dashboard Preview Mockup */}
-        <div className="mt-16">
-
-          {/* Mock dashboard images */}
-          <img src="/school_admin_dashboard_monitor.png" alt="Madrasio Desktop Dashboard" className="hidden md:block w-full h-auto object-cover border-t border-[#14213D]" />
-          <img src="/school_admin_dashboard_mobile.png" alt="Madrasio Mobile Dashboard" className="block md:hidden w-full h-auto object-cover border-t border-[#14213D]" />
+        <div className="mt-16 max-w-5xl mx-auto rounded-xl border-2 border-[#14213D] bg-[#E5E5E5] overflow-hidden">
+          <Image
+            src="/dashboard-desktop-placeholder.webp"
+            alt="Madrasio Desktop Dashboard"
+            width={1200}
+            height={800}
+            className="hidden md:block w-full h-auto object-cover rounded-b-lg"
+            priority
+          />
+          <Image
+            src="/dashboard-mobile-placeholder.webp"
+            alt="Madrasio Mobile Dashboard"
+            width={600}
+            height={1000}
+            className="block md:hidden w-full h-auto object-cover rounded-b-lg"
+            priority
+          />
         </div>
       </div>
     </section>

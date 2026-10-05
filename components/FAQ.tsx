@@ -1,3 +1,10 @@
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion';
+
 interface FaqItem {
   question: string;
   answer: string;
@@ -30,26 +37,27 @@ const faqs: FaqItem[] = [
 export default function FAQ() {
   return (
     <section className="bg-[#FCA311] px-4 py-16 md:py-24">
-      <div className="mx-auto max-w-3xl">
+      <div className="max-w-3xl mx-auto space-y-4 px-4">
         <h2 className="text-3xl md:text-5xl font-extrabold text-[#000000] mb-12 text-center">
           Frequently Asked Questions
         </h2>
 
-        <div>
+        <Accordion>
           {faqs.map((faq) => (
-            <div
+            <AccordionItem
               key={faq.question}
-              className="bg-[#FFFFFF] border-2 border-[#000000] rounded-xl p-6 mb-6 shadow-none"
+              value={faq.question}
+              className="bg-[#FFFFFF] border-2 border-[#000000] rounded-xl px-6 py-2 mb-4 shadow-none"
             >
-              <h3 className="text-xl font-bold text-[#000000] mb-3">
+              <AccordionTrigger className="text-xl font-bold text-[#000000] hover:no-underline text-left">
                 {faq.question}
-              </h3>
-              <p className="text-base text-[#14213D]/90 leading-relaxed">
+              </AccordionTrigger>
+              <AccordionContent className="text-base text-[#14213D]/90 leading-relaxed pt-2">
                 {faq.answer}
-              </p>
-            </div>
+              </AccordionContent>
+            </AccordionItem>
           ))}
-        </div>
+        </Accordion>
       </div>
     </section>
   );

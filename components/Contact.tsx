@@ -3,8 +3,18 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 
+import { Input } from '@/components/ui/input';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+
 const STUDENT_COUNT_OPTIONS = [
-  'Select student count',
   'Under 200',
   '200 – 500',
   '500 – 1,000',
@@ -12,7 +22,7 @@ const STUDENT_COUNT_OPTIONS = [
 ];
 
 const inputClassName =
-  'w-full px-4 py-3 bg-[#E5E5E5] border-2 border-[#14213D] rounded-lg text-[#000000] focus:outline-none focus:border-[#FCA311]';
+  'bg-[#E5E5E5] border-2 border-[#14213D] text-[#000000] focus-visible:ring-[#FCA311] py-6';
 
 const labelClassName = 'block text-sm font-bold text-[#14213D] mb-2';
 
@@ -21,9 +31,7 @@ export default function Contact() {
   const [schoolName, setSchoolName] = useState('');
   const [cityCountry, setCityCountry] = useState('');
   const [email, setEmail] = useState('');
-  const [studentCount, setStudentCount] = useState(
-    STUDENT_COUNT_OPTIONS[0]
-  );
+  const [studentCount, setStudentCount] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -46,106 +54,117 @@ export default function Contact() {
           pricing.
         </p>
 
-        <div className="max-w-2xl mx-auto mt-12 bg-[#FFFFFF] border-2 border-[#000000] rounded-xl p-6 md:p-10 shadow-none text-left">
-          {isSubmitted ? (
-            <p className="text-center text-lg font-bold text-[#14213D]">
-              Thank you for your interest! We will contact you shortly.
-            </p>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <div className="text-left mb-5">
-                <label htmlFor="fullName" className={labelClassName}>
-                  Full Name
-                </label>
-                <input
-                  id="fullName"
-                  name="fullName"
-                  type="text"
-                  required
-                  value={fullName}
-                  onChange={(e) => setFullName(e.target.value)}
-                  placeholder="Jane Doe"
-                  className={inputClassName}
-                />
-              </div>
+        <Card className="max-w-2xl mx-auto bg-[#FFFFFF] border-2 border-[#000000] rounded-xl p-6 md:p-8 shadow-none mt-12 text-left">
+          <CardHeader className="p-0">
+            <CardTitle className="sr-only">Request Early Access</CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            {isSubmitted ? (
+              <p className="text-center text-lg font-bold text-[#14213D]">
+                Thank you for your interest! We will contact you shortly.
+              </p>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="text-left mb-5">
+                  <label htmlFor="fullName" className={labelClassName}>
+                    Full Name
+                  </label>
+                  <Input
+                    id="fullName"
+                    name="fullName"
+                    type="text"
+                    required
+                    value={fullName}
+                    onChange={(e) => setFullName(e.target.value)}
+                    placeholder="Jane Doe"
+                    className={inputClassName}
+                  />
+                </div>
 
-              <div className="text-left mb-5">
-                <label htmlFor="schoolName" className={labelClassName}>
-                  School Name
-                </label>
-                <input
-                  id="schoolName"
-                  name="schoolName"
-                  type="text"
-                  required
-                  value={schoolName}
-                  onChange={(e) => setSchoolName(e.target.value)}
-                  placeholder="International Academy"
-                  className={inputClassName}
-                />
-              </div>
+                <div className="text-left mb-5">
+                  <label htmlFor="schoolName" className={labelClassName}>
+                    School Name
+                  </label>
+                  <Input
+                    id="schoolName"
+                    name="schoolName"
+                    type="text"
+                    required
+                    value={schoolName}
+                    onChange={(e) => setSchoolName(e.target.value)}
+                    placeholder="International Academy"
+                    className={inputClassName}
+                  />
+                </div>
 
-              <div className="text-left mb-5">
-                <label htmlFor="cityCountry" className={labelClassName}>
-                  City &amp; Country
-                </label>
-                <input
-                  id="cityCountry"
-                  name="cityCountry"
-                  type="text"
-                  required
-                  value={cityCountry}
-                  onChange={(e) => setCityCountry(e.target.value)}
-                  placeholder="Casablanca, Morocco"
-                  className={inputClassName}
-                />
-              </div>
+                <div className="text-left mb-5">
+                  <label htmlFor="cityCountry" className={labelClassName}>
+                    City &amp; Country
+                  </label>
+                  <Input
+                    id="cityCountry"
+                    name="cityCountry"
+                    type="text"
+                    required
+                    value={cityCountry}
+                    onChange={(e) => setCityCountry(e.target.value)}
+                    placeholder="Casablanca, Morocco"
+                    className={inputClassName}
+                  />
+                </div>
 
-              <div className="text-left mb-5">
-                <label htmlFor="email" className={labelClassName}>
-                  Institutional Email
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="contact@school.edu"
-                  className={inputClassName}
-                />
-              </div>
+                <div className="text-left mb-5">
+                  <label htmlFor="email" className={labelClassName}>
+                    Institutional Email
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="contact@school.edu"
+                    className={inputClassName}
+                  />
+                </div>
 
-              <div className="text-left mb-5">
-                <label htmlFor="studentCount" className={labelClassName}>
-                  Estimated Student Count
-                </label>
-                <select
-                  id="studentCount"
-                  name="studentCount"
-                  required
-                  value={studentCount}
-                  onChange={(e) => setStudentCount(e.target.value)}
-                  className={inputClassName}
+                <div className="text-left mb-5">
+                  <label htmlFor="studentCount" className={labelClassName}>
+                    Estimated Student Count
+                  </label>
+                  <Select
+                    name="studentCount"
+                    required
+                    value={studentCount}
+                    onValueChange={(value) => setStudentCount(value ?? '')}
+                  >
+                    <SelectTrigger
+                      id="studentCount"
+                      className="w-full bg-[#E5E5E5] border-2 border-[#14213D] text-[#000000] focus-visible:ring-[#FCA311] py-6"
+                    >
+                      <SelectValue placeholder="Select student count" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {STUDENT_COUNT_OPTIONS.map((option) => (
+                        <SelectItem key={option} value={option}>
+                          {option}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <Button
+                  type="submit"
+                  className="w-full py-6 bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold text-lg rounded-lg border-2 border-[#000000]"
                 >
-                  {STUDENT_COUNT_OPTIONS.map((option) => (
-                    <option key={option} value={option}>
-                      {option}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full py-4 bg-[#FCA311] text-[#000000] font-bold text-lg rounded-lg border-2 border-[#000000] hover:brightness-95 transition-all mt-4 cursor-pointer"
-              >
-                Request Early Access
-              </button>
-            </form>
-          )}
-        </div>
+                  Request Early Access
+                </Button>
+              </form>
+            )}
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
