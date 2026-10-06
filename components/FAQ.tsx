@@ -12,25 +12,39 @@ interface FaqItem {
 
 const faqs: FaqItem[] = [
   {
-    question: 'Does Madrasio support our country’s specific grading system?',
+    question: "Is our school's data completely private and safe?",
     answer:
-      'Yes. Madrasio uses configurable curriculum versions. You can set custom coefficients, assessment types, passing thresholds, and calculation rules for any academic track.',
+      "Yes. Your school gets its own isolated, bank-grade secure environment. No outside person or other school can ever view or access your students' records, grades, or financial data.",
   },
   {
-    question: 'Can we run our school in multiple languages simultaneously?',
+    question: 'Can we transfer our existing student lists without re-typing everything?',
     answer:
-      'Yes. Administrators, teachers, and parents can each switch between Arabic, French, and English independently, with full support for RTL and LTR layouts.',
+      "Yes. Our team helps you import all your existing Excel lists, student files, and class rosters into Madrasio in minutes so you don't have to enter data manually.",
   },
   {
-    question:
-      "How are our school's records protected from other institutions on the platform?",
+    question: "Can Madrasio adapt to our school's specific grading scale and report cards?",
     answer:
-      'Madrasio uses strict server-side multi-tenancy. Authorization is validated on every single server request, ensuring complete domain and data isolation between schools.',
+      'Yes. Whether your school uses percentage scales, letter grades, or custom evaluation systems, Madrasio customizes report cards and grading systems to match your exact academic standards.',
   },
   {
-    question: 'How long does it take to import our current school data?',
+    question: 'Which languages are supported, and can parents set their own language?',
     answer:
-      'You can onboard your school in minutes by importing student, teacher, and parent rosters via standard CSV/Excel templates.',
+      'Madrasio supports over 12 languages—including Arabic, French, English, and Spanish—with full support for right-to-left (RTL) and left-to-right (LTR) reading. Directors, teachers, and parents can each choose their preferred language independently.',
+  },
+  {
+    question: 'Do our teachers need technical skills to use Madrasio?',
+    answer:
+      'Not at all. Madrasio is designed to be as simple as using a smartphone. If your staff knows how to browse the internet, they can learn Madrasio in under 30 minutes.',
+  },
+  {
+    question: 'How does Madrasio help us manage tuition fees?',
+    answer:
+      'Madrasio provides a clear financial overview of paid, pending, and overdue tuition. It can send automatic payment reminders to parents, saving your administration hours of manual follow-up.',
+  },
+  {
+    question: 'How long does it take to set up Madrasio for our school?',
+    answer:
+      'Your school can be completely set up and ready to go in less than 48 hours. Our setup team manages the configuration for you so your staff can start smoothly.',
   },
 ];
 

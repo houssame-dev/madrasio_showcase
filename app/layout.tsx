@@ -3,6 +3,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
 
+import FloatingButtons from '@/components/FloatingButtons';
+
 export const metadata: Metadata = {
   title: 'Madrasio | The All-in-One School Management System',
   description:
@@ -38,7 +40,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[#FFFFFF]">{children}</body>
+      <body className="antialiased bg-[#FFFFFF]">
+        {children}
+        <FloatingButtons />
+      </body>
     </html>
   );
 }
