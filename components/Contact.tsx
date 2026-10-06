@@ -258,7 +258,7 @@ export default function Contact() {
                       Sending request...
                     </span>
                   ) : (
-                    'Request Early Access'
+                    'Book a Demo'
                   )}
                 </Button>
               </form>

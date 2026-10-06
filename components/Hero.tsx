@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { FaStar } from 'react-icons/fa6';
 
 import { Button } from '@/components/ui/button';
 import InfiniteBanner from '@/components/InfiniteBanner';
@@ -8,30 +9,30 @@ export default function Hero() {
     <>
     <section className="bg-[#FFFFFF] px-4 pt-16 md:pt-24 pb-0">
       <div className="mx-auto max-w-7xl text-center">
-        {/* Badge */}
-        <span className="bg-[#E5E5E5] text-[#14213D] font-medium rounded-full px-4 py-1 text-sm border border-[#14213D]/20 inline-block mb-4">
-          Global School Management Platform
+
+        {/* Pill Badge */}
+        <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#14213D]/15 text-[#14213D] text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-sm mb-6">
+          <FaStar aria-hidden="true" />
+          All-in-One School Management System
         </span>
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-[#000000] max-w-4xl mx-auto leading-tight">
-          The All-in-One School Management System for Modern Private Schools
+          Everything Your Private School Needs to Run Smoothly EveryDay
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-[#14213D]/80 max-w-2xl mx-auto mt-6">
-          Streamline academics, simplify tuition collection, and keep parents
-          engaged—all inside a secure, multilingual platform built for global
-          education.
+          Effortless control for directors, simplified daily tasks for teachers, and real-time updates that keep parents connected and informed.
         </p>
 
         {/* CTA Group */}
-        <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="flex flex-row items-center justify-center gap-3 w-full max-w-[24rem] mx-auto mt-8">
           <Button
             render={<a href="#contact" />}
-            className="bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold px-8 py-6 text-lg rounded-lg"
+            className="flex-1 flex justify-center items-center px-2 py-6 text-sm sm:text-base font-bold whitespace-nowrap bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] rounded-lg"
           >
-            Request Early Access
+            Book a Demo
           </Button>
           <Button
             render={
@@ -41,9 +42,9 @@ export default function Hero() {
                 rel="noopener noreferrer"
               />
             }
-            className="bg-[#14213D] hover:bg-[#14213D]/90 text-[#FFFFFF] font-bold px-8 py-6 text-lg rounded-lg"
+            className="flex-1 flex justify-center items-center px-2 py-6 text-sm sm:text-base font-bold whitespace-nowrap bg-[#14213D] hover:bg-[#14213D]/90 text-[#FFFFFF] rounded-lg"
           >
-            Sign In to App
+            Sign In
           </Button>
         </div>
 

@@ -107,7 +107,7 @@ export default function Navbar() {
             href="#contact"
             className="inline-flex items-center rounded-md bg-[#FCA311] px-4 py-2 text-sm font-bold text-[#000000] transition-colors hover:bg-[#e5940b]"
           >
-            Request Early Access
+            Book a Demo
           </a>
         </div>
 
@@ -215,7 +215,7 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
               className="w-full bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold py-3.5 rounded-lg text-center text-lg"
             >
-              Request Early Access
+              Book a Demo
             </a>
           </div>
         </nav>
