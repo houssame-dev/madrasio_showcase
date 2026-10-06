@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import type { FormEvent } from 'react';
 
+import { CheckCircle2, Loader2 } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import {
   Select,
@@ -14,7 +15,10 @@ import {
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const STUDENT_COUNT_OPTIONS = [
+const FORMSPREE_FORM_ID =
+  process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'YOUR_FORMSPREE_FORM_ID';
+
+const SCHOOL_SIZE_OPTIONS = [
   'Under 200',
   '200 – 500',
   '500 – 1,000',
@@ -26,17 +30,70 @@ const inputClassName =
 
 const labelClassName = 'block text-sm font-bold text-[#14213D] mb-2';
 
+const FRIENDLY_ERROR_MESSAGE =
+  'Something went wrong. Please try again or contact us directly on WhatsApp.';
+
 export default function Contact() {
   const [fullName, setFullName] = useState('');
   const [schoolName, setSchoolName] = useState('');
-  const [cityCountry, setCityCountry] = useState('');
   const [email, setEmail] = useState('');
-  const [studentCount, setStudentCount] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [phone, setPhone] = useState('');
+  const [schoolSize, setSchoolSize] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const resetForm = () => {
+    setFullName('');
+    setSchoolName('');
+    setEmail('');
+    setPhone('');
+    setSchoolSize('');
+    setMessage('');
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+    setErrorMessage(null);
+
+    const formId = FORMSPREE_FORM_ID;
+
+    try {
+      const response = await fetch(`https://formspree.io/f/${formId}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: fullName,
+          schoolName,
+          email,
+          phone,
+          schoolSize,
+          message,
+        }),
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        resetForm();
+      } else {
+        setErrorMessage(FRIENDLY_ERROR_MESSAGE);
+      }
+    } catch {
+      setErrorMessage(FRIENDLY_ERROR_MESSAGE);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleSendAnother = () => {
+    setIsSuccess(false);
+    setErrorMessage(null);
   };
 
   return (
@@ -59,10 +116,24 @@ export default function Contact() {
             <CardTitle className="sr-only">Request Early Access</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
-            {isSubmitted ? (
-              <p className="text-center text-lg font-bold text-[#14213D]">
-                Thank you for your interest! We will contact you shortly.
-              </p>
+            {isSuccess ? (
+              <div className="text-center py-6">
+                <CheckCircle2
+                  className="h-14 w-14 text-green-600 mx-auto mb-4"
+                  aria-hidden="true"
+                />
+                <p className="text-lg font-bold text-[#14213D]">
+                  Thank you! Your request has been received. Our team will
+                  contact you within 24 hours.
+                </p>
+                <Button
+                  type="button"
+                  onClick={handleSendAnother}
+                  className="mt-6 bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold rounded-lg"
+                >
+                  Send another message
+                </Button>
+              </div>
             ) : (
               <form onSubmit={handleSubmit}>
                 <div className="text-left mb-5">
@@ -71,7 +142,7 @@ export default function Contact() {
                   </label>
                   <Input
                     id="fullName"
-                    name="fullName"
+                    name="name"
                     type="text"
                     required
                     value={fullName}
@@ -98,24 +169,8 @@ export default function Contact() {
                 </div>
 
                 <div className="text-left mb-5">
-                  <label htmlFor="cityCountry" className={labelClassName}>
-                    City &amp; Country
-                  </label>
-                  <Input
-                    id="cityCountry"
-                    name="cityCountry"
-                    type="text"
-                    required
-                    value={cityCountry}
-                    onChange={(e) => setCityCountry(e.target.value)}
-                    placeholder="Casablanca, Morocco"
-                    className={inputClassName}
-                  />
-                </div>
-
-                <div className="text-left mb-5">
                   <label htmlFor="email" className={labelClassName}>
-                    Institutional Email
+                    Email Address
                   </label>
                   <Input
                     id="email"
@@ -130,23 +185,39 @@ export default function Contact() {
                 </div>
 
                 <div className="text-left mb-5">
-                  <label htmlFor="studentCount" className={labelClassName}>
-                    Estimated Student Count
+                  <label htmlFor="phone" className={labelClassName}>
+                    Phone / WhatsApp Number
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder="+212 6 00 00 00 00"
+                    className={inputClassName}
+                  />
+                </div>
+
+                <div className="text-left mb-5">
+                  <label htmlFor="schoolSize" className={labelClassName}>
+                    School Student Capacity
                   </label>
                   <Select
-                    name="studentCount"
+                    name="schoolSize"
                     required
-                    value={studentCount}
-                    onValueChange={(value) => setStudentCount(value ?? '')}
+                    value={schoolSize}
+                    onValueChange={(value) => setSchoolSize(value ?? '')}
                   >
                     <SelectTrigger
-                      id="studentCount"
+                      id="schoolSize"
                       className="w-full bg-[#E5E5E5] border-2 border-[#14213D] text-[#000000] focus-visible:ring-[#FCA311] py-6"
                     >
-                      <SelectValue placeholder="Select student count" />
+                      <SelectValue placeholder="Select student capacity" />
                     </SelectTrigger>
                     <SelectContent>
-                      {STUDENT_COUNT_OPTIONS.map((option) => (
+                      {SCHOOL_SIZE_OPTIONS.map((option) => (
                         <SelectItem key={option} value={option}>
                           {option}
                         </SelectItem>
@@ -155,11 +226,40 @@ export default function Contact() {
                   </Select>
                 </div>
 
+                <div className="text-left mb-5">
+                  <label htmlFor="message" className={labelClassName}>
+                    Additional Notes / Message
+                  </label>
+                  <Input
+                    id="message"
+                    name="message"
+                    type="text"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Tell us about your school's needs..."
+                    className={inputClassName}
+                  />
+                </div>
+
+                {errorMessage && (
+                  <p role="alert" className="text-sm font-medium text-red-600 mb-4">
+                    {errorMessage}
+                  </p>
+                )}
+
                 <Button
                   type="submit"
-                  className="w-full py-6 bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold text-lg rounded-lg border-2 border-[#000000]"
+                  disabled={isSubmitting}
+                  className="w-full py-6 bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold text-lg rounded-lg border-2 border-[#000000] disabled:opacity-70"
                 >
-                  Request Early Access
+                  {isSubmitting ? (
+                    <span className="inline-flex items-center gap-2">
+                      <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
+                      Sending request...
+                    </span>
+                  ) : (
+                    'Request Early Access'
+                  )}
                 </Button>
               </form>
             )}
