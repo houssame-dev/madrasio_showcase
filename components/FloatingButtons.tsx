@@ -1,10 +1,9 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { ArrowUp, MessageCircle } from 'lucide-react';
+import { FaArrowUp, FaWhatsapp } from 'react-icons/fa6';
 
-const WHATSAPP_URL =
-  'https://wa.me/212607991544?text=Hello%20Madrasio%20Team%2C%20I%20would%20like%20more%20information.';
+const WHATSAPP_URL = 'https://wa.me/212607991544';
 
 export default function FloatingButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -30,9 +29,9 @@ export default function FloatingButtons() {
           type="button"
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="bg-[#14213D] text-[#FFFFFF] border border-[#FCA311] p-3 rounded-full shadow-lg hover:bg-[#FCA311] hover:text-[#000000] transition-all"
+          className="flex items-center justify-center rounded-full aspect-square p-4 h-14 w-14 bg-[#14213D] text-[#FFFFFF] border-4 border-[#FCA311] shadow-lg hover:bg-[#FCA311] hover:text-[#000000] transition-all"
         >
-          <ArrowUp className="h-5 w-5" aria-hidden="true" />
+          <FaArrowUp aria-hidden="true" />
         </button>
       )}
 
@@ -43,7 +42,7 @@ export default function FloatingButtons() {
         aria-label="Chat with Madrasio on WhatsApp"
         className="bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 rounded-full shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
       >
-        <MessageCircle className="h-6 w-6" aria-hidden="true" />
+        <FaWhatsapp className="h-6 w-6 text-white" aria-hidden="true" />
       </a>
     </div>
   );

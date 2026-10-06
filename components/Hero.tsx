@@ -1,10 +1,12 @@
 import Image from 'next/image';
 
 import { Button } from '@/components/ui/button';
+import InfiniteBanner from '@/components/InfiniteBanner';
 
 export default function Hero() {
   return (
-    <section className="bg-[#FFFFFF] px-4 py-16 md:py-24">
+    <>
+    <section className="bg-[#FFFFFF] px-4 pt-16 md:pt-24 pb-0">
       <div className="mx-auto max-w-7xl text-center">
         {/* Badge */}
         <span className="bg-[#E5E5E5] text-[#14213D] font-medium rounded-full px-4 py-1 text-sm border border-[#14213D]/20 inline-block mb-4">
@@ -46,7 +48,7 @@ export default function Hero() {
         </div>
 
         {/* Dashboard Preview Mockup */}
-        <div className="mt-16 overflow-hidden">
+        <div className="mt-16 mb-12 overflow-hidden">
           <Image
             src="/school_admin_dashboard_monitor.png"
             alt="Madrasio Desktop Dashboard"
@@ -66,5 +68,7 @@ export default function Hero() {
         </div>
       </div>
     </section>
+    <InfiniteBanner />
+    </>
   );
 }

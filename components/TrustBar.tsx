@@ -3,7 +3,7 @@ export default function TrustBar() {
     {
       title: 'Native Multilingual',
       description:
-        'Seamlessly operate in 12+ languages including English, Arabic (RTL), French, Spanish, Deutsch, Italian, and more.',
+        'Seamlessly operate in 12+ languages including English, Arabic, French, Spanish, Deutsch, Italian, and more.',
     },
     {
       title: 'Curriculum Agnostic',
