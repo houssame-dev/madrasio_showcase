@@ -21,11 +21,14 @@ export default function Footer() {
         <div className="text-left">
           <p className="text-2xl font-bold tracking-tight text-[#FFFFFF] justify-normal flex items-center">
             <img
-              src="/madrasio-logo.png"
+              src="/madrasio-logo-colored.png"
               alt="Madrasio Logo"
               className="w-12 h-12 object-contain inline-block mr-2"
             />
-            Madrasio
+            <span className="font-bold text-2xl tracking-tight">
+              <span className="text-[#FCA311]">Madr</span>
+              <span className="text-[#FFFFFF]">asio</span>
+            </span>
           </p>
           <p className="text-sm text-[#E5E5E5] mt-1 max-w-sm">
             The all-in-one school management platform for modern global
