@@ -46,9 +46,9 @@ export default function Hero() {
         </div>
 
         {/* Dashboard Preview Mockup */}
-        <div className="mt-16 max-w-5xl mx-auto rounded-xl border-2 border-[#14213D] bg-[#E5E5E5] overflow-hidden">
+        <div className="mt-16 overflow-hidden">
           <Image
-            src="/dashboard-desktop-placeholder.webp"
+            src="/school_admin_dashboard_monitor.png"
             alt="Madrasio Desktop Dashboard"
             width={1200}
             height={800}
@@ -56,7 +56,7 @@ export default function Hero() {
             priority
           />
           <Image
-            src="/dashboard-mobile-placeholder.webp"
+            src="/school_admin_dashboard_mobile.png"
             alt="Madrasio Mobile Dashboard"
             width={600}
             height={1000}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <title>Madrasio Icon</title>
+  <rect width="512" height="512" rx="112" fill="#14213D"/>
+  <!-- Abstract M -->
+  <path d="M120 360 V160 L256 290 L392 160 V360" fill="none" stroke="#FCA311" stroke-width="48" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Open book base -->
+  <path d="M156 400 Q206 382 256 400 Q306 382 356 400 L356 428 Q306 410 256 428 Q206 410 156 428 Z" fill="#FFFFFF"/>
+  <line x1="256" y1="400" x2="256" y2="428" stroke="#14213D" stroke-width="6" stroke-linecap="round"/>
+</svg>
