@@ -40,7 +40,7 @@ export default function Hero() {
   return (
     <>
       <section className="relative w-full overflow-hidden bg-white min-h-screen">
-        <div className="absolute inset-0 z-0 pointer-events-none opacity-90 lg:opacity-100">
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-90 lg:opacity-100 ltr:scale-x-100 rtl:-scale-x-100 transition-transform duration-500">
           <span className="block sm:hidden absolute inset-0">
             <Image
               src="/images/hero-bg-mobile.png"

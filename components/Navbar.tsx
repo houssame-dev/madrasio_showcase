@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import {
+  FaChevronDown,
   FaFacebook,
   FaInstagram,
   FaLinkedin,
@@ -84,6 +85,9 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('en');
   const [isScrolled, setIsScrolled] = useState(false);
+  // Mobile language list uses click-driven inline expansion (touch-safe:
+  // no hover, no floating portal that could clip or hide behind the overlay).
+  const [isLangOpen, setIsLangOpen] = useState(false);
 
   // Solid navy background once scrolled OR while the mobile menu is open
   // (so the header blends seamlessly with the navy mobile overlay).
@@ -177,11 +181,7 @@ export default function Navbar() {
           <Select onValueChange={handleLanguageChange} value={currentLang}>
             <SelectTrigger
               aria-label="Select language"
-              className={`w-[85px] h-9 bg-transparent focus:ring-[#FCA311] focus:border-[#FCA311] font-semibold text-xs ${
-                navbarSolid
-                  ? 'border-white/20 text-white hover:bg-white/10'
-                  : 'border-[#14213D]/20 text-[#14213D] hover:bg-[#14213D]/5'
-              }`}
+              className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer"
             >
               <SelectValue placeholder="EN">
                 {(value: string | null) => {
@@ -200,12 +200,15 @@ export default function Navbar() {
                 }}
               </SelectValue>
             </SelectTrigger>
-            <SelectContent className="bg-[#14213D] border-[#E5E5E5]/20 text-white min-w-[85px]">
+            <SelectContent
+              sideOffset={8}
+              className="w-48 bg-[#14213D] border border-[#FCA311]/40 rounded-2xl p-2 shadow-2xl text-white z-[999] max-h-60 overflow-y-auto"
+            >
               {languages.map((lang) => (
                 <SelectItem
                   key={lang.code}
                   value={lang.code}
-                  className="focus:bg-[#FCA311] focus:text-[#14213D] text-xs font-medium cursor-pointer"
+                  className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-white text-sm font-medium hover:bg-white/10 cursor-pointer transition-colors whitespace-nowrap"
                 >
                   <lang.Flag
                     style={{ width: 20, height: 14 }}
@@ -227,7 +230,10 @@ export default function Navbar() {
         {/* Mobile hamburger toggle */}
         <button
           type="button"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
+          onClick={() => {
+            setIsMenuOpen((prev) => !prev);
+            setIsLangOpen(false);
+          }}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -289,45 +295,70 @@ export default function Navbar() {
           {/* Bottom Section: Language + CTA */}
           <div className="w-full pt-6 flex flex-col items-center space-y-4 border-t border-[#FFFFFF]/10 mt-auto">
             <div className="flex justify-center w-full">
-              <Select onValueChange={handleLanguageChange} value={currentLang}>
-                <SelectTrigger
+              <div className="relative">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setIsLangOpen((prev) => !prev);
+                  }}
+                  aria-expanded={isLangOpen}
                   aria-label="Select language"
-                  className="w-[85px] h-9 bg-transparent border-[#E5E5E5]/20 text-white focus:ring-[#FCA311] focus:border-[#FCA311] font-semibold text-xs"
+                  className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer"
                 >
-                  <SelectValue placeholder="EN">
-                    {(value: string | null) => {
-                      const lang =
-                        languages.find((l) => l.code === value) ??
-                        currentLanguage;
-                      const Flag = lang.Flag;
+                  <span className="flex items-center gap-1.5">
+                    {(() => {
+                      const Flag = currentLanguage.Flag;
                       return (
-                        <span className="flex items-center gap-1.5">
+                        <>
                           <Flag
                             style={{ width: 18, height: 13 }}
                             className="shrink-0 rounded-[2px]"
                           />
-                          {lang.code.toUpperCase()}
-                        </span>
+                          {currentLanguage.code.toUpperCase()}
+                        </>
                       );
-                    }}
-                  </SelectValue>
-                </SelectTrigger>
-                <SelectContent className="bg-[#14213D] border-[#E5E5E5]/20 text-white min-w-[85px]">
-                  {languages.map((lang) => (
-                    <SelectItem
-                      key={lang.code}
-                      value={lang.code}
-                      className="focus:bg-[#FCA311] focus:text-[#14213D] text-xs font-medium cursor-pointer"
-                    >
-                      <lang.Flag
-                        style={{ width: 20, height: 14 }}
-                        className="shrink-0 rounded-[2px]"
-                      />
-                      <span>{lang.name}</span>
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+                    })()}
+                  </span>
+                  <FaChevronDown
+                    aria-hidden="true"
+                    className={`text-[10px] shrink-0 transition-transform duration-200 ${
+                      isLangOpen ? 'rotate-180' : ''
+                    }`}
+                  />
+                </button>
+                {isLangOpen && (
+                  <ul className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 bg-[#14213D] border border-[#FCA311]/40 rounded-2xl p-2 shadow-2xl text-white z-[999] max-h-60 overflow-y-auto flex flex-col gap-0.5">
+                    {languages.map((lang) => {
+                      const LangFlag = lang.Flag;
+                      const isActive = lang.code === currentLang;
+                      return (
+                        <li key={lang.code}>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              handleLanguageChange(lang.code);
+                              setIsLangOpen(false);
+                            }}
+                            aria-current={isActive ? 'true' : undefined}
+                            className={`flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium cursor-pointer transition-colors whitespace-nowrap w-full ${
+                              isActive
+                                ? 'bg-[#FCA311] text-[#14213D]'
+                                : 'text-white hover:bg-white/10'
+                            }`}
+                          >
+                            <LangFlag
+                              style={{ width: 20, height: 14 }}
+                              className="shrink-0 rounded-[2px]"
+                            />
+                            <span>{lang.name}</span>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
             </div>
             <a
               href="#contact"
