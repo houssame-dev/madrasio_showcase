@@ -36,8 +36,8 @@ const roles: RoleCard[] = [
 
 export default function Roles() {
   return (
-    <section id="roles" className="bg-[#14213D] px-4 py-16 md:py-24">
-      <div className="mx-auto max-w-6xl text-center">
+    <section id="roles" className="w-full bg-[#14213D] py-16 md:py-24">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
         <span className="bg-[#FCA311] text-[#000000] font-bold text-xs uppercase px-3 py-1 rounded-full inline-block mb-3">
           Designed for Every Stakeholder
         </span>
@@ -49,7 +49,7 @@ export default function Roles() {
           families exactly what they need.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-12 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
           {roles.map((role) => (
             <div
               key={role.title}

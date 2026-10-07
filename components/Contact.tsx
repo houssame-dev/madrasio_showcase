@@ -97,8 +97,8 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#14213D] px-4 py-16 md:py-24">
-      <div className="mx-auto max-w-6xl text-center">
+    <section id="contact" className="w-full bg-[#14213D] py-16 md:py-24">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
         <span className="bg-[#FCA311] text-[#000000] font-bold text-xs uppercase px-3 py-1 rounded-full inline-block mb-3">
           Limited V1 Onboarding
         </span>

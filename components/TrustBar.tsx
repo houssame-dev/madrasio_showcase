@@ -18,15 +18,15 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="bg-[#000000] px-4 py-16">
-      <div className="mx-auto max-w-6xl">
+    <section className="w-full bg-[#000000] py-16">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         {/* Section Header */}
         <h2 className="text-2xl md:text-3xl font-bold text-[#FFFFFF] mb-10 text-center">
           Built for Global Education
         </h2>
 
         {/* Three Feature Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {features.map((feature) => (
             <div
               key={feature.title}

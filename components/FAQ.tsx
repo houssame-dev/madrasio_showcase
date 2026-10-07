@@ -50,8 +50,8 @@ const faqs: FaqItem[] = [
 
 export default function FAQ() {
   return (
-    <section id="faq" className="scroll-mt-20 bg-[#FCA311] px-4 py-16 md:py-24">
-      <div className="max-w-3xl mx-auto space-y-4 px-4">
+    <section id="faq" className="scroll-mt-20 w-full bg-[#FCA311] py-16 md:py-24">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 space-y-4">
         <h2 className="text-3xl md:text-5xl font-extrabold text-[#000000] mb-12 text-center">
           Frequently Asked Questions
         </h2>

@@ -28,8 +28,8 @@ const pillars: PillarCard[] = [
 
 export default function ValuePillars() {
   return (
-    <section id="features" className="bg-[#E5E5E5] px-4 py-16 md:py-24">
-      <div className="mx-auto max-w-6xl text-center">
+    <section id="features" className="w-full bg-[#E5E5E5] py-16 md:py-24">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
         <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-[#000000]">
           Four Pillars for Modern School Operations
         </h2>

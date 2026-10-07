@@ -47,7 +47,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased bg-[#FFFFFF]">
+      <body className="antialiased bg-[#FFFFFF] ">
         {children}
         <FloatingButtons />
       </body>

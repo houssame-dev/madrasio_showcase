@@ -20,8 +20,8 @@ const cards: SecurityCard[] = [
 
 export default function Security() {
   return (
-    <section id="security" className="bg-[#FFFFFF] px-4 py-16 md:py-24">
-      <div className="mx-auto max-w-6xl text-center">
+    <section id="security" className="w-full bg-[#FFFFFF] py-16 md:py-24">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
         <h2 className="text-3xl md:text-5xl font-extrabold text-[#000000] mb-4">
           Enterprise-Grade Architecture &amp; Security
         </h2>
@@ -31,7 +31,7 @@ export default function Security() {
           integrity.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-16 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-left">
           {cards.map((card) => (
             <div
               key={card.title}

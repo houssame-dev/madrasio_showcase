@@ -1,5 +1,8 @@
+import Image from 'next/image';
 import {
   FaArrowRight,
+  FaCircleCheck,
+  FaGlobe,
   FaGraduationCap,
   FaStar,
   FaUser,
@@ -36,8 +39,37 @@ const AVATAR_URLS = [
 export default function Hero() {
   return (
     <>
-      <section className="bg-[#FFFFFF]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+      <section className="relative w-full overflow-hidden bg-white min-h-screen">
+        <div className="absolute inset-0 z-0 pointer-events-none opacity-90 lg:opacity-100">
+          <span className="block sm:hidden absolute inset-0">
+            <Image
+              src="/images/hero-bg-mobile.png"
+              alt="Hero Background Mobile"
+              fill
+              priority
+              className="object-cover object-top"
+            />
+          </span>
+          <span className="hidden sm:block lg:hidden absolute inset-0">
+            <Image
+              src="/images/hero-bg-tablet.png"
+              alt="Hero Background Tablet"
+              fill
+              priority
+              className="object-cover object-top"
+            />
+          </span>
+          <span className="hidden lg:block absolute inset-0">
+            <Image
+              src="/images/hero-bg-desktop.png"
+              alt="Hero Background Desktop"
+              fill
+              priority
+              className="object-cover object-right-top"
+            />
+          </span>
+        </div>
+        <div className="relative z-10 w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-28 pb-12 lg:pt-36 lg:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column Content */}
             <div className="lg:col-span-6 order-1">
@@ -80,40 +112,36 @@ export default function Hero() {
               </div>
 
               {/* 3 Role Pillars */}
-              <div className="grid grid-cols-3 gap-3 sm:gap-4 mt-8 pt-6 border-t border-gray-100">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 justify-start w-5/6 mt-8">
                 {ROLE_PILLARS.map(({ title, subtext, Icon }) => (
-                  <div key={title} className="flex flex-col items-start gap-2">
-                    <span className="bg-blue-50 text-blue-600 p-2.5 rounded-full flex items-center justify-center">
+                  <div
+                    key={title}
+                    className="w-full sm:w-auto flex items-center gap-3 p-2.5 px-3.5 rounded-xl bg-white/70 backdrop-blur-md border border-white/80 shadow-sm"
+                  >
+                    <span className="bg-blue-50 text-blue-600 p-2.5 rounded-full flex items-center justify-center shrink-0">
                       <Icon aria-hidden="true" />
                     </span>
-                    <p className="font-bold text-sm text-[#14213D]">{title}</p>
-                    <p className="text-xs text-gray-500">{subtext}</p>
+                    <span>
+                      <p className="font-bold text-sm text-[#14213D]">
+                        {title}
+                      </p>
+                      <p className="text-xs text-[#14213D]/80 font-medium">
+                        {subtext}
+                      </p>
+                    </span>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right Column / Mockup Image */}
-            <div className="lg:col-span-6 order-3 lg:order-2">
-              <div className="relative w-full flex justify-center lg:justify-end mt-8 lg:mt-0">
-                <img
-                  src="/images/hero-laptop-mockup.png"
-                  alt="Madrasio School Management Dashboard"
-                  className="w-full max-w-2xl h-auto drop-shadow-2xl object-contain"
-                />
-              </div>
-            </div>
-
             {/* Trust & Social Proof Banner */}
-            <div className="lg:col-span-12 order-2 lg:order-3">
-              <div className="flex items-center gap-4">
-                <div className="h-px flex-1 bg-gray-200" />
-                <p className="uppercase text-gray-500 text-xs tracking-wider whitespace-nowrap">
+            <div className="lg:col-span-12 order-2 lg:order-3 flex flex-col items-center lg:items-start text-center w-full mx-auto">
+              <div className="flex items-center justify-center md:justify-start sm:justify-start w-full gap-4">
+                <p className="text-[#14213D]/70 font-semibold uppercase tracking-wider text-xs whitespace-nowrap">
                   — Trusted by over 100 private schools —
                 </p>
-                <div className="h-px flex-1 bg-gray-200" />
               </div>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-6">
+              <div className="flex flex-col sm:flex-row items-center justify-start gap-4 mt-6">
                 <div className="flex items-center">
                   {AVATAR_URLS.map((src, index) => (
                     <img
@@ -128,9 +156,9 @@ export default function Hero() {
                     100+
                   </span>
                 </div>
-                <p className="text-sm text-gray-600 text-center sm:text-left">
+                <p className="text-sm text-[#14213D] font-medium text-center sm:text-left">
                   Join <strong className="text-[#14213D]">100+ schools</strong>{' '}
-                  building a brighter future with Madrasio.
+                  building a brighter future with <span className="font-bold uppercase underline">Madrasio</span>.
                 </p>
               </div>
             </div>

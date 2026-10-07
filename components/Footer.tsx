@@ -62,14 +62,14 @@ function ColumnHeading({ children }: { children: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#000000] text-[#E5E5E5]">
-      <div className="max-w-6xl mx-auto px-4 py-12">
+    <footer className="w-full bg-[#000000] text-[#E5E5E5]">
+      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand Section (centered on mobile, left-aligned on desktop) */}
           <div className="text-center md:text-left flex flex-col items-center md:items-start">
             <p className="text-2xl font-bold tracking-tight text-[#FFFFFF] flex items-center">
               <img
-                src="/madrasio-logo.png"
+                src="/logo-colored.png"
                 alt="Madrasio Logo"
                 className="w-12 h-12 object-contain inline-block mr-2"
               />
@@ -211,6 +211,7 @@ export default function Footer() {
 
         {/* Divider with center glow */}
         <div className="relative h-px w-full bg-[#E5E5E5]/10 mt-12 mb-6">
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 h-[2px] w-24 bg-[#FCA311] shadow-[0_0_10px_#FCA311]" />
         </div>
 
         {/* Bottom Bar */}

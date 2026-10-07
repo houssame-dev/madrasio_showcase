@@ -7,6 +7,8 @@ import {
   FaLinkedin,
   FaXTwitter,
 } from 'react-icons/fa6';
+import { ImMenu } from 'react-icons/im';
+import { FaWindowClose } from 'react-icons/fa';
 import {
   Select,
   SelectContent,
@@ -81,6 +83,20 @@ const getLanguageDir = (code: string) =>
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('en');
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Solid navy background once scrolled OR while the mobile menu is open
+  // (so the header blends seamlessly with the navy mobile overlay).
+  const navbarSolid = isScrolled || isMenuOpen;
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleLanguageChange = (value: string | null) => {
     if (!value) return;
@@ -111,23 +127,33 @@ export default function Navbar() {
   }, [isMenuOpen]);
 
   return (
-    <header className="sticky top-0 z-50 bg-[#14213D] text-[#FFFFFF]">
+    <header
+      className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
+        isMenuOpen ? 'z-[999]' : 'z-50'
+      } ${
+        navbarSolid
+          ? 'bg-[#14213D] py-3 shadow-md border-b border-[#14213D]'
+          : 'bg-transparent py-5 border-b border-transparent'
+      }`}
+    >
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8"
+        className="mx-auto flex h-10 w-full items-center justify-between px-4 sm:px-8 lg:px-12 xl:px-16"
       >
         {/* Brand logo (far left) */}
         <a
           href="#top"
           onClick={() => setIsMenuOpen(false)}
-          className="flex items-center gap-2 font-bold text-xl tracking-tight text-[#FFFFFF]"
+          className="flex items-center gap-2 font-bold text-xl tracking-tight"
         >
           <img
-            src="/madrasio-logo.png"
+            src={navbarSolid ? '/logo-white.png' : '/logo-black.png'}
             alt="Madrasio Logo"
             className="w-12 h-12 object-contain"
           />
-          Madrasio
+          <span className={navbarSolid ? 'text-white' : 'text-[#14213D]'}>
+            Madrasio
+          </span>
         </a>
 
         {/* Desktop links (center/right) */}
@@ -136,7 +162,9 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-[#FFFFFF] transition-colors hover:text-[#E5E5E5]"
+                className={`text-sm font-medium transition-colors hover:text-[#FCA311] ${
+                  navbarSolid ? 'text-white' : 'text-[#14213D]'
+                }`}
               >
                 {link.label}
               </a>
@@ -149,7 +177,11 @@ export default function Navbar() {
           <Select onValueChange={handleLanguageChange} value={currentLang}>
             <SelectTrigger
               aria-label="Select language"
-              className="w-[85px] h-9 bg-transparent border-[#E5E5E5]/20 text-white focus:ring-[#FCA311] focus:border-[#FCA311] font-semibold text-xs"
+              className={`w-[85px] h-9 bg-transparent focus:ring-[#FCA311] focus:border-[#FCA311] font-semibold text-xs ${
+                navbarSolid
+                  ? 'border-white/20 text-white hover:bg-white/10'
+                  : 'border-[#14213D]/20 text-[#14213D] hover:bg-[#14213D]/5'
+              }`}
             >
               <SelectValue placeholder="EN">
                 {(value: string | null) => {
@@ -186,7 +218,7 @@ export default function Navbar() {
           </Select>
           <a
             href="#contact"
-            className="inline-flex items-center rounded-md bg-[#FCA311] px-4 py-2 text-sm font-bold text-[#000000] transition-colors hover:bg-[#e5940b]"
+            className="inline-flex items-center rounded-md bg-[#FCA311] px-4 py-2 text-sm font-bold text-[#14213D] transition-colors hover:bg-[#e08f0a]"
           >
             Book a Demo
           </a>
@@ -199,40 +231,18 @@ export default function Navbar() {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="inline-flex items-center justify-center rounded-md p-2 text-[#FFFFFF] hover:text-[#E5E5E5] md:hidden"
+          className={`inline-flex items-center justify-center p-2 rounded-md md:hidden transition-colors hover:text-[#FCA311] ${
+            isMenuOpen
+              ? 'text-white'
+              : isScrolled
+                ? 'text-white'
+                : 'text-[#14213D]'
+          }`}
         >
           {isMenuOpen ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="h-6 w-6"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
+            <FaWindowClose className="w-6 h-6 text-white" />
           ) : (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="h-6 w-6"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
+            <ImMenu className="w-6 h-6" />
           )}
         </button>
       </nav>
@@ -242,7 +252,7 @@ export default function Navbar() {
         <nav
           id="mobile-menu"
           aria-label="Mobile navigation"
-          className="fixed inset-x-0 top-16 h-[calc(100dvh-4rem)] bg-[#14213D] text-[#FFFFFF] z-50 flex flex-col justify-between p-6 overflow-y-auto md:hidden"
+          className="absolute inset-x-0 top-full h-[calc(100dvh-100%)] bg-[#14213D] text-[#FFFFFF] z-[999] flex flex-col justify-between p-6 overflow-y-auto md:hidden"
         >
           {/* Centered Navigation Links & Social Icons Section */}
           <div className="flex-1 flex flex-col items-center justify-center space-y-8 my-auto w-full">
