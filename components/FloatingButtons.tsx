@@ -23,13 +23,13 @@ export default function FloatingButtons() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-center gap-3">
       {showScrollTop && (
         <button
           type="button"
           onClick={scrollToTop}
           aria-label="Scroll to top"
-          className="flex items-center justify-center rounded-full aspect-square p-4 h-14 w-14 bg-[#14213D] text-[#FFFFFF] border-4 border-[#FCA311] shadow-lg hover:bg-[#FCA311] hover:text-[#000000] transition-all"
+          className="flex items-center justify-center rounded-full aspect-square p-4 h-12 w-12 bg-[#14213D] text-[#FFFFFF] shadow-lg hover:bg-[#FCA311] hover:text-[#000000] transition-all"
         >
           <FaArrowUp aria-hidden="true" />
         </button>
@@ -40,7 +40,7 @@ export default function FloatingButtons() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat with Madrasio on WhatsApp"
-        className="bg-[#25D366] hover:bg-[#20ba5a] text-white p-3.5 rounded-full shadow-xl transition-all duration-300 hover:scale-110 flex items-center justify-center"
+        className="flex items-center justify-center w-12 h-12 sm:w-12 sm:h-12 rounded-full shrink-0 aspect-square bg-[#25D366] text-white shadow-lg hover:scale-110 transition-transform"
       >
         <FaWhatsapp className="h-6 w-6 text-white" aria-hidden="true" />
       </a>
