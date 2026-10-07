@@ -1,6 +1,6 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import TrustBar from '@/components/TrustBar';
+import GlobalEducation from '@/components/GlobalEducation';
 import ValuePillars from '@/components/ValuePillars';
 import Roles from '@/components/Roles';
 import Security from '@/components/Security';
@@ -13,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen bg-[#FFFFFF] text-[#000000]">
       <Navbar />
       <Hero />
-      <TrustBar />
+      <GlobalEducation />
       <ValuePillars />
       <Roles />
       <Security />

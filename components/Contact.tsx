@@ -2,18 +2,23 @@
 
 import { useState } from 'react';
 import type { FormEvent } from 'react';
-
-import { CheckCircle2, Loader2 } from 'lucide-react';
-import { Input } from '@/components/ui/input';
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+  FaArrowRight,
+  FaBuilding,
+  FaCalendarDays,
+  FaChevronDown,
+  FaCircleCheck,
+  FaCrown,
+  FaEnvelope,
+  FaHeadset,
+  FaLock,
+  FaMessage,
+  FaPhone,
+  FaRocket,
+  FaUser,
+  FaUsers,
+} from 'react-icons/fa6';
+import { IoPeopleSharp } from "react-icons/io5";
 
 const FORMSPREE_FORM_ID =
   process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'YOUR_FORMSPREE_FORM_ID';
@@ -25,13 +30,57 @@ const SCHOOL_SIZE_OPTIONS = [
   '1,000+',
 ];
 
-const inputClassName =
-  'bg-[#E5E5E5] border-2 border-[#14213D] text-[#000000] focus-visible:ring-[#FCA311] py-6';
+const FEATURES = [
+  {
+    title: 'Dedicated Setup',
+    subtext: 'Personalized onboarding and data migration support.',
+    Icon: FaRocket,
+  },
+  {
+    title: 'Early Partner Pricing',
+    subtext: 'Exclusive rates for early schools.',
+    Icon: FaCrown,
+  },
+  {
+    title: 'Priority Support',
+    subtext: 'Direct access to our team during launch.',
+    Icon: FaHeadset,
+  },
+];
 
-const labelClassName = 'block text-sm font-bold text-[#14213D] mb-2';
+const inputClassName =
+  'bg-transparent border-none outline-none text-white w-full ml-3 placeholder-white/30 text-sm';
 
 const FRIENDLY_ERROR_MESSAGE =
   'Something went wrong. Please try again or contact us directly on WhatsApp.';
+
+function FieldWrapper({
+  label,
+  htmlFor,
+  icon,
+  children,
+  className = '',
+}: {
+  label: string;
+  htmlFor: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={`flex flex-col gap-2 ${className}`}>
+      <label htmlFor={htmlFor} className="text-sm font-medium text-white/90">
+        {label}
+      </label>
+      <div className="relative flex items-center bg-black/20 border border-white/10 rounded-xl px-4 py-3 focus-within:border-[#FCA311]/50 transition-colors">
+        {icon}
+        {children}
+      </div>
+    </div>
+  );
+}
+
+const fieldIconClassName = 'text-white/50 text-sm shrink-0';
 
 export default function Contact() {
   const [fullName, setFullName] = useState('');
@@ -97,174 +146,271 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="w-full bg-[#14213D] py-16 md:py-24">
-      <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center">
-        <span className="bg-[#FCA311] text-[#000000] font-bold text-xs uppercase px-3 py-1 rounded-full inline-block mb-3">
-          Limited V1 Onboarding
-        </span>
-        <h2 className="text-3xl md:text-5xl font-extrabold text-[#FFFFFF] text-center">
-          Bring Modern Management to Your School
-        </h2>
-        <p className="text-base md:text-lg text-[#E5E5E5] mt-4 max-w-2xl mx-auto text-center">
-          We are accepting a select group of global private schools for our V1
-          launch. Reserve your spot for dedicated setup and early partner
-          pricing.
-        </p>
+    <section
+      id="contact"
+      className="scroll-mt-20 relative w-full bg-[#E5E5E5] overflow-hidden"
+    >
+      <div className="relative w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column: Text & Value Props */}
+          <div>
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#FCA311] text-[#14213D] text-xs font-black tracking-widest uppercase mb-6 shadow-md">
+              <IoPeopleSharp size={18} />
+              <span>LIMITED EARLY ACCESS</span>
+            </div>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#14213D] tracking-tight mb-6 leading-tight">
+              Bring Modern Management{' '}
+              <br className="hidden sm:block" />{' '}
+              <span className="text-[#FCA311]">to Your School</span>
+            </h2>
+            <p className="text-gray-600 text-lg max-w-lg mb-10">
+              We are accepting a select group of global private schools for
+              our v1 launch. Reserve your spot for dedicated setup and early
+              partner pricing.
+            </p>
 
-        <Card className="max-w-2xl mx-auto bg-[#FFFFFF] border-2 border-[#000000] rounded-xl p-6 md:p-8 shadow-none mt-12 text-left">
-          <CardHeader className="p-0">
-            <CardTitle className="sr-only">Request Early Access</CardTitle>
-          </CardHeader>
-          <CardContent className="p-0">
+            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-12 items-center">
+              {FEATURES.map(({ title, subtext, Icon }) => (
+                <div key={title} className="flex-1 text-center sm:text-left">
+                  <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-[#14213D]/10 text-[#14213D] p-3 shadow-sm text-xl mb-3">
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <p className="text-[#14213D] font-bold text-sm mb-1">
+                    {title}
+                  </p>
+                  <p className="text-gray-600 text-sm">{subtext}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px bg-[#14213D]/10 flex-1"></div>
+              <span className="text-[#14213D]/40 text-xs font-bold uppercase tracking-wider">
+                TRUSTED BY SCHOOLS WORLDWIDE
+              </span>
+              <div className="h-px bg-[#14213D]/10 flex-1"></div>
+            </div>
+          </div>
+
+          {/* Right Column: Form Card */}
+          <div className="bg-[#14213D] border border-[#14213D] shadow-2xl rounded-3xl p-6 sm:p-8 relative overflow-hidden">
             {isSuccess ? (
-              <div className="text-center py-6">
-                <CheckCircle2
-                  className="h-14 w-14 text-green-600 mx-auto mb-4"
+              <div className="text-center py-10">
+                <FaCircleCheck
+                  className="h-14 w-14 text-green-500 mx-auto mb-4"
                   aria-hidden="true"
                 />
-                <p className="text-lg font-bold text-[#14213D]">
+                <p className="text-lg font-bold text-white">
                   Thank you! Your request has been received. Our team will
                   contact you within 24 hours.
                 </p>
-                <Button
+                <button
                   type="button"
                   onClick={handleSendAnother}
-                  className="mt-6 bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold rounded-lg"
+                  className="mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold rounded-xl px-6 py-3 transition-all"
                 >
                   Send another message
-                </Button>
+                </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                <div className="text-left mb-5">
-                  <label htmlFor="fullName" className={labelClassName}>
-                    Full Name
-                  </label>
-                  <Input
-                    id="fullName"
-                    name="name"
-                    type="text"
-                    required
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
-                    placeholder="Jane Doe"
-                    className={inputClassName}
-                  />
+              <>
+                <div className="flex items-center gap-4 mb-2">
+                  <span className="bg-[#FCA311]/20 text-[#FCA311] p-3 rounded-xl text-xl">
+                    <FaCalendarDays aria-hidden="true" />
+                  </span>
+                  <h3 className="text-2xl font-bold text-white">
+                    Book a Demo
+                  </h3>
                 </div>
+                <p className="text-[#E5E5E5]/70 text-sm mb-8">
+                  Fill in the details and we&apos;ll get in touch to schedule
+                  your demo.
+                </p>
 
-                <div className="text-left mb-5">
-                  <label htmlFor="schoolName" className={labelClassName}>
-                    School Name
-                  </label>
-                  <Input
-                    id="schoolName"
-                    name="schoolName"
-                    type="text"
-                    required
-                    value={schoolName}
-                    onChange={(e) => setSchoolName(e.target.value)}
-                    placeholder="International Academy"
-                    className={inputClassName}
-                  />
-                </div>
-
-                <div className="text-left mb-5">
-                  <label htmlFor="email" className={labelClassName}>
-                    Email Address
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="contact@school.edu"
-                    className={inputClassName}
-                  />
-                </div>
-
-                <div className="text-left mb-5">
-                  <label htmlFor="phone" className={labelClassName}>
-                    Phone / WhatsApp Number
-                  </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    required
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    placeholder="+212 6 00 00 00 00"
-                    className={inputClassName}
-                  />
-                </div>
-
-                <div className="text-left mb-5">
-                  <label htmlFor="schoolSize" className={labelClassName}>
-                    School Student Capacity
-                  </label>
-                  <Select
-                    name="schoolSize"
-                    required
-                    value={schoolSize}
-                    onValueChange={(value) => setSchoolSize(value ?? '')}
-                  >
-                    <SelectTrigger
-                      id="schoolSize"
-                      className="w-full bg-[#E5E5E5] border-2 border-[#14213D] text-[#000000] focus-visible:ring-[#FCA311] py-6"
+                <form onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <FieldWrapper
+                      label="Full Name"
+                      htmlFor="fullName"
+                      icon={
+                        <FaUser
+                          className={fieldIconClassName}
+                          aria-hidden="true"
+                        />
+                      }
                     >
-                      <SelectValue placeholder="Select student capacity" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      {SCHOOL_SIZE_OPTIONS.map((option) => (
-                        <SelectItem key={option} value={option}>
-                          {option}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </div>
+                      <input
+                        id="fullName"
+                        name="name"
+                        type="text"
+                        required
+                        value={fullName}
+                        onChange={(e) => setFullName(e.target.value)}
+                        placeholder="John Doe"
+                        className={inputClassName}
+                      />
+                    </FieldWrapper>
 
-                <div className="text-left mb-5">
-                  <label htmlFor="message" className={labelClassName}>
-                    Additional Notes / Message
-                  </label>
-                  <Input
-                    id="message"
-                    name="message"
-                    type="text"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Tell us about your school's needs..."
-                    className={inputClassName}
-                  />
-                </div>
+                    <FieldWrapper
+                      label="School Name"
+                      htmlFor="schoolName"
+                      icon={
+                        <FaBuilding
+                          className={fieldIconClassName}
+                          aria-hidden="true"
+                        />
+                      }
+                    >
+                      <input
+                        id="schoolName"
+                        name="schoolName"
+                        type="text"
+                        required
+                        value={schoolName}
+                        onChange={(e) => setSchoolName(e.target.value)}
+                        placeholder="International Academy"
+                        className={inputClassName}
+                      />
+                    </FieldWrapper>
 
-                {errorMessage && (
-                  <p role="alert" className="text-sm font-medium text-red-600 mb-4">
-                    {errorMessage}
-                  </p>
-                )}
+                    <FieldWrapper
+                      label="Email Address"
+                      htmlFor="email"
+                      icon={
+                        <FaEnvelope
+                          className={fieldIconClassName}
+                          aria-hidden="true"
+                        />
+                      }
+                    >
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="you@school.com"
+                        className={inputClassName}
+                      />
+                    </FieldWrapper>
 
-                <Button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-6 bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold text-lg rounded-lg border-2 border-[#000000] disabled:opacity-70"
-                >
-                  {isSubmitting ? (
-                    <span className="inline-flex items-center gap-2">
-                      <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
-                      Sending request...
-                    </span>
-                  ) : (
-                    'Book a Demo'
+                    <FieldWrapper
+                      label="Phone / WhatsApp"
+                      htmlFor="phone"
+                      icon={
+                        <FaPhone
+                          className={fieldIconClassName}
+                          aria-hidden="true"
+                        />
+                      }
+                    >
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        required
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="+212 6 00 00 00 00"
+                        className={inputClassName}
+                      />
+                    </FieldWrapper>
+
+                    <FieldWrapper
+                      label="School Student Capacity"
+                      htmlFor="schoolSize"
+                      icon={
+                        <FaUsers
+                          className={fieldIconClassName}
+                          aria-hidden="true"
+                        />
+                      }
+                    >
+                      <select
+                        id="schoolSize"
+                        name="schoolSize"
+                        required
+                        value={schoolSize}
+                        onChange={(e) => setSchoolSize(e.target.value)}
+                        className={`${inputClassName} appearance-none cursor-pointer pr-6 [&>option]:bg-[#14213D] [&>option]:text-white ${
+                          schoolSize ? 'text-white' : 'text-white/30'
+                        }`}
+                      >
+                        <option value="" disabled>
+                          Select capacity
+                        </option>
+                        {SCHOOL_SIZE_OPTIONS.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
+                      <FaChevronDown
+                        className="absolute right-4 text-white/40 text-xs pointer-events-none"
+                        aria-hidden="true"
+                      />
+                    </FieldWrapper>
+
+                    <FieldWrapper
+                      label="Additional Notes"
+                      htmlFor="message"
+                      icon={
+                        <FaMessage
+                          className={`${fieldIconClassName} mt-1 self-start`}
+                          aria-hidden="true"
+                        />
+                      }
+                      className="sm:col-span-2"
+                    >
+                      <textarea
+                        id="message"
+                        name="message"
+                        rows={3}
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        placeholder="Tell us about your school's needs..."
+                        className={`${inputClassName} resize-none`}
+                      />
+                    </FieldWrapper>
+                  </div>
+
+                  {errorMessage && (
+                    <p
+                      role="alert"
+                      className="text-sm font-medium text-red-400 mt-4"
+                    >
+                      {errorMessage}
+                    </p>
                   )}
-                </Button>
-              </form>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_4px_14px_rgba(252,163,17,0.4)] disabled:opacity-70"
+                  >
+                    {isSubmitting ? (
+                      'Sending request...'
+                    ) : (
+                      <>
+                        Book a Demo
+                        <FaArrowRight aria-hidden="true" />
+                      </>
+                    )}
+                  </button>
+
+                  <div className="flex items-center justify-center gap-2 mt-4 text-xs text-white/40 text-center">
+                    <FaLock aria-hidden="true" />
+                    <span>
+                      Your information is secure and will only be used to
+                      contact you about a demo.
+                    </span>
+                  </div>
+                </form>
+              </>
             )}
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     </section>
   );

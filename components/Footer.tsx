@@ -211,7 +211,6 @@ export default function Footer() {
 
         {/* Divider with center glow */}
         <div className="relative h-px w-full bg-[#E5E5E5]/10 mt-12 mb-6">
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 h-[2px] w-24 bg-[#FCA311] shadow-[0_0_10px_#FCA311]" />
         </div>
 
         {/* Bottom Bar */}
