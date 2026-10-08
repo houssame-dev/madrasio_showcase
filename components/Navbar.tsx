@@ -105,6 +105,10 @@ export default function Navbar() {
   const handleLanguageChange = (value: string | null) => {
     if (!value) return;
     setCurrentLang(value);
+    // Close the mobile menu on selection so the newly applied
+    // language (and RTL/LTR direction) is immediately visible.
+    // No-op on desktop where the menu is already closed.
+    setIsMenuOpen(false);
     if (typeof document !== 'undefined') {
       document.documentElement.lang = value;
       document.documentElement.dir = getLanguageDir(value);
