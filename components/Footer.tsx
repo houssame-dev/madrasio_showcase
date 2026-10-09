@@ -10,11 +10,11 @@ import {
   FaWhatsapp,
 } from 'react-icons/fa6';
 
-const PRODUCT_LINKS = [
+const QUICK_LINKS = [
   { label: 'Features', href: '#features' },
-  { label: 'Roles', href: '#roles' },
-  { label: 'Security', href: '#security' },
+  { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
+  { label: 'Contact', href: '#contact' },
 ];
 
 const LEGAL_LINKS = [
@@ -62,7 +62,7 @@ function ColumnHeading({ children }: { children: string }) {
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#000000] text-[#E5E5E5]">
+    <footer className="w-full bg-[#000000] text-[#E5E5E5] overflow-hidden">
       <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand Section (centered on mobile, left-aligned on desktop) */}
@@ -105,9 +105,9 @@ export default function Footer() {
           {/* Desktop Navigation Columns */}
           <div className="hidden md:flex gap-16">
             <div>
-              <ColumnHeading>Product</ColumnHeading>
+              <ColumnHeading>Quick Links</ColumnHeading>
               <ul className="flex flex-col space-y-3 text-sm text-[#E5E5E5]">
-                {PRODUCT_LINKS.map((link) => (
+                {QUICK_LINKS.map((link) => (
                   <li key={link.label}>
                     <a
                       href={link.href}
@@ -155,10 +155,10 @@ export default function Footer() {
           <div className="border-b border-[#E5E5E5]/10 pb-6 mb-6">
             <p className="flex items-center font-bold text-[#FFFFFF]">
               <FaCube className="text-[#FCA311] mr-3" aria-hidden="true" />
-              Product
+              Quick Links
             </p>
             <ul className="flex flex-col space-y-3 text-sm text-[#E5E5E5] mt-4">
-              {PRODUCT_LINKS.map((link) => (
+              {QUICK_LINKS.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}

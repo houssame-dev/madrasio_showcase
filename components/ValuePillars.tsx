@@ -45,7 +45,7 @@ const pillars: PillarCard[] = [
 
 export default function ValuePillars() {
   return (
-    <section id="features" className="w-full bg-[#E5E5E5]">
+    <section className="w-full bg-[#E5E5E5] overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14213D]/5 border border-[#14213D]/10 text-[#14213D] text-xs font-bold tracking-widest uppercase mb-4">
           🎓 BUILT FOR MODERN SCHOOLS
@@ -57,7 +57,7 @@ export default function ValuePillars() {
           </span>
         </h2>
         <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-12 sm:mb-16">
-          Everything your institution needs to streamline academics, finance,
+          Everything your private school needs to streamline academics, finance,
           communication, and administration.
         </p>
 

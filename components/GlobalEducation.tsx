@@ -25,7 +25,7 @@ const CARDS = [
 
 export default function GlobalEducation() {
   return (
-    <section className="w-full bg-[#000000]">
+    <section id="features" className="w-full scroll-mt-20 bg-[#000000] overflow-hidden">
 
       {/* Section Header & Feature Cards */}
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center py-16 lg:py-24">

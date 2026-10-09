@@ -18,7 +18,7 @@ export default function TrustBar() {
   ];
 
   return (
-    <section className="w-full bg-[#000000] py-16">
+    <section className="w-full bg-[#000000] py-16 overflow-hidden">
       <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
         {/* Section Header */}
         <h2 className="text-2xl md:text-3xl font-bold text-[#FFFFFF] mb-10 text-center">

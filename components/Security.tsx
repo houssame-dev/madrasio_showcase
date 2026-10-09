@@ -45,7 +45,7 @@ const cards: SecurityCard[] = [
 
 export default function Security() {
   return (
-    <section id="security" className="w-full bg-white">
+    <section id="security" className="w-full bg-white overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#14213D]/5 border border-[#14213D]/10 text-[#14213D] text-xs font-bold tracking-widest uppercase mb-4">
           🛡️ SECURITY FOUNDATION
@@ -57,7 +57,7 @@ export default function Security() {
           </span>
         </h2>
         <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto mb-12 sm:mb-16">
-          Built on zero-trust principles. Your institution&apos;s data is
+          Built on zero-trust principles. Your school&apos;s data is
           strictly isolated, encrypted, and preserved with immutable historical
           integrity.
         </p>

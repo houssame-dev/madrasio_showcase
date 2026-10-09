@@ -34,8 +34,7 @@ import {
 
 const NAV_LINKS = [
   { label: 'Features', href: '#features' },
-  { label: 'Roles', href: '#roles' },
-  { label: 'Security', href: '#security' },
+  { label: 'Pricing', href: '#pricing' },
   { label: 'FAQ', href: '#faq' },
   { label: 'Contact', href: '#contact' },
 ];
