@@ -17,7 +17,8 @@ import { useLanguage } from '@/components/LanguageProvider';
 interface PlanMeta {
   monthlyPrice: number;
   annualPrice: number;
-  INCLUDED_FEATURES: string[];
+  students: string;
+  storageGB: string;
   highlighted?: boolean;
   Icon: typeof FaSchool;
 }
@@ -26,20 +27,23 @@ const plansMeta: PlanMeta[] = [
   {
     monthlyPrice: 49,
     annualPrice: 39,
-    INCLUDED_FEATURES: ['Up to 250 Students','Complete tuition management tracking','Admin, Parent & Teacher Workspaces','Multilingual Interface Support','Automated Encrypted Backups','Free Data Migration & Setup','24/7 Priority Support'],
+    students: '250',
+    storageGB: '15',
     Icon: FaSchool,
   },
   {
     monthlyPrice: 99,
     annualPrice: 79,
-    INCLUDED_FEATURES: ['Up to 750 Students', 'Complete tuition management tracking', 'Admin, Parent & Teacher Workspaces','Multilingual Interface Support','Automated Encrypted Backups','Free Data Migration & Setup','24/7 Priority Support'],
+    students: '750',
+    storageGB: '50',
     highlighted: true,
     Icon: FaRocket,
   },
   {
     monthlyPrice: 149,
     annualPrice: 119,
-    INCLUDED_FEATURES: ['Up to 1,500 Students', 'Complete tuition management tracking', 'Admin, Parent & Teacher Workspaces','Multilingual Interface Support','Automated Encrypted Backups','Free Data Migration & Setup','24/7 Priority Support'],
+    students: '1,500',
+    storageGB: '150',
     Icon: FaCrown,
   },
 ];
@@ -114,7 +118,12 @@ export default function Pricing() {
           {plansMeta.map((meta, index) => {
             const plan = planNames[index] ?? { name: '', subtext: '' };
             const { name, subtext } = plan;
-            const { monthlyPrice, annualPrice, INCLUDED_FEATURES, highlighted, Icon } = meta;
+            const { monthlyPrice, annualPrice, students, storageGB, highlighted, Icon } = meta;
+            const features = [
+              t('pricing.studentsUpTo').replace('{n}', students),
+              t('pricing.storageGB').replace('{n}', storageGB),
+              ...tp<string[]>('pricing.features'),
+            ];
               const price = billingAnnually ? annualPrice : monthlyPrice;
               return (
                 <div
@@ -156,7 +165,7 @@ export default function Pricing() {
                     <span className="text-base font-bold">/mo</span>
                   </p>
                   <ul className="space-y-3 mb-8">
-                    {INCLUDED_FEATURES.map((feature) => (
+                    {features.map((feature) => (
                       <li
                         key={feature}
                         className="flex items-center gap-2.5 text-sm font-medium"

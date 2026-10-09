@@ -169,7 +169,9 @@
         "title": "Prévisibilité tarifaire.",
         "body": "Accueillez de nouveaux élèves sans craindre une hausse immédiate des coûts logiciels."
       }
-    ]
+    ],
+    "studentsUpTo": "Jusqu'à {n} élèves",
+    "storageGB": "{n} Go de stockage sécurisé"
   },
   "faq": {
     "badge": "💬 DES QUESTIONS ?",

@@ -169,7 +169,9 @@
         "title": "Voorspelbaarheid met vast tarief.",
         "body": "Verwelkom nieuwe leerlingen zonder je zorgen te maken over directe softwaremeerkosten."
       }
-    ]
+    ],
+    "studentsUpTo": "Tot {n} leerlingen",
+    "storageGB": "{n} GB veilige opslag"
   },
   "faq": {
     "badge": "💬 VRAGEN?",
@@ -245,7 +247,12 @@
       "schoolSize": "Selecteer capaciteit",
       "message": "Vertel ons over de behoeften van je school..."
     },
-    "capacityOptions": ["Minder dan 200", "200 – 500", "500 – 1.000", "Meer dan 1.000"],
+    "capacityOptions": [
+      "Minder dan 200",
+      "200 – 500",
+      "500 – 1.000",
+      "Meer dan 1.000"
+    ],
     "submit": "Demo boeken",
     "sending": "Aanvraag verzenden...",
     "success": "Bedankt! Ons onboardingteam neemt binnen 12 uur contact op via WhatsApp/e-mail.",

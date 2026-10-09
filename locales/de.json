@@ -169,7 +169,9 @@
         "title": "Kalkulierbare Pauschalpreise.",
         "body": "Nehmen Sie neue Schüler auf, ohne sofortige Software-Mehrkosten zu befürchten."
       }
-    ]
+    ],
+    "studentsUpTo": "Bis zu {n} Schüler",
+    "storageGB": "{n} GB sicherer Speicher"
   },
   "faq": {
     "badge": "💬 FRAGEN?",
@@ -245,7 +247,12 @@
       "schoolSize": "Kapazität wählen",
       "message": "Erzählen Sie uns von den Bedürfnissen Ihrer Schule..."
     },
-    "capacityOptions": ["Unter 200", "200 – 500", "500 – 1.000", "Über 1.000"],
+    "capacityOptions": [
+      "Unter 200",
+      "200 – 500",
+      "500 – 1.000",
+      "Über 1.000"
+    ],
     "submit": "Demo buchen",
     "sending": "Anfrage wird gesendet...",
     "success": "Danke! Unser Onboarding-Team meldet sich innerhalb von 12 Stunden per WhatsApp/E-Mail.",

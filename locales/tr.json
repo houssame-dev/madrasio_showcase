@@ -169,7 +169,9 @@
         "title": "Sabit fiyat öngörülebilirliği.",
         "body": "Anında yazılım maliyeti artışlarından endişe etmeden yeni öğrenciler kabul edin."
       }
-    ]
+    ],
+    "studentsUpTo": "{n} Öğrenciye Kadar",
+    "storageGB": "{n} GB Güvenli Depolama"
   },
   "faq": {
     "badge": "💬 SORULARINIZ MI VAR?",
@@ -245,7 +247,12 @@
       "schoolSize": "Kapasite seçin",
       "message": "Okulunuzun ihtiyaçlarından bahsedin..."
     },
-    "capacityOptions": ["200'den az", "200 – 500", "500 – 1.000", "1.000+"],
+    "capacityOptions": [
+      "200'den az",
+      "200 – 500",
+      "500 – 1.000",
+      "1.000+"
+    ],
     "submit": "Demo Talebi",
     "sending": "İstek gönderiliyor...",
     "success": "Teşekkürler! Okul katılım ekibimiz 12 saat içinde WhatsApp/E-posta ile sizinle iletişime geçecek.",

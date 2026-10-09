@@ -146,10 +146,10 @@ function auditContrast() {
   console.log('\n--- Gold-surface contrast (advisory) ---');
   const offenders = [];
   for (const file of componentFiles()) {
-    // Ignore thin decorative bars (h-1/w-1 accents carry no text).
+    // Ignore thin decorative bars (h-1/w-1/h-[2px] accents carry no text).
     const src = read(file)
       .split('\n')
-      .filter((line) => !/\b[hw]-1\b/.test(line))
+      .filter((line) => !/\b[hw]-1\b|\b[hw]-\[2px\]/.test(line))
       .join('\n');
     // Only solid, non-hover gold surfaces count (translucent /10 washes
     // and hover states pair their own contrast handling).

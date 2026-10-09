@@ -169,7 +169,9 @@
         "title": "Prevedibilità a tariffa fissa.",
         "body": "Accogli nuovi studenti senza preoccuparti di aumenti immediati dei costi del software."
       }
-    ]
+    ],
+    "studentsUpTo": "Fino a {n} studenti",
+    "storageGB": "{n} GB di archiviazione sicura"
   },
   "faq": {
     "badge": "💬 DOMANDE?",
@@ -245,7 +247,12 @@
       "schoolSize": "Seleziona la capacità",
       "message": "Raccontaci le esigenze della tua scuola..."
     },
-    "capacityOptions": ["Meno di 200", "200 – 500", "500 – 1.000", "Oltre 1.000"],
+    "capacityOptions": [
+      "Meno di 200",
+      "200 – 500",
+      "500 – 1.000",
+      "Oltre 1.000"
+    ],
     "submit": "Prenota una demo",
     "sending": "Invio della richiesta...",
     "success": "Grazie! Il nostro team di attivazione ti contatterà entro 12 ore su WhatsApp/e-mail.",

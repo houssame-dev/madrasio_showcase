@@ -169,7 +169,9 @@
         "title": "Previsibilidade de tarifa fixa.",
         "body": "Receba novos alunos sem se preocupar com aumentos imediatos no custo do software."
       }
-    ]
+    ],
+    "studentsUpTo": "Até {n} alunos",
+    "storageGB": "{n} GB de armazenamento seguro"
   },
   "faq": {
     "badge": "💬 DÚVIDAS?",
@@ -245,7 +247,12 @@
       "schoolSize": "Selecionar capacidade",
       "message": "Conte-nos as necessidades da sua escola..."
     },
-    "capacityOptions": ["Menos de 200", "200 – 500", "500 – 1.000", "Mais de 1.000"],
+    "capacityOptions": [
+      "Menos de 200",
+      "200 – 500",
+      "500 – 1.000",
+      "Mais de 1.000"
+    ],
     "submit": "Agendar demonstração",
     "sending": "Enviando solicitação...",
     "success": "Obrigado! Nossa equipe de implantação entrará em contato em 12 horas por WhatsApp/e-mail.",

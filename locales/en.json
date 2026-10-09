@@ -169,7 +169,9 @@
         "title": "Flat-rate predictability.",
         "body": "Welcome new students without worrying about immediate per-student software cost increases."
       }
-    ]
+    ],
+    "studentsUpTo": "Up to {n} Students",
+    "storageGB": "{n} GB Secure Storage"
   },
   "faq": {
     "badge": "💬 QUESTIONS ?",
