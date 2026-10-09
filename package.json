@@ -6,7 +6,10 @@
     "dev": "next dev -p 3006",
     "build": "next build",
     "start": "next start -p 3006",
-    "lint": "next lint"
+    "lint": "next lint",
+    "audit:http": "node scripts/audit-http.js",
+    "audit:seo": "node scripts/audit-seo.js",
+    "audit:meta": "node scripts/audit-meta.js"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

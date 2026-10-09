@@ -148,7 +148,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-20 relative w-full bg-[#E5E5E5] overflow-hidden"
+      className="scroll-mt-16 relative w-full bg-[#E5E5E5] overflow-hidden"
     >
       <div className="relative w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">

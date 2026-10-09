@@ -6,21 +6,49 @@ import type { ReactNode } from 'react';
 import FloatingButtons from '@/components/FloatingButtons';
 
 export const metadata: Metadata = {
-  title: 'Madrasio | The All-in-One School Management System',
+  metadataBase: new URL('https://www.madrasio.com'),
+  alternates: {
+    canonical: 'https://www.madrasio.com',
+    languages: {
+      en: 'https://www.madrasio.com',
+      fr: 'https://www.madrasio.com/fr',
+      ar: 'https://www.madrasio.com/ar',
+      'x-default': 'https://www.madrasio.com',
+    },
+  },
+  title: 'Madrasio | School Management System for Private Schools',
   description:
-    'Streamline academics, simplify tuition collection, and keep parents engaged with Madrasio, the modern platform for private schools from primary to high school.',
+    'Run your private school with absolute clarity. Flat-rate pricing, free data migration, and full access to all core modules. Start your 30-day free trial.',
+  keywords: [
+    'school management system',
+    'private school software',
+    'student information system',
+    'multilingual school software',
+  ],
   openGraph: {
-    title: 'Madrasio | Modern School Management',
-    description: 'The all-in-one platform for private schools globally.',
-    url: 'https://madrasio.com',
+    title: 'Madrasio | School Management System for Private Schools',
+    description:
+      'Run your private school with absolute clarity. Flat-rate pricing, free data migration, and full access to all core modules.',
+    url: 'https://www.madrasio.com',
     siteName: 'Madrasio',
     locale: 'en_US',
+    alternateLocale: ['fr_FR', 'ar_MA'],
     type: 'website',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Madrasio School Management System',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Madrasio | Modern School Management',
-    description: 'The all-in-one platform for private schools globally.',
+    title: 'Madrasio | School Management System for Private Schools',
+    description:
+      'Run your private school with absolute clarity. Flat-rate pricing, free data migration, and full access to all core modules.',
+    images: ['/og-image.jpg'],
   },
   robots: { index: true, follow: true },
   manifest: '/site.webmanifest',

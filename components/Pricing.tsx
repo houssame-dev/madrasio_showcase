@@ -55,7 +55,7 @@ export default function Pricing() {
   const [billingAnnually, setBillingAnnually] = useState(false);
 
   return (
-    <section id="pricing" className="scroll-mt-20 w-full bg-[#FCA311] overflow-hidden">
+    <section id="pricing" className="scroll-mt-16 w-full bg-[#FCA311] overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#14213D] text-xs font-black tracking-widest uppercase mb-6 shadow-sm">
           TRANSPARENT PRICING
