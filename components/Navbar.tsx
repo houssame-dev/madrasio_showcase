@@ -31,13 +31,7 @@ import {
   CN,
   JP,
 } from 'country-flag-icons/react/3x2';
-
-const NAV_LINKS = [
-  { label: 'Features', href: '#features' },
-  { label: 'Pricing', href: '#pricing' },
-  { label: 'FAQ', href: '#faq' },
-  { label: 'Contact', href: '#contact' },
-];
+import { useLanguage } from '@/components/LanguageProvider';
 
 const SOCIAL_LINKS = [
   {
@@ -77,16 +71,23 @@ const languages = [
   { code: 'ja', name: '日本語', Flag: JP, dir: 'ltr' },
 ];
 
-const getLanguageDir = (code: string) =>
-  languages.find((lang) => lang.code === code)?.dir ?? 'ltr';
-
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('en');
   const [isScrolled, setIsScrolled] = useState(false);
   // Mobile language list uses click-driven inline expansion (touch-safe:
   // no hover, no floating portal that could clip or hide behind the overlay).
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const { locale, setLocale, t } = useLanguage();
+
+  const currentLanguage =
+    languages.find((lang) => lang.code === locale) ?? languages[0];
+
+  const NAV_LINKS = [
+    { label: t('nav.features'), href: '#features' },
+    { label: t('nav.pricing'), href: '#pricing' },
+    { label: t('nav.faq'), href: '#faq' },
+    { label: t('nav.contact'), href: '#contact' },
+  ];
 
   // Solid navy background once scrolled OR while the mobile menu is open
   // (so the header blends seamlessly with the navy mobile overlay).
@@ -103,26 +104,14 @@ export default function Navbar() {
 
   const handleLanguageChange = (value: string | null) => {
     if (!value) return;
-    setCurrentLang(value);
+    // Locale state (plus <html> lang/dir sync + persistence) lives in
+    // LanguageProvider, so switching re-renders without a page reload.
+    setLocale(value);
     // Close the mobile menu on selection so the newly applied
     // language (and RTL/LTR direction) is immediately visible.
     // No-op on desktop where the menu is already closed.
     setIsMenuOpen(false);
-    if (typeof document !== 'undefined') {
-      document.documentElement.lang = value;
-      document.documentElement.dir = getLanguageDir(value);
-    }
   };
-
-  const currentLanguage =
-    languages.find((lang) => lang.code === currentLang) ?? languages[0];
-
-  useEffect(() => {
-    if (typeof document !== 'undefined') {
-      document.documentElement.lang = currentLang;
-      document.documentElement.dir = getLanguageDir(currentLang);
-    }
-  }, [currentLang]);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -156,48 +145,52 @@ export default function Navbar() {
     >
       <nav
         aria-label="Main navigation"
-        className="mx-auto flex h-10 w-full items-center justify-between px-4 sm:px-8 lg:px-12 xl:px-16"
+        className="mx-auto max-w-[1536px] w-full grid grid-cols-3 items-center h-10 px-4 sm:px-8 lg:px-12 xl:px-16"
       >
-        {/* Brand logo (far left) */}
-        <a
-          href="#top"
-          onClick={() => setIsMenuOpen(false)}
-          className="flex items-center gap-2 font-bold text-xl tracking-tight"
-        >
-          <img
-            src={navbarSolid ? '/logo-white.png' : '/logo-black.png'}
-            alt="Madrasio Logo"
-            className="w-12 h-12 object-contain"
-          />
-          <span className={navbarSolid ? 'text-white' : 'text-[#14213D]'}>
-            Madrasio
-          </span>
-        </a>
+        {/* Column 1: Logo & Brand (start) */}
+        <div className="flex justify-start items-center">
+          <a
+            href="#top"
+            onClick={() => setIsMenuOpen(false)}
+            className="flex items-center gap-2 font-bold text-xl tracking-tight"
+          >
+            <img
+              src={navbarSolid ? '/logo-white.png' : '/logo-colored.png'}
+              alt="Madrasio Logo"
+              className="w-12 h-12 object-contain"
+            />
+            <span className={navbarSolid ? 'text-white' : 'text-[#14213D]'}>
+              Madrasio
+            </span>
+          </a>
+        </div>
 
-        {/* Desktop links (center/right) */}
-        <ul className="hidden items-center gap-4 md:flex">
-          {NAV_LINKS.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-[#FCA311] ${
-                  navbarSolid ? 'text-white' : 'text-[#14213D]'
-                }`}
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Column 2: Navigation Links (center) */}
+        <div className="hidden md:flex justify-center items-center">
+          <ul className="flex items-center gap-x-8">
+            {NAV_LINKS.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className={`text-sm font-medium transition-colors hover:text-[#FCA311] ${
+                    navbarSolid ? 'text-white' : 'text-[#14213D]'
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        {/* Desktop CTA (far right) */}
-        <div className="hidden items-center gap-3 md:flex">
-          <Select onValueChange={handleLanguageChange} value={currentLang}>
+        {/* Column 3: CTAs & Language Switcher (end) */}
+        <div className="hidden md:flex justify-end items-center gap-x-4">
+          <Select onValueChange={handleLanguageChange} value={locale}>
             <SelectTrigger
-              aria-label="Select language"
-              className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer min-h-[44px]"
+              aria-label={t('nav.selectLanguage')}
+              className="inline-flex items-center justify-between gap-2 px-2 py-4 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer"
             >
-              <SelectValue placeholder="EN">
+              <SelectValue placeholder={locale.toUpperCase()}>
                 {(value: string | null) => {
                   const lang =
                     languages.find((l) => l.code === value) ?? currentLanguage;
@@ -235,9 +228,9 @@ export default function Navbar() {
           </Select>
           <a
             href="#contact"
-            className="inline-flex items-center rounded-md bg-[#FCA311] px-4 py-2 text-sm font-bold text-[#14213D] transition-colors hover:bg-[#e08f0a]"
+            className="inline-flex items-center rounded-md bg-[#FCA311] px-3 py-2 text-sm font-bold text-[#14213D] transition-colors hover:bg-[#e08f0a]"
           >
-            Book a Demo
+            {t('nav.bookDemo')}
           </a>
         </div>
 
@@ -250,8 +243,8 @@ export default function Navbar() {
           }}
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className={`inline-flex items-center justify-center p-2 rounded-md md:hidden min-h-[44px] min-w-[44px] transition-colors hover:text-[#FCA311] ${
+          aria-label={isMenuOpen ? t('nav.closeMenu') : t('nav.openMenu')}
+          className={`inline-flex items-center justify-center p-2 rounded-md md:hidden min-h-[44px] min-w-[44px] col-start-3 justify-self-end transition-colors hover:text-[#FCA311] ${
             isMenuOpen
               ? 'text-white'
               : isScrolled
@@ -317,8 +310,8 @@ export default function Navbar() {
                     setIsLangOpen((prev) => !prev);
                   }}
                   aria-expanded={isLangOpen}
-                  aria-label="Select language"
-                  className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer min-h-[44px]"
+                  aria-label={t('nav.selectLanguage')}
+                  className="inline-flex items-center justify-between gap-2 px-2 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer min-h-[44px]"
                 >
                   <span className="flex items-center gap-1.5">
                     {(() => {
@@ -345,7 +338,7 @@ export default function Navbar() {
                   <ul className="absolute bottom-full mb-2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 w-48 bg-[#14213D] border border-[#FCA311]/40 rounded-2xl p-2 shadow-2xl text-white z-[999] max-h-60 overflow-y-auto flex flex-col gap-0.5">
                     {languages.map((lang) => {
                       const LangFlag = lang.Flag;
-                      const isActive = lang.code === currentLang;
+                      const isActive = lang.code === locale;
                       return (
                         <li key={lang.code}>
                           <button
@@ -377,9 +370,9 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsMenuOpen(false)}
-              className="w-full bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold py-3.5 rounded-lg text-center text-lg"
+              className="w-full bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold py-3 rounded-lg text-center text-lg"
             >
-              Book a Demo
+              {t('nav.bookDemo')}
             </a>
           </div>
         </nav>

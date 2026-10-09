@@ -21,33 +21,12 @@ import {
 } from 'react-icons/fa6';
 import { IoPeopleSharp } from "react-icons/io5";
 
+import { useLanguage } from '@/components/LanguageProvider';
+
 const FORMSPREE_FORM_ID =
   process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? 'YOUR_FORMSPREE_FORM_ID';
 
-const SCHOOL_SIZE_OPTIONS = [
-  'Under 200',
-  '200 – 500',
-  '500 – 1,000',
-  '1,000+',
-];
-
-const FEATURES = [
-  {
-    title: 'Dedicated Setup',
-    subtext: 'Personalized onboarding and data migration support.',
-    Icon: FaRocket,
-  },
-  {
-    title: 'Early Partner Pricing',
-    subtext: 'Exclusive rates for early schools.',
-    Icon: FaCrown,
-  },
-  {
-    title: 'Priority Support',
-    subtext: 'Direct access to our team during launch.',
-    Icon: FaHeadset,
-  },
-];
+const FEATURE_ICONS = [FaRocket, FaCrown, FaHeadset];
 
 const inputClassName =
   'bg-transparent border-none outline-none text-white w-full ms-3 placeholder-white/30 text-sm';
@@ -129,21 +108,24 @@ export default function Contact() {
       return next;
     });
 
+  const { t, tp } = useLanguage();
+  const features = tp<Array<{ title: string; subtext: string }>>(
+    'contact.features',
+  );
+  const capacityOptions = tp<string[]>('contact.capacityOptions');
+
   const validate = () => {
     const errs: Record<string, string> = {};
-    if (!fullName.trim())
-      errs.fullName = 'Please enter the contact person’s full name.';
-    if (!schoolName.trim())
-      errs.schoolName = 'Please enter your school name.';
-    if (!email.trim()) errs.email = 'Please enter your email address.';
+    if (!fullName.trim()) errs.fullName = t('contact.errors.fullName');
+    if (!schoolName.trim()) errs.schoolName = t('contact.errors.schoolName');
+    if (!email.trim()) errs.email = t('contact.errors.email');
     else if (!EMAIL_RE.test(email.trim()))
-      errs.email = 'Please enter a valid email address.';
+      errs.email = t('contact.errors.emailInvalid');
     const digitCount = (phone.match(/\d/g) || []).length;
-    if (!phone.trim()) errs.phone = 'Please enter your phone number.';
+    if (!phone.trim()) errs.phone = t('contact.errors.phone');
     else if (digitCount < 8)
-      errs.phone = 'Phone number must contain at least 8 digits.';
-    if (!schoolSize)
-      errs.schoolSize = 'Please select your school student capacity.';
+      errs.phone = t('contact.errors.phoneDigits');
+    if (!schoolSize) errs.schoolSize = t('contact.errors.schoolSize');
     return errs;
   };
 
@@ -213,21 +195,21 @@ export default function Contact() {
           <div>
             <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#FCA311] text-[#14213D] text-xs font-black tracking-widest uppercase mb-6 shadow-md">
               <IoPeopleSharp size={18} />
-              <span>LIMITED EARLY ACCESS</span>
+              <span>{t('contact.badge')}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#14213D] tracking-tight mb-6 leading-tight">
-              Bring Modern Management{' '}
+              {t('contact.titleA')}{' '}
               <br className="hidden sm:block" />{' '}
-              <span className="text-[#FCA311]">to Your School</span>
+              <span className="text-[#FCA311]">{t('contact.titleB')}</span>
             </h2>
             <p className="text-gray-600 text-lg max-w-lg mb-10">
-              We are accepting a select group of global private schools for
-              our v1 launch. Reserve your spot for dedicated setup and early
-              partner pricing.
+              {t('contact.subtitle')}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-12 items-center">
-              {FEATURES.map(({ title, subtext, Icon }) => (
+              {features.map(({ title, subtext }, index) => {
+                const Icon = FEATURE_ICONS[index] ?? FaRocket;
+                return (
                 <div key={title} className="flex-1 text-center sm:text-start">
                   <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-[#14213D]/10 text-[#14213D] p-3 shadow-sm text-xl mb-3">
                     <Icon aria-hidden="true" />
@@ -237,13 +219,14 @@ export default function Contact() {
                   </p>
                   <p className="text-gray-600 text-sm">{subtext}</p>
                 </div>
-              ))}
+                );
+              })}
             </div>
 
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px bg-[#14213D]/10 flex-1"></div>
               <span className="text-[#14213D]/40 text-xs font-bold uppercase tracking-wider">
-                TRUSTED BY SCHOOLS WORLDWIDE
+                {t('contact.trustedBy')}
               </span>
               <div className="h-px bg-[#14213D]/10 flex-1"></div>
             </div>
@@ -258,15 +241,14 @@ export default function Contact() {
                   aria-hidden="true"
                 />
                 <p className="text-lg font-bold text-white">
-                  Thank you! Our school onboarding team will contact you
-                  within 12 hours on WhatsApp/Email.
+                  {t('contact.success')}
                 </p>
                 <button
                   type="button"
                   onClick={handleSendAnother}
                   className="mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold rounded-xl px-6 py-3 transition-all"
                 >
-                  Send another message
+                  {t('contact.sendAnother')}
                 </button>
               </div>
             ) : (
@@ -276,12 +258,11 @@ export default function Contact() {
                     <FaCalendarDays aria-hidden="true" />
                   </span>
                   <h3 className="text-2xl font-bold text-white">
-                    Book a Demo
+                    {t('contact.formTitle')}
                   </h3>
                 </div>
                 <p className="text-[#E5E5E5]/70 text-sm mb-8">
-                  Fill in the details and we&apos;ll get in touch to schedule
-                  your demo.
+                  {t('contact.formSubtitle')}
                 </p>
 
                 <form onSubmit={handleSubmit}>
@@ -293,7 +274,7 @@ export default function Contact() {
                   {selectedPlan && (
                     <div className="mb-5 flex items-center justify-between gap-3 rounded-xl border border-[#FCA311]/40 bg-[#FCA311]/10 px-4 py-3">
                       <p className="text-sm font-semibold text-white">
-                        Selected plan:{' '}
+                        {t('contact.selectedPlan')}{' '}
                         <span className="text-[#FCA311]">{selectedPlan}</span>
                       </p>
                       <button
@@ -301,13 +282,13 @@ export default function Contact() {
                         onClick={() => setSelectedPlan(null)}
                         className="text-xs font-bold text-white/60 hover:text-white transition-colors"
                       >
-                        Clear
+                        {t('contact.clear')}
                       </button>
                     </div>
                   )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <FieldWrapper
-                      label="Full Name"
+                      label={t('contact.labels.fullName')}
                       htmlFor="fullName"
                       error={fieldErrors.fullName}
                       icon={
@@ -327,13 +308,13 @@ export default function Contact() {
                           setFullName(e.target.value);
                           clearFieldError('fullName');
                         }}
-                        placeholder="John Doe"
+                        placeholder={t('contact.placeholders.fullName')}
                         className={inputClassName}
                       />
                     </FieldWrapper>
 
                     <FieldWrapper
-                      label="School Name"
+                      label={t('contact.labels.schoolName')}
                       htmlFor="schoolName"
                       error={fieldErrors.schoolName}
                       icon={
@@ -353,13 +334,13 @@ export default function Contact() {
                           setSchoolName(e.target.value);
                           clearFieldError('schoolName');
                         }}
-                        placeholder="International Academy"
+                        placeholder={t('contact.placeholders.schoolName')}
                         className={inputClassName}
                       />
                     </FieldWrapper>
 
                     <FieldWrapper
-                      label="Email Address"
+                      label={t('contact.labels.email')}
                       htmlFor="email"
                       error={fieldErrors.email}
                       icon={
@@ -379,13 +360,13 @@ export default function Contact() {
                           setEmail(e.target.value);
                           clearFieldError('email');
                         }}
-                        placeholder="you@school.com"
+                        placeholder={t('contact.placeholders.email')}
                         className={inputClassName}
                       />
                     </FieldWrapper>
 
                     <FieldWrapper
-                      label="Phone / WhatsApp"
+                      label={t('contact.labels.phone')}
                       htmlFor="phone"
                       error={fieldErrors.phone}
                       icon={
@@ -405,13 +386,13 @@ export default function Contact() {
                           setPhone(e.target.value);
                           clearFieldError('phone');
                         }}
-                        placeholder="+212 6 00 00 00 00"
+                        placeholder={t('contact.placeholders.phone')}
                         className={inputClassName}
                       />
                     </FieldWrapper>
 
                     <FieldWrapper
-                      label="School Student Capacity"
+                      label={t('contact.labels.schoolSize')}
                       htmlFor="schoolSize"
                       error={fieldErrors.schoolSize}
                       icon={
@@ -437,7 +418,7 @@ export default function Contact() {
                         <option value="" disabled>
                           Select capacity
                         </option>
-                        {SCHOOL_SIZE_OPTIONS.map((option) => (
+                        {capacityOptions.map((option: string) => (
                           <option key={option} value={option}>
                             {option}
                           </option>
@@ -450,7 +431,7 @@ export default function Contact() {
                     </FieldWrapper>
 
                     <FieldWrapper
-                      label="Additional Notes"
+                      label={t('contact.labels.message')}
                       htmlFor="message"
                       icon={
                         <FaMessage
@@ -466,7 +447,7 @@ export default function Contact() {
                         rows={3}
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
-                        placeholder="Tell us about your school's needs..."
+                        placeholder={t('contact.placeholders.message')}
                         className={`${inputClassName} resize-none`}
                       />
                     </FieldWrapper>
@@ -492,11 +473,11 @@ export default function Contact() {
                           className="animate-spin"
                           aria-hidden="true"
                         />
-                        Sending request...
+                        {t('contact.sending')}
                       </span>
                     ) : (
                       <>
-                        Book a Demo
+                        {t('contact.submit')}
                         <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
                       </>
                     )}
@@ -504,10 +485,7 @@ export default function Contact() {
 
                   <div className="flex items-center justify-center gap-2 mt-4 text-xs text-white/40 text-center">
                     <FaLock aria-hidden="true" />
-                    <span>
-                      Your information is secure and will only be used to
-                      contact you about a demo.
-                    </span>
+                    <span>{t('contact.lockNote')}</span>
                   </div>
                 </form>
               </>

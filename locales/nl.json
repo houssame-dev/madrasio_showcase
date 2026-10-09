@@ -1,0 +1,296 @@
+{
+  "common": {
+    "brand": "Madrasio"
+  },
+  "nav": {
+    "features": "Functies",
+    "pricing": "Prijzen",
+    "faq": "Veelgestelde vragen",
+    "contact": "Contact",
+    "bookDemo": "Demo boeken",
+    "signIn": "Inloggen",
+    "openMenu": "Menu openen",
+    "closeMenu": "Menu sluiten",
+    "selectLanguage": "Taal selecteren"
+  },
+  "hero": {
+    "badge": "— Gebouwd voor moderne privéscholen —",
+    "title": "Alles wat jouw privéschool nodig heeft om te draaien",
+    "titleHighlight": "Vlot Elke Dag",
+    "subtitle": "Moeiteloze controle voor directeuren, vereenvoudigde dagtaken voor docenten en realtime updates die ouders verbonden en geïnformeerd houden — allemaal in één krachtig platform.",
+    "ctaPrimary": "Demo boeken",
+    "ctaSecondary": "Inloggen"
+  },
+  "globalEducation": {
+    "badge": "🎓 GEBOUWD VOOR",
+    "titleA": "Gebouwd voor",
+    "titleB": "wereldwijd onderwijs",
+    "subtitle": "Een flexibel schoolbeheerplatform ontworpen voor verschillende talen, curricula en niveaus — overal ter wereld.",
+    "ticker": "EERSTE MAAND GRATIS",
+    "cards": [
+      {
+        "title": "Native meertalig",
+        "description": "Werk naadloos in 12+ talen, waaronder Engels, Arabisch, Frans, Spaans, Duits, Italiaans en meer."
+      },
+      {
+        "title": "Curriculum-onafhankelijk",
+        "description": "Past zich aan elk beoordelingssysteem, traject of nationaal onderwijsstelsel aan met aangepaste weging."
+      },
+      {
+        "title": "Van basis tot middelbaar",
+        "description": "Perfect afgestemd op de operationele en academische behoeften van basis- en middelbare scholen."
+      }
+    ]
+  },
+  "pillars": {
+    "badge": "🎓 GEBOUWD VOOR MODERNE SCHOLEN",
+    "titleA": "Vier pijlers voor",
+    "titleB": "schoolbeheer",
+    "subtitle": "Alles wat jouw privéschool nodig heeft om onderwijs, financiën, communicatie en administratie te stroomlijnen.",
+    "cards": [
+      {
+        "title": "Onderwijsoperatie",
+        "description": "Beheer roosters, cijferlijsten, aanwezigheid en rapporten in één gestroomlijnde workflow voor moderne privéscholen."
+      },
+      {
+        "title": "Lesgeldinning",
+        "description": "Vereenvoudig facturering, volg betalingen en verhoog tijdige inning met helder financieel overzicht voor beheerders."
+      },
+      {
+        "title": "Ouderbetrokkenheid",
+        "description": "Houd ouders verbonden met realtime updates over cijfers, aanwezigheid en mededelingen via een veilig meertalig portaal."
+      },
+      {
+        "title": "Veilig beheer",
+        "description": "Beheer toegang per rol, bescherm leerlinggegevens en opereer vol vertrouwen op een veilig platform voor wereldwijd onderwijs."
+      }
+    ]
+  },
+  "roles": {
+    "badge": "ONTWORPEN VOOR ELKE BELANGHEBBENDE",
+    "titleA": "Ervaringen op maat voor",
+    "titleB": "elke rol",
+    "subtitle": "Doelgerichte werkruimtes die beheerders, docenten en gezinnen precies geven wat ze nodig hebben.",
+    "cards": [
+      {
+        "title": "Schoolbeheerders",
+        "tagline": "Volledige operationele controle",
+        "points": [
+          "Realtime lesgeldinning en financiële tracking",
+          "Configureerbare onderwijsstructuur, trajecten en beoordelingsregels",
+          "Behoud van historische inschrijvingen en transcripten"
+        ]
+      },
+      {
+        "title": "Docenten",
+        "tagline": "Gestroomlijnde dagelijkse workflows",
+        "points": [
+          "Aanwezigheid per lesuur registreren in seconden",
+          "Flexibele beoordelingscijferlijsten met eigen weging",
+          "Huiswerk aanmaken en klassikale mededelingen"
+        ]
+      },
+      {
+        "title": "Ouders",
+        "tagline": "Realtime inzicht en gemoedsrust",
+        "points": [
+          "Dashboard voor meerdere kinderen met direct profielwissel",
+          "Direct inzicht in gepubliceerde cijfers en aanwezigheid",
+          "Mobielvriendelijke schoolmededelingen en meldingen"
+        ]
+      }
+    ]
+  },
+  "security": {
+    "badge": "🛡️ BEVEILIGINGSFUNDAMENT",
+    "titleA": "Architectuur en beveiliging",
+    "titleB": "op enterpriseniveau",
+    "subtitle": "Gebouwd op zero-trust-principes. De gegevens van jouw school zijn strikt geïsoleerd, versleuteld en bewaard met onveranderlijke historische integriteit.",
+    "cards": [
+      {
+        "title": "Strikte tenant-isolatie",
+        "description": "Elke query is veilig geïsoleerd op databaseniveau. Autorisatie wordt bij elk serververzoek gevalideerd; nul datalekkage tussen scholen."
+      },
+      {
+        "title": "Behoud van historische gegevens",
+        "description": "De academische geschiedenis is onveranderlijk. Het wijzigen van klasconfiguraties of curriculumregels herschrijft nooit stilzwijgend oude transcripten of rapporten."
+      },
+      {
+        "title": "Versleutelde opslag en back-ups",
+        "description": "Aangedreven door enterprise relationele databases en edge objectopslag. Alle gevoelige documenten zijn standaard privé en versleuteld in rust."
+      }
+    ]
+  },
+  "pricing": {
+    "badge": "TRANSPARANTE PRIJZEN",
+    "titleA": "Eenvoudige, voorspelbare prijzen voor",
+    "titleB": "privéscholen",
+    "subtitle": "Run je hele privéschool met absolute helderheid. Krijg je eerste maand helemaal gratis. Geen verborgen implementatiekosten; alle kernfuncties in elk pakket.",
+    "monthly": "Maandelijks",
+    "annually": "Jaarlijks",
+    "save": "20% KORTING",
+    "checklistHeading": "Elk pakket omvat volledige toegang tot alle Madrasio-modules:",
+    "features": [
+      "24/7 prioriteitsondersteuning (e-mail en WhatsApp)",
+      "Geautomatiseerde versleutelde back-ups",
+      "Meertalige interface (Arabisch, Frans, Engels)",
+      "Ouder- en docentwerkruimtes",
+      "Gratis datamigratie en installatie",
+      "Geavanceerde cijferlijsten en transcripten"
+    ],
+    "perMonth": "/mnd",
+    "billedAnnually": ", jaarlijks gefactureerd",
+    "choosePlan": "Kies pakket",
+    "startFree": "Start gratis maand",
+    "popular": "👑 MEEST POPULAIR",
+    "plans": [
+      {
+        "name": "Basis Campus",
+        "subtext": "Voor kleinere basis- of startende privéscholen."
+      },
+      {
+        "name": "Groei Campus",
+        "subtext": "De optimale keuze voor standaard K-12-instellingen."
+      },
+      {
+        "name": "Elite Campus",
+        "subtext": "Gebouwd voor grote privéscholen met hoog operationeel volume."
+      }
+    ],
+    "enterpriseTitle": "Enterprise en districten",
+    "enterpriseSub": "Voor 1.500+ leerlingen en aangepaste opslagbehoeften.",
+    "enterpriseCta": "Neem contact op voor een prijs op maat",
+    "value": [
+      {
+        "title": "Absolute historische integriteit.",
+        "body": "Upgraden of wisselen van pakket wijzigt nooit oude transcripten of archieven van je school."
+      },
+      {
+        "title": "Voorspelbaarheid met vast tarief.",
+        "body": "Verwelkom nieuwe leerlingen zonder je zorgen te maken over directe softwaremeerkosten."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "💬 VRAGEN?",
+    "titleA": "Veelgestelde",
+    "titleB": "vragen",
+    "subtitle": "Vind snelle antwoorden op de meest gestelde vragen over Madrasio, van gegevensbeveiliging tot installatie en support.",
+    "items": [
+      {
+        "q": "Zijn de gegevens van onze school volledig privé en veilig?",
+        "a": "Ja. Jouw school krijgt een eigen geïsoleerde, bankwaardige beveiligde omgeving. Geen buitenstaander of andere school kan ooit dossiers, cijfers of financiële gegevens van je leerlingen inzien."
+      },
+      {
+        "q": "Kunnen we bestaande leerlingenlijsten overzetten zonder alles over te typen?",
+        "a": "Ja. Ons team helpt je alle Excel-lijsten, leerlingdossiers en klassenlijsten binnen enkele minuten naar Madrasio te importeren, zonder handmatige invoer."
+      },
+      {
+        "q": "Past Madrasio zich aan onze beoordelingsschaal en rapporten aan?",
+        "a": "Ja. Of je school nu met procenten, letters of eigen beoordelingssystemen werkt, Madrasio past rapporten en beoordelingssystemen exact aan jullie academische standaarden aan."
+      },
+      {
+        "q": "Welke talen worden ondersteund en kunnen ouders hun eigen taal kiezen?",
+        "a": "Madrasio ondersteunt 12+ talen — waaronder Arabisch, Frans, Engels en Spaans — met volledige ondersteuning voor lezen van rechts naar links (RTL) en links naar rechts (LTR). Directie, docenten en ouders kiezen elk hun voorkeurstaal."
+      },
+      {
+        "q": "Hebben onze docenten technische vaardigheden nodig voor Madrasio?",
+        "a": "Helemaal niet. Madrasio is ontworpen om zo eenvoudig te zijn als een smartphone. Als je team kan internetten, leert het Madrasio in minder dan 30 minuten."
+      },
+      {
+        "q": "Hoe helpt Madrasio ons lesgeld beheren?",
+        "a": "Madrasio biedt een helder financieel overzicht van betaald, openstaand en achterstallig lesgeld. Het kan automatische betalingsherinneringen naar ouders sturen, wat je administratie uren handmatige opvolging bespaart."
+      },
+      {
+        "q": "Hoe lang duurt de installatie van Madrasio op onze school?",
+        "a": "Jouw school kan in minder dan 48 uur volledig zijn ingericht en klaar. Ons installatieteam regelt de configuratie zodat je team soepel start."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "👥 BEPERKTE VROEGE TOEGANG",
+    "titleA": "Breng modern beheer",
+    "titleB": "naar jouw school",
+    "subtitle": "We accepteren een selecte groep wereldwijde privéscholen voor onze v1-lancering. Reserveer je plek voor toegewijde installatie en vroege partnerprijzen.",
+    "features": [
+      {
+        "title": "Toegewijde installatie",
+        "subtext": "Persoonlijke onboarding en hulp bij datamigratie."
+      },
+      {
+        "title": "Vroege partnerprijzen",
+        "subtext": "Exclusieve tarieven voor vroege scholen."
+      },
+      {
+        "title": "Prioriteitsondersteuning",
+        "subtext": "Directe toegang tot ons team tijdens de lancering."
+      }
+    ],
+    "trustedBy": "WERELDWIJD VERTROUWD DOOR SCHOLEN",
+    "formTitle": "Demo boeken",
+    "formSubtitle": "Vul de gegevens in en we nemen contact op om je demo in te plannen.",
+    "labels": {
+      "fullName": "Volledige naam",
+      "schoolName": "Schoolnaam",
+      "email": "E-mailadres",
+      "phone": "Telefoon / WhatsApp",
+      "schoolSize": "Leerlingcapaciteit",
+      "message": "Aanvullende opmerkingen"
+    },
+    "placeholders": {
+      "fullName": "Jan Jansen",
+      "schoolName": "Internationale Academie",
+      "email": "jij@school.com",
+      "phone": "+31 6 1234 5678",
+      "schoolSize": "Selecteer capaciteit",
+      "message": "Vertel ons over de behoeften van je school..."
+    },
+    "capacityOptions": ["Minder dan 200", "200 – 500", "500 – 1.000", "Meer dan 1.000"],
+    "submit": "Demo boeken",
+    "sending": "Aanvraag verzenden...",
+    "success": "Bedankt! Ons onboardingteam neemt binnen 12 uur contact op via WhatsApp/e-mail.",
+    "sendAnother": "Nog een bericht sturen",
+    "selectedPlan": "Geselecteerd pakket:",
+    "clear": "Wissen",
+    "lockNote": "Je gegevens zijn veilig en worden alleen gebruikt om contact op te nemen over een demo.",
+    "errors": {
+      "fullName": "Vul de volledige naam van de contactpersoon in.",
+      "schoolName": "Vul de naam van je school in.",
+      "email": "Vul je e-mailadres in.",
+      "emailInvalid": "Vul een geldig e-mailadres in.",
+      "phone": "Vul je telefoonnummer in.",
+      "phoneDigits": "Het nummer moet minimaal 8 cijfers bevatten.",
+      "schoolSize": "Selecteer de capaciteit van je school."
+    }
+  },
+  "footer": {
+    "tagline": "Het alles-in-één schoolbeheerplatform voor modern wereldwijd onderwijs.",
+    "byLine": "Een product van Gemistra Tech",
+    "quickLinks": "Snelle links",
+    "legal": "Juridisch",
+    "contact": "Contact",
+    "rights": "© 2026 Madrasio. Alle rechten voorbehouden.",
+    "status": "V1 is live",
+    "policies": [
+      {
+        "label": "Privacybeleid"
+      },
+      {
+        "label": "Servicevoorwaarden"
+      },
+      {
+        "label": "Cookiebeleid"
+      }
+    ],
+    "socials": [
+      "Madrasio op LinkedIn",
+      "Madrasio op Facebook",
+      "Madrasio op X",
+      "Madrasio op Instagram"
+    ]
+  },
+  "floating": {
+    "scrollTop": "Terug naar boven",
+    "whatsapp": "Chat met Madrasio op WhatsApp"
+  }
+}

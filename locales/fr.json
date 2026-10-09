@@ -1,5 +1,7 @@
 {
-  "common": { "brand": "Madrasio" },
+  "common": {
+    "brand": "Madrasio"
+  },
   "nav": {
     "features": "Fonctionnalités",
     "pricing": "Tarifs",
@@ -12,21 +14,12 @@
     "selectLanguage": "Choisir la langue"
   },
   "hero": {
-    "badge": "Système de gestion scolaire tout-en-un",
+    "badge": "— Conçu pour les écoles privées modernes —",
     "title": "Tout ce dont votre école privée a besoin pour fonctionner",
     "titleHighlight": "En Douceur Chaque Jour",
     "subtitle": "Un contrôle sans effort pour les directeurs, des tâches quotidiennes simplifiées pour les enseignants, et des mises à jour en temps réel qui tiennent les parents connectés et informés — le tout dans une seule plateforme puissante.",
     "ctaPrimary": "Réserver une démo",
-    "ctaSecondary": "Se connecter",
-    "pillars": [
-      { "title": "Pour les directeurs", "subtext": "Visibilité et contrôle totaux" },
-      { "title": "Pour les enseignants", "subtext": "Simplifiez les tâches quotidiennes" },
-      { "title": "Pour les parents", "subtext": "Restez informés en temps réel" }
-    ],
-    "trustCaption": "— Ils sont déjà plus de 100 écoles privées —",
-    "trustBefore": "Rejoignez",
-    "trustCount": "plus de 100 écoles",
-    "trustAfter": "qui construisent un avenir meilleur avec Madrasio."
+    "ctaSecondary": "Se connecter"
   },
   "globalEducation": {
     "badge": "🎓 CONÇU POUR",
@@ -252,7 +245,12 @@
       "schoolSize": "Choisir la capacité",
       "message": "Parlez-nous des besoins de votre école..."
     },
-    "capacityOptions": ["Moins de 200", "200 – 500", "500 – 1 000", "1 000+"],
+    "capacityOptions": [
+      "Moins de 200",
+      "200 – 500",
+      "500 – 1 000",
+      "1 000+"
+    ],
     "submit": "Réserver une démo",
     "sending": "Envoi en cours...",
     "success": "Merci ! Notre équipe d'intégration vous contactera dans les 12 heures sur WhatsApp/e-mail.",
@@ -277,7 +275,24 @@
     "legal": "Mentions légales",
     "contact": "Contact",
     "rights": "© 2026 Madrasio. Tous droits réservés.",
-    "status": "V1 est en ligne"
+    "status": "V1 est en ligne",
+    "policies": [
+      {
+        "label": "Politique de confidentialité"
+      },
+      {
+        "label": "Conditions d'utilisation"
+      },
+      {
+        "label": "Politique relative aux cookies"
+      }
+    ],
+    "socials": [
+      "Madrasio sur LinkedIn",
+      "Madrasio sur Facebook",
+      "Madrasio sur X",
+      "Madrasio sur Instagram"
+    ]
   },
   "floating": {
     "scrollTop": "Retour en haut",

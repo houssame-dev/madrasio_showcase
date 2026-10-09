@@ -1,5 +1,7 @@
 {
-  "common": { "brand": "Madrasio" },
+  "common": {
+    "brand": "Madrasio"
+  },
   "nav": {
     "features": "Features",
     "pricing": "Pricing",
@@ -12,21 +14,12 @@
     "selectLanguage": "Select language"
   },
   "hero": {
-    "badge": "All-in-One School Management System",
+    "badge": "— Built for Modern Private Schools —",
     "title": "Everything Your Private School Needs to Run",
     "titleHighlight": "Smoothly EveryDay",
     "subtitle": "Effortless control for directors, simplified daily tasks for teachers, and real-time updates that keep parents connected and informed — all in one powerful platform.",
     "ctaPrimary": "Book a Demo",
-    "ctaSecondary": "Sign In",
-    "pillars": [
-      { "title": "For Directors", "subtext": "Full visibility and control" },
-      { "title": "For Teachers", "subtext": "Simplify daily tasks" },
-      { "title": "For Parents", "subtext": "Stay informed in real time" }
-    ],
-    "trustCaption": "— Trusted by over 100 private schools —",
-    "trustBefore": "Join",
-    "trustCount": "100+ schools",
-    "trustAfter": "building a brighter future with Madrasio."
+    "ctaSecondary": "Sign In"
   },
   "globalEducation": {
     "badge": "🎓 BUILT FOR",
@@ -252,7 +245,12 @@
       "schoolSize": "Select capacity",
       "message": "Tell us about your school's needs..."
     },
-    "capacityOptions": ["Under 200", "200 – 500", "500 – 1,000", "1,000+"],
+    "capacityOptions": [
+      "Under 200",
+      "200 – 500",
+      "500 – 1,000",
+      "1,000+"
+    ],
     "submit": "Book a Demo",
     "sending": "Sending request...",
     "success": "Thank you! Our school onboarding team will contact you within 12 hours on WhatsApp/Email.",
@@ -277,7 +275,24 @@
     "legal": "Legal",
     "contact": "Contact",
     "rights": "© 2026 Madrasio. All rights reserved.",
-    "status": "V1 is Live"
+    "status": "V1 is Live",
+    "policies": [
+      {
+        "label": "Privacy Policy"
+      },
+      {
+        "label": "Terms of Service"
+      },
+      {
+        "label": "Cookie Policy"
+      }
+    ],
+    "socials": [
+      "Madrasio on LinkedIn",
+      "Madrasio on Facebook",
+      "Madrasio on X",
+      "Madrasio on Instagram"
+    ]
   },
   "floating": {
     "scrollTop": "Scroll to top",

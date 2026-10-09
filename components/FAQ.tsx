@@ -12,59 +12,22 @@ import {
   FaUsers,
 } from 'react-icons/fa6';
 
-interface FaqItem {
-  question: string;
-  answer: string;
-  Icon: typeof FaShieldHalved;
-}
+import { useLanguage } from '@/components/LanguageProvider';
 
-const faqs: FaqItem[] = [
-  {
-    question: "Is our school's data completely private and safe?",
-    answer:
-      "Yes. Your school gets its own isolated, bank-grade secure environment. No outside person or other school can ever view or access your students' records, grades, or financial data.",
-    Icon: FaShieldHalved,
-  },
-  {
-    question: 'Can we transfer our existing student lists without re-typing everything?',
-    answer:
-      "Yes. Our team helps you import all your existing Excel lists, student files, and class rosters into Madrasio in minutes so you don't have to enter data manually.",
-    Icon: FaUsers,
-  },
-  {
-    question: "Can Madrasio adapt to our school's specific grading scale and report cards?",
-    answer:
-      'Yes. Whether your school uses percentage scales, letter grades, or custom evaluation systems, Madrasio customizes report cards and grading systems to match your exact academic standards.',
-    Icon: FaChartBar,
-  },
-  {
-    question: 'Which languages are supported, and can parents set their own language?',
-    answer:
-      'Madrasio supports over 12 languages—including Arabic, French, English, and Spanish—with full support for right-to-left (RTL) and left-to-right (LTR) reading. Directors, teachers, and parents can each choose their preferred language independently.',
-    Icon: FaGlobe,
-  },
-  {
-    question: 'Do our teachers need technical skills to use Madrasio?',
-    answer:
-      'Not at all. Madrasio is designed to be as simple as using a smartphone. If your staff knows how to browse the internet, they can learn Madrasio in under 30 minutes.',
-    Icon: FaGraduationCap,
-  },
-  {
-    question: 'How does Madrasio help us manage tuition fees?',
-    answer:
-      'Madrasio provides a clear financial overview of paid, pending, and overdue tuition. It can send automatic payment reminders to parents, saving your administration hours of manual follow-up.',
-    Icon: FaCreditCard,
-  },
-  {
-    question: 'How long does it take to set up Madrasio for our school?',
-    answer:
-      'Your school can be completely set up and ready to go in less than 48 hours. Our setup team manages the configuration for you so your staff can start smoothly.',
-    Icon: FaClock,
-  },
+const FAQ_ICONS = [
+  FaShieldHalved,
+  FaUsers,
+  FaChartBar,
+  FaGlobe,
+  FaGraduationCap,
+  FaCreditCard,
+  FaClock,
 ];
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { t, tp } = useLanguage();
+  const faqs = tp<Array<{ q: string; a: string }>>('faq.items');
 
   return (
     <section id="faq" className="scroll-mt-16 w-full bg-[#000000] overflow-hidden">
@@ -73,25 +36,25 @@ export default function FAQ() {
           {/* Left Column: Header */}
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FCA311]/15 border border-[#FCA311]/40 text-[#FCA311] text-xs font-black tracking-widest uppercase mb-6">
-              💬 QUESTIONS ?
+              {t('faq.badge')}
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
-              Frequently Asked{' '}
-              <span className="text-[#FCA311]">Questions</span>
+              {t('faq.titleA')}{' '}
+              <span className="text-[#FCA311]">{t('faq.titleB')}</span>
             </h2>
             <p className="text-[#E5E5E5]/80 text-lg sm:text-xl max-w-lg">
-              Find quick answers to the most common questions about Madrasio,
-              from data security to setup and support.
+              {t('faq.subtitle')}
             </p>
           </div>
 
           {/* Right Column: Accordion */}
           <div className="lg:col-span-7 flex flex-col gap-4">
-            {faqs.map(({ question, answer, Icon }, index) => {
+            {faqs.map(({ q, a }, index) => {
               const isOpen = openIndex === index;
+              const Icon = FAQ_ICONS[index] ?? FaShieldHalved;
               return (
                 <div
-                  key={question}
+                  key={q}
                   className="bg-[#14213D]/60 backdrop-blur-md border border-[#FCA311]/20 rounded-2xl p-4 sm:p-6 mb-4 hover:border-[#FCA311]/50 transition-colors shadow-lg w-full text-start flex flex-col"
                 >
                   <button
@@ -105,7 +68,7 @@ export default function FAQ() {
                         <Icon aria-hidden="true" />
                       </span>
                       <span className="font-bold text-white text-base sm:text-lg group-hover:text-[#FCA311] transition-colors">
-                        {question}
+                        {q}
                       </span>
                     </span>
                     <FaChevronDown
@@ -117,7 +80,7 @@ export default function FAQ() {
                   </button>
                   {isOpen && (
                     <p className="text-[#E5E5E5] text-sm sm:text-base leading-relaxed mt-4 ps-14">
-                      {answer}
+                      {a}
                     </p>
                   )}
                 </div>

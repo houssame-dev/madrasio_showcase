@@ -12,9 +12,9 @@ import {
   FaUsers,
 } from 'react-icons/fa6';
 
-interface Plan {
-  name: string;
-  subtext: string;
+import { useLanguage } from '@/components/LanguageProvider';
+
+interface PlanMeta {
   monthlyPrice: number;
   annualPrice: number;
   INCLUDED_FEATURES: string[];
@@ -22,18 +22,14 @@ interface Plan {
   Icon: typeof FaSchool;
 }
 
-const plans: Plan[] = [
+const plansMeta: PlanMeta[] = [
   {
-    name: 'Foundation Campus',
-    subtext: 'For smaller primary or emerging private schools.',
     monthlyPrice: 49,
     annualPrice: 39,
     INCLUDED_FEATURES: ['Up to 250 Students','Complete tuition management tracking','Admin, Parent & Teacher Workspaces','Multilingual Interface Support','Automated Encrypted Backups','Free Data Migration & Setup','24/7 Priority Support'],
     Icon: FaSchool,
   },
   {
-    name: 'Growth Campus',
-    subtext: 'The optimal choice for standard K-12 private campuses.',
     monthlyPrice: 99,
     annualPrice: 79,
     INCLUDED_FEATURES: ['Up to 750 Students', 'Complete tuition management tracking', 'Admin, Parent & Teacher Workspaces','Multilingual Interface Support','Automated Encrypted Backups','Free Data Migration & Setup','24/7 Priority Support'],
@@ -41,8 +37,6 @@ const plans: Plan[] = [
     Icon: FaRocket,
   },
   {
-    name: 'Elite Campus',
-    subtext: 'Built for large private schools with high operational volume.',
     monthlyPrice: 149,
     annualPrice: 119,
     INCLUDED_FEATURES: ['Up to 1,500 Students', 'Complete tuition management tracking', 'Admin, Parent & Teacher Workspaces','Multilingual Interface Support','Automated Encrypted Backups','Free Data Migration & Setup','24/7 Priority Support'],
@@ -60,21 +54,23 @@ function selectPlanAndScroll(plan: string) {
 
 export default function Pricing() {
   const [billingAnnually, setBillingAnnually] = useState(false);
+  const { t, tp } = useLanguage();
+  const planNames = tp<Array<{ name: string; subtext: string }>>(
+    'pricing.plans',
+  );
 
   return (
     <section id="pricing" className="scroll-mt-16 w-full bg-[#FCA311] overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white text-[#14213D] text-xs font-black tracking-widest uppercase mb-6 shadow-sm">
-          TRANSPARENT PRICING
+          {t('pricing.badge')}
         </div>
         <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#14213D] mb-6">
-          Simple, Predictable Pricing for{' '}
-          <span className="text-white">Private Schools</span>
+          {t('pricing.titleA')}{' '}
+          <span className="text-white">{t('pricing.titleB')}</span>
         </h2>
         <p className="text-[#14213D]/90 text-lg max-w-2xl mx-auto mb-8 font-medium">
-          Run your entire private school with absolute clarity. Get your first
-          month completely free. No hidden implementation fees, and all core
-          features are included in every tier.
+          {t('pricing.subtitle')}
         </p>
 
         {/* Billing Toggle */}
@@ -84,7 +80,7 @@ export default function Pricing() {
               billingAnnually ? 'text-[#14213D]/50' : 'text-[#14213D]'
             }`}
           >
-            Monthly
+            {t('pricing.monthly')}
           </span>
           <button
             type="button"
@@ -106,25 +102,19 @@ export default function Pricing() {
               billingAnnually ? 'text-[#14213D]' : 'text-[#14213D]/50'
             }`}
           >
-            Annually
+            {t('pricing.annually')}
           </span>
           <span className="bg-white text-[#14213D] rounded-full px-3 py-1 text-xs font-bold">
-            SAVE 20%
+            {t('pricing.save')}
           </span>
         </div>
 
         {/* Pricing Cards */}
         <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 mt-12 text-start">
-          {plans.map(
-            ({
-              name,
-              subtext,
-              monthlyPrice,
-              annualPrice,
-              INCLUDED_FEATURES,
-              highlighted,
-              Icon,
-            }) => {
+          {plansMeta.map((meta, index) => {
+            const plan = planNames[index] ?? { name: '', subtext: '' };
+            const { name, subtext } = plan;
+            const { monthlyPrice, annualPrice, INCLUDED_FEATURES, highlighted, Icon } = meta;
               const price = billingAnnually ? annualPrice : monthlyPrice;
               return (
                 <div
@@ -137,7 +127,7 @@ export default function Pricing() {
                 >
                   {highlighted && (
                     <span className="absolute top-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 bg-[#FCA311] text-white text-xs font-bold px-4 py-1 rounded-b-lg whitespace-nowrap">
-                      👑 MOST POPULAR
+                      {t('pricing.popular')}
                     </span>
                   )}
                   <span
@@ -187,13 +177,12 @@ export default function Pricing() {
                         : 'w-full bg-[#FCA311] text-[#14213D] font-bold py-3 rounded-xl hover:bg-white transition-colors mt-6 flex items-center justify-center gap-2'
                     }
                   >
-                    {highlighted ? 'Start Free Month' : 'Choose Plan'}
+                    {highlighted ? t('pricing.startFree') : t('pricing.choosePlan')}
                     <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
                   </a>
                 </div>
               );
-            },
-          )}
+            })}
         </div>
 
         {/* Enterprise Banner */}
@@ -203,9 +192,9 @@ export default function Pricing() {
               <FaUsers aria-hidden="true" />
             </span>
             <div>
-              <h3 className="text-xl font-bold">Enterprise & District</h3>
+              <h3 className="text-xl font-bold">{t('pricing.enterpriseTitle')}</h3>
               <p className="text-sm text-white/70">
-                For 1,500+ students.
+                {t('pricing.enterpriseSub')}
               </p>
             </div>
           </div>
@@ -214,7 +203,7 @@ export default function Pricing() {
             onClick={() => selectPlanAndScroll('Enterprise')}
             className="bg-[#FCA311] text-[#14213D] font-bold py-3 px-6 rounded-xl whitespace-nowrap flex items-center gap-2 hover:bg-white transition-colors"
           >
-            Contact Us for Custom Pricing
+            {t('pricing.enterpriseCta')}
             <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
           </a>
         </div>

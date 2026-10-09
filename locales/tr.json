@@ -1,0 +1,296 @@
+{
+  "common": {
+    "brand": "Madrasio"
+  },
+  "nav": {
+    "features": "Özellikler",
+    "pricing": "Fiyatlandırma",
+    "faq": "SSS",
+    "contact": "İletişim",
+    "bookDemo": "Demo Talebi",
+    "signIn": "Giriş Yap",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "selectLanguage": "Dil seçin"
+  },
+  "hero": {
+    "badge": "— Modern Özel Okullar İçin Tasarlandı —",
+    "title": "Özel okulunuzun sorunsuz işlemesi için gereken her şey",
+    "titleHighlight": "Her Gün Sorunsuzca",
+    "subtitle": "Müdürler için zahmetsiz kontrol, öğretmenler için basitleştirilmiş günlük görevler ve velileri bağlı ve bilgili tutan gerçek zamanlı güncellemeler — hepsi tek güçlü platformda.",
+    "ctaPrimary": "Demo Talebi",
+    "ctaSecondary": "Giriş Yap"
+  },
+  "globalEducation": {
+    "badge": "🎓 KÜRESEL EĞİTİM İÇİN",
+    "titleA": "Küresel Eğitim İçin",
+    "titleB": "Tasarlandı",
+    "subtitle": "Farklı diller, müfredatlar ve sınıf seviyeleri için tasarlanmış esnek bir okul yönetim platformu — dünyanın her yerinde.",
+    "ticker": "İLK AY ÜCRETSİZ",
+    "cards": [
+      {
+        "title": "Anadilde Çok Dillilik",
+        "description": "İngilizce, Arapça, Fransızca, İspanyolca, Almanca, İtalyanca dahil 12'den fazla dilde akıcı şekilde çalışın."
+      },
+      {
+        "title": "Müfredattan Bağımsız",
+        "description": "Özel ağırlıklandırmayla her not sistemine, kademeye veya ulusal akademik yapıya uyum sağlar."
+      },
+      {
+        "title": "İlkokuldan Liseye",
+        "description": "İlkokul, ortaokul ve liselerin operasyonel ve akademik ihtiyaçlarına mükemmel uyum."
+      }
+    ]
+  },
+  "pillars": {
+    "badge": "🎓 MODERN OKULLAR İÇİN",
+    "titleA": "Okul Operasyonları İçin",
+    "titleB": "Dört Temel Direk",
+    "subtitle": "Akademik işleri, finansmanı, iletişimi ve yönetimi kolaylaştırmak için özel okulunuzun ihtiyacı olan her şey.",
+    "cards": [
+      {
+        "title": "Akademik Operasyonlar",
+        "description": "Ders programlarını, not defterlerini, yoklamayı ve karneleri modern özel okullar için tek akıcı iş akışında yönetin."
+      },
+      {
+        "title": "Harç Tahsilatı",
+        "description": "Faturalandırmayı basitleştirin, ödemeleri izleyin ve yöneticiler için net finansal görünürlükle zamanında tahsilatı artırın."
+      },
+      {
+        "title": "Veli Katılımı",
+        "description": "Güvenli çok dilli portal üzerinden notlar, devamsızlık ve duyurularla ilgili gerçek zamanlı güncellemelerle velileri bağlı tutun."
+      },
+      {
+        "title": "Güvenli Yönetim",
+        "description": "Role dayalı erişimi kontrol edin, öğrenci verilerini koruyun ve küresel eğitim için güvenli platformda güvenle çalışın."
+      }
+    ]
+  },
+  "roles": {
+    "badge": "HER PAYDAŞ İÇİN TASARLANDI",
+    "titleA": "Her Role Özel",
+    "titleB": "Deneyimler",
+    "subtitle": "Yöneticilere, eğitimcilere ve ailelere tam olarak ihtiyaç duydukları şeyi veren amaca yönelik çalışma alanları.",
+    "cards": [
+      {
+        "title": "Okul Yöneticileri",
+        "tagline": "Tam operasyonel kontrol",
+        "points": [
+          "Gerçek zamanlı harç tahsilatı ve finansal takip",
+          "Yapılandırılabilir akademik yapı, kademeler ve not kuralları",
+          "Tarihsel kayıt ve transkript arşivinin korunması"
+        ]
+      },
+      {
+        "title": "Öğretmenler",
+        "tagline": "Kolaylaştırılmış günlük iş akışları",
+        "points": [
+          "Ders ders yoklama takibi saniyeler içinde",
+          "Esnek değerlendirme not defterleri ve özel ağırlıklar",
+          "Ödev oluşturma ve sınıfa özel duyurular"
+        ]
+      },
+      {
+        "title": "Veliler",
+        "tagline": "Gerçek zamanlı görünürlük ve gönül rahatlığı",
+        "points": [
+          "Anında profil geçişli çok çocuklu pano",
+          "Yayınlanan notlara ve devamsızlığa doğrudan görünürlük",
+          "Mobil uyumlu okul duyuruları ve uyarıları"
+        ]
+      }
+    ]
+  },
+  "security": {
+    "badge": "🛡️ GÜVENLİK TEMELİ",
+    "titleA": "Kurumsal Düzeyde",
+    "titleB": "Mimari ve Güvenlik",
+    "subtitle": "Sıfır güven ilkeleriyle inşa edildi. Okulunuzun verileri kesinlikle izole edilir, şifrelenir ve değişmez tarihsel bütünlükle korunur.",
+    "cards": [
+      {
+        "title": "Sıkı Kiracı İzolasyonu",
+        "description": "Her sorgu veritabanı düzeyinde güvenle izole edilir. Yetkilendirme her sunucu isteğinde doğrulanır; okullar arası veri sızıntısı sıfırdır."
+      },
+      {
+        "title": "Tarihsel Verilerin Korunması",
+        "description": "Akademik geçmiş değiştirilemez. Güncel sınıf yapılandırmalarını veya müfredat kurallarını değiştirmek geçmiş transkriptleri sessizce yeniden yazmaz."
+      },
+      {
+        "title": "Şifreli Depolama ve Yedekler",
+        "description": "Kurumsal ilişkisel veritabanları ve uç nesne depolama ile güçlendirilmiştir. Tüm hassas belgeler varsayılan olarak özeldir ve beklerken şifrelenir."
+      }
+    ]
+  },
+  "pricing": {
+    "badge": "ŞEFFAF FİYATLANDIRMA",
+    "titleA": "Özel Okullar İçin",
+    "titleB": "Basit, Öngörülebilir Fiyatlar",
+    "subtitle": "Tüm kurumunuzu mutlak netlikle yönetin. İlk ayınız tamamen ücretsiz. Gizli kurulum ücreti yok; tüm temel özellikler her pakete dahil.",
+    "monthly": "Aylık",
+    "annually": "Yıllık",
+    "save": "%20 İNDİRİM",
+    "checklistHeading": "Her plan tüm Madrasio modüllerine tam erişim içerir:",
+    "features": [
+      "7/24 Öncelikli Destek (E-posta ve WhatsApp)",
+      "Otomatik Şifreli Yedekler",
+      "Çok Dilli Arayüz (Arapça, Fransızca, İngilizce)",
+      "Veli ve Öğretmen Çalışma Alanları",
+      "Ücretsiz Veri Taşıma ve Kurulum",
+      "Gelişmiş Not Defterleri ve Transkriptler"
+    ],
+    "perMonth": "/ay",
+    "billedAnnually": ", yıllık faturalandırılır",
+    "choosePlan": "Planı Seç",
+    "startFree": "Ücretsiz Ayı Başlat",
+    "popular": "👑 EN POPÜLER",
+    "plans": [
+      {
+        "name": "Temel Kampüs",
+        "subtext": "Küçük ilkokullar veya yeni özel okullar için."
+      },
+      {
+        "name": "Büyüme Kampüsü",
+        "subtext": "Standart K-12 kurumları için ideal seçim."
+      },
+      {
+        "name": "Elit Kampüs",
+        "subtext": "Yüksek operasyon hacimli büyük özel okullar için."
+      }
+    ],
+    "enterpriseTitle": "Kurumsal ve Bölgesel",
+    "enterpriseSub": "1.500+ öğrenci ve özel depolama ihtiyaçları için.",
+    "enterpriseCta": "Özel Fiyat İçin İletişime Geçin",
+    "value": [
+      {
+        "title": "Mutlak tarihsel bütünlük.",
+        "body": "Paket yükseltmek veya değiştirmek okulunuzun geçmiş transkriptlerini asla değiştirmez."
+      },
+      {
+        "title": "Sabit fiyat öngörülebilirliği.",
+        "body": "Anında yazılım maliyeti artışlarından endişe etmeden yeni öğrenciler kabul edin."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "💬 SORULARINIZ MI VAR?",
+    "titleA": "Sık Sorulan",
+    "titleB": "Sorular",
+    "subtitle": "Veri güvenliğinden kuruluma ve desteğe, Madrasio hakkında en sık sorulan soruların hızlı yanıtlarını bulun.",
+    "items": [
+      {
+        "q": "Okulumuzun verileri tamamen gizli ve güvende mi?",
+        "a": "Evet. Okulunuz banka düzeyinde güvenli, izole edilmiş kendi ortamına sahip olur. Hiçbir yabancı ve başka hiçbir okul öğrencilerinizin kayıtlarını, notlarını veya finansal verilerini göremez."
+      },
+      {
+        "q": "Mevcut öğrenci listelerimizi yeniden yazmadan aktarabilir miyiz?",
+        "a": "Evet. Ekibimiz tüm Excel listelerinizi, öğrenci dosyalarınızı ve sınıf listelerinizi dakikalar içinde Madrasio'ya aktarmanıza yardımcı olur; manuel giriş gerekmez."
+      },
+      {
+        "q": "Madrasio okulumuzun not ölçeğine ve karnelerine uyum sağlar mı?",
+        "a": "Evet. Okulunuz ister yüzde ölçekleri, ister harf notları, ister özel değerlendirme sistemleri kullansın; Madrasio karne ve not sistemlerini akademik standartlarınıza göre uyarlar."
+      },
+      {
+        "q": "Hangi diller destekleniyor, veliler kendi dilini seçebilir mi?",
+        "a": "Madrasio Arapça, Fransızca, İngilizce ve İspanyolca dahil 12'den fazla dili destekler; sağdan sola (RTL) ve soldan sağa (LTR) okuma tam desteklenir. Müdürler, öğretmenler ve veliler tercih ettikleri dili bağımsız seçer."
+      },
+      {
+        "q": "Öğretmenlerimizin Madrasio için teknik beceriye ihtiyacı var mı?",
+        "a": "Hiç gerekmez. Madrasio akıllı telefon kadar basit tasarlandı. Ekibiniz internette gezinebiliyorsa Madrasio'yu 30 dakikadan kısa sürede öğrenir."
+      },
+      {
+        "q": "Madrasio harç yönetiminde bize nasıl yardımcı olur?",
+        "a": "Madrasio ödenen, bekleyen ve geciken harçların net finansal görünümünü sunar. Velilere otomatik ödeme hatırlatmaları göndererek yönetiminize saatlerce manuel takip kazandırır."
+      },
+      {
+        "q": "Madrasio'yu okulumuza kurmak ne kadar sürer?",
+        "a": "Okulunuz 48 saatten kısa sürede tamamen kurulup hazır hale gelebilir. Kurulum ekibimiz yapılandırmayı sizin için yönetir, ekibiniz sorunsuz başlar."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "👥 SINIRLI ERKEN ERİŞİM",
+    "titleA": "Okulunuza Modern",
+    "titleB": "Yönetim Getirin",
+    "subtitle": "V1 lansmanımız için seçkin bir küresel özel okul grubunu kabul ediyoruz. Özel kurulum ve erken iş ortağı fiyatları için yerinizi ayırtın.",
+    "features": [
+      {
+        "title": "Özel Kurulum",
+        "subtext": "Kişiselleştirilmiş katılım ve veri taşıma desteği."
+      },
+      {
+        "title": "Erken İş Ortağı Fiyatları",
+        "subtext": "Erken okullara özel tarifeler."
+      },
+      {
+        "title": "Öncelikli Destek",
+        "subtext": "Lansman sırasında ekibimize doğrudan erişim."
+      }
+    ],
+    "trustedBy": "DÜNYA GENELİNDE OKULLARIN GÜVENİ",
+    "formTitle": "Demo Talebi",
+    "formSubtitle": "Bilgileri doldurun, demonuzu planlamak için sizinle iletişime geçelim.",
+    "labels": {
+      "fullName": "Ad Soyad",
+      "schoolName": "Okul Adı",
+      "email": "E-posta Adresi",
+      "phone": "Telefon / WhatsApp",
+      "schoolSize": "Öğrenci Kapasitesi",
+      "message": "Ek Notlar"
+    },
+    "placeholders": {
+      "fullName": "Mehmet Yılmaz",
+      "schoolName": "Uluslararası Akademi",
+      "email": "siz@okul.com",
+      "phone": "+90 532 000 00 00",
+      "schoolSize": "Kapasite seçin",
+      "message": "Okulunuzun ihtiyaçlarından bahsedin..."
+    },
+    "capacityOptions": ["200'den az", "200 – 500", "500 – 1.000", "1.000+"],
+    "submit": "Demo Talebi",
+    "sending": "İstek gönderiliyor...",
+    "success": "Teşekkürler! Okul katılım ekibimiz 12 saat içinde WhatsApp/E-posta ile sizinle iletişime geçecek.",
+    "sendAnother": "Başka mesaj gönder",
+    "selectedPlan": "Seçilen plan:",
+    "clear": "Temizle",
+    "lockNote": "Bilgileriniz güvende; yalnızca demo hakkında sizinle iletişim için kullanılacak.",
+    "errors": {
+      "fullName": "Lütfen ilgili kişinin adını girin.",
+      "schoolName": "Lütfen okulunuzun adını girin.",
+      "email": "Lütfen e-posta adresinizi girin.",
+      "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
+      "phone": "Lütfen telefon numaranızı girin.",
+      "phoneDigits": "Numara en az 8 rakam içermelidir.",
+      "schoolSize": "Lütfen okul kapasitenizi seçin."
+    }
+  },
+  "footer": {
+    "tagline": "Modern küresel eğitim için hepsi bir arada okul yönetim platformu.",
+    "byLine": "Gemistra Tech ürünü",
+    "quickLinks": "Hızlı Bağlantılar",
+    "legal": "Yasal",
+    "contact": "İletişim",
+    "rights": "© 2026 Madrasio. Tüm hakları saklıdır.",
+    "status": "V1 Yayında",
+    "policies": [
+      {
+        "label": "Gizlilik Politikası"
+      },
+      {
+        "label": "Kullanım Şartları"
+      },
+      {
+        "label": "Çerez Politikası"
+      }
+    ],
+    "socials": [
+      "LinkedIn'de Madrasio",
+      "Facebook'ta Madrasio",
+      "X'te Madrasio",
+      "Instagram'da Madrasio"
+    ]
+  },
+  "floating": {
+    "scrollTop": "Başa dön",
+    "whatsapp": "WhatsApp'ta Madrasio ile sohbet edin"
+  }
+}

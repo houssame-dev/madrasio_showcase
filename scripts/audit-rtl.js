@@ -58,17 +58,22 @@ function flatten(obj, prefix = '', out = {}) {
   return out;
 }
 
-/** 1. Dictionary parity + script coverage. */
+/** 1. Dictionary parity + script coverage (all 12 locales). */
 function auditDictionaries() {
-  console.log('\n--- Dictionary parity (locales/en|fr|ar.json) ---');
-  const files = ['en', 'fr', 'ar'];
+  console.log('\n--- Dictionary parity (locales/*.json, 12 locales) ---');
+  const files = fs
+    .readdirSync(LOCALES)
+    .filter((f) => f.endsWith('.json'))
+    .map((f) => f.replace(/\.json$/, ''))
+    .sort();
+  if (!files.includes('en')) {
+    fail('locales/en.json (source of truth) is missing.');
+    return;
+  }
+  console.log(`      locales found: ${files.join(', ')}`);
   const dicts = {};
   for (const locale of files) {
     const p = path.join(LOCALES, `${locale}.json`);
-    if (!fs.existsSync(p)) {
-      fail(`locales/${locale}.json is missing.`);
-      return;
-    }
     try {
       dicts[locale] = JSON.parse(read(p));
     } catch (err) {
@@ -95,7 +100,7 @@ function auditDictionaries() {
     }
   }
   if (parityOk) {
-    pass(`All 3 dictionaries expose identical key trees (${baseKeys.size} keys).`);
+    pass(`All ${files.length} dictionaries expose identical key trees (${baseKeys.size} keys).`);
   }
 
   for (const locale of files) {

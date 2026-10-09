@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google';
 import type { ReactNode } from 'react';
 
 import FloatingButtons from '@/components/FloatingButtons';
+import { LanguageProvider } from '@/components/LanguageProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -88,8 +89,10 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {children}
-        <FloatingButtons />
+        <LanguageProvider>
+          {children}
+          <FloatingButtons />
+        </LanguageProvider>
       </body>
     </html>
   );

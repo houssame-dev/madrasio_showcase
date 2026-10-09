@@ -1,0 +1,296 @@
+{
+  "common": {
+    "brand": "Madrasio"
+  },
+  "nav": {
+    "features": "Funciones",
+    "pricing": "Precios",
+    "faq": "Preguntas frecuentes",
+    "contact": "Contacto",
+    "bookDemo": "Reservar una demo",
+    "signIn": "Iniciar sesión",
+    "openMenu": "Abrir el menú",
+    "closeMenu": "Cerrar el menú",
+    "selectLanguage": "Seleccionar idioma"
+  },
+  "hero": {
+    "badge": "— Diseñado para escuelas privadas modernas —",
+    "title": "Todo lo que tu escuela privada necesita para funcionar",
+    "titleHighlight": "con fluidez cada día",
+    "subtitle": "Control sin esfuerzo para directores, tareas diarias simplificadas para docentes y actualizaciones en tiempo real que mantienen a las familias conectadas e informadas, todo en una plataforma potente.",
+    "ctaPrimary": "Reservar una demo",
+    "ctaSecondary": "Iniciar sesión"
+  },
+  "globalEducation": {
+    "badge": "🎓 HECHO PARA",
+    "titleA": "Hecho para",
+    "titleB": "la educación global",
+    "subtitle": "Una plataforma flexible de gestión escolar diseñada para distintos idiomas, currículos y niveles educativos, en cualquier parte del mundo.",
+    "ticker": "PRIMER MES GRATIS",
+    "cards": [
+      {
+        "title": "Multilingüe nativo",
+        "description": "Opera con fluidez en más de 12 idiomas, incluidos inglés, árabe, francés, español, alemán, italiano y más."
+      },
+      {
+        "title": "Agnóstico al currículo",
+        "description": "Se adapta a cualquier sistema de calificación, itinerario o estructura académica nacional con ponderación personalizada."
+      },
+      {
+        "title": "De primaria a bachillerato",
+        "description": "Perfectamente adaptado a las necesidades operativas y académicas de primaria, secundaria y bachillerato."
+      }
+    ]
+  },
+  "pillars": {
+    "badge": "🎓 HECHO PARA ESCUELAS MODERNAS",
+    "titleA": "Cuatro pilares para",
+    "titleB": "la gestión escolar",
+    "subtitle": "Todo lo que tu escuela privada necesita para optimizar lo académico, las finanzas, la comunicación y la administración.",
+    "cards": [
+      {
+        "title": "Operación académica",
+        "description": "Gestiona horarios, libros de calificaciones, asistencia y boletines en un flujo de trabajo ágil diseñado para escuelas privadas modernas."
+      },
+      {
+        "title": "Cobro de colegiaturas",
+        "description": "Simplifica la facturación, haz seguimiento de los pagos e impulsa el cobro puntual con una supervisión financiera clara para la administración."
+      },
+      {
+        "title": "Vinculación con las familias",
+        "description": "Mantén a las familias conectadas con actualizaciones en tiempo real sobre calificaciones, asistencia y avisos mediante un portal multilingüe seguro."
+      },
+      {
+        "title": "Administración segura",
+        "description": "Controla el acceso por roles, protege los datos del alumnado y opera con confianza en una plataforma segura diseñada para la educación global."
+      }
+    ]
+  },
+  "roles": {
+    "badge": "DISEÑADO PARA CADA ACTOR",
+    "titleA": "Experiencias a medida para",
+    "titleB": "cada rol",
+    "subtitle": "Espacios de trabajo diseñados para dar a la administración, al profesorado y a las familias exactamente lo que necesitan.",
+    "cards": [
+      {
+        "title": "Administración escolar",
+        "tagline": "Control operativo total",
+        "points": [
+          "Cobro de colegiaturas y seguimiento financiero en tiempo real",
+          "Estructura académica, itinerarios y reglas de calificación configurables",
+          "Conservación de matrículas históricas y expedientes académicos"
+        ]
+      },
+      {
+        "title": "Docentes",
+        "tagline": "Flujos de trabajo diarios simplificados",
+        "points": [
+          "Control de asistencia por sesión en segundos",
+          "Libros de calificaciones flexibles con ponderación personalizada",
+          "Creación de tareas y avisos dirigidos por clase"
+        ]
+      },
+      {
+        "title": "Familias",
+        "tagline": "Visibilidad en tiempo real y tranquilidad",
+        "points": [
+          "Panel multi-hijo con cambio instantáneo de perfil",
+          "Visibilidad directa de calificaciones y asistencia publicadas",
+          "Avisos y alertas escolares adaptados al móvil"
+        ]
+      }
+    ]
+  },
+  "security": {
+    "badge": "🛡️ BASE DE SEGURIDAD",
+    "titleA": "Arquitectura y seguridad",
+    "titleB": "de nivel empresarial",
+    "subtitle": "Construida sobre principios de confianza cero. Los datos de tu escuela están estrictamente aislados, cifrados y preservados con integridad histórica inmutable.",
+    "cards": [
+      {
+        "title": "Aislamiento estricto por centro",
+        "description": "Cada consulta está aislada de forma segura a nivel de base de datos. La autorización se valida en cada petición al servidor, garantizando cero fugas de datos entre escuelas."
+      },
+      {
+        "title": "Preservación del historial académico",
+        "description": "El historial académico es inmutable. Cambiar la configuración actual de clases o las reglas curriculares nunca reescribirá en silencio los expedientes pasados ni los boletines publicados."
+      },
+      {
+        "title": "Almacenamiento cifrado y copias de seguridad",
+        "description": "Con tecnología de bases de datos relacionales empresariales y almacenamiento de objetos en el borde. Todos los documentos sensibles son privados por defecto y están cifrados en reposo."
+      }
+    ]
+  },
+  "pricing": {
+    "badge": "PRECIOS TRANSPARENTES",
+    "titleA": "Precios sencillos y predecibles para",
+    "titleB": "escuelas privadas",
+    "subtitle": "Gestiona toda tu escuela privada con total claridad. Recibe tu primer mes completamente gratis. Sin gastos ocultos de implementación y con todas las funciones básicas incluidas en cada plan.",
+    "monthly": "Mensual",
+    "annually": "Anual",
+    "save": "AHORRA 20%",
+    "checklistHeading": "Cada plan incluye acceso completo a todos los módulos de Madrasio:",
+    "features": [
+      "Soporte prioritario 24/7 (correo y WhatsApp)",
+      "Copias de seguridad cifradas automáticas",
+      "Interfaz multilingüe (árabe, francés, inglés)",
+      "Espacios para familias y docentes",
+      "Migración de datos e instalación gratuitas",
+      "Libros de calificaciones y expedientes avanzados"
+    ],
+    "perMonth": "/mes",
+    "billedAnnually": ", facturado anualmente",
+    "choosePlan": "Elegir plan",
+    "startFree": "Empezar el mes gratis",
+    "popular": "👑 MÁS POPULAR",
+    "plans": [
+      {
+        "name": "Campus Fundación",
+        "subtext": "Para escuelas primarias pequeñas o escuelas privadas emergentes."
+      },
+      {
+        "name": "Campus Crecimiento",
+        "subtext": "La opción óptima para instituciones K-12 estándar."
+      },
+      {
+        "name": "Campus Élite",
+        "subtext": "Diseñado para grandes escuelas privadas con alto volumen operativo."
+      }
+    ],
+    "enterpriseTitle": "Empresas y distritos",
+    "enterpriseSub": "Para más de 1.500 alumnos y necesidades de almacenamiento personalizadas.",
+    "enterpriseCta": "Contáctanos para un precio personalizado",
+    "value": [
+      {
+        "title": "Integridad histórica absoluta.",
+        "body": "Cambiar de plan nunca alterará los expedientes pasados ni los archivos de tu escuela."
+      },
+      {
+        "title": "Previsibilidad de tarifa plana.",
+        "body": "Recibe nuevos alumnos sin preocuparte por aumentos inmediatos del coste del software."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "💬 ¿PREGUNTAS?",
+    "titleA": "Preguntas",
+    "titleB": "frecuentes",
+    "subtitle": "Encuentra respuestas rápidas a las preguntas más comunes sobre Madrasio, desde la seguridad de los datos hasta la instalación y el soporte.",
+    "items": [
+      {
+        "q": "¿Los datos de nuestra escuela están totalmente privados y seguros?",
+        "a": "Sí. Tu escuela dispone de su propio entorno seguro aislado, de nivel bancario. Ninguna persona externa ni ninguna otra escuela podrá ver ni consultar los expedientes, calificaciones o datos financieros de tu alumnado."
+      },
+      {
+        "q": "¿Podemos transferir nuestras listas de alumnos sin volver a escribirlo todo?",
+        "a": "Sí. Nuestro equipo te ayuda a importar todas tus listas de Excel, expedientes y listas de clase a Madrasio en minutos, sin introducción manual de datos."
+      },
+      {
+        "q": "¿Madrasio se adapta a nuestra escala de calificaciones y boletines?",
+        "a": "Sí. Tanto si tu escuela usa porcentajes, calificaciones por letras o sistemas de evaluación personalizados, Madrasio adapta boletines y sistemas de calificación a tus estándares académicos exactos."
+      },
+      {
+        "q": "¿Qué idiomas son compatibles y pueden las familias elegir el suyo?",
+        "a": "Madrasio admite más de 12 idiomas —incluidos árabe, francés, inglés y español— con soporte total de lectura de derecha a izquierda (RTL) y de izquierda a derecha (LTR). Dirección, profesorado y familias eligen cada uno su idioma preferido."
+      },
+      {
+        "q": "¿Necesita nuestro profesorado habilidades técnicas para usar Madrasio?",
+        "a": "Para nada. Madrasio está diseñado para ser tan sencillo como un teléfono inteligente. Si tu personal sabe navegar por internet, puede aprender Madrasio en menos de 30 minutos."
+      },
+      {
+        "q": "¿Cómo nos ayuda Madrasio a gestionar las colegiaturas?",
+        "a": "Madrasio ofrece una visión financiera clara de las colegiaturas pagadas, pendientes y vencidas. Puede enviar recordatorios de pago automáticos a las familias, ahorrando a tu administración horas de seguimiento manual."
+      },
+      {
+        "q": "¿Cuánto tarda la puesta en marcha de Madrasio en nuestra escuela?",
+        "a": "Tu escuela puede estar completamente configurada y lista en menos de 48 horas. Nuestro equipo de instalación gestiona la configuración para que tu personal empiece sin complicaciones."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "👥 ACCESO ANTICIPADO LIMITADO",
+    "titleA": "Aporta una gestión moderna",
+    "titleB": "a tu escuela",
+    "subtitle": "Aceptamos un grupo selecto de escuelas privadas globales para nuestro lanzamiento v1. Reserva tu plaza para una instalación dedicada y precios preferentes de socio fundador.",
+    "features": [
+      {
+        "title": "Instalación dedicada",
+        "subtext": "Acompañamiento personalizado y ayuda con la migración de datos."
+      },
+      {
+        "title": "Precios preferentes de socio",
+        "subtext": "Tarifas exclusivas para las primeras escuelas."
+      },
+      {
+        "title": "Soporte prioritario",
+        "subtext": "Acceso directo a nuestro equipo durante el lanzamiento."
+      }
+    ],
+    "trustedBy": "ESCUELAS DE TODO EL MUNDO CONFÍAN EN NOSOTROS",
+    "formTitle": "Reservar una demo",
+    "formSubtitle": "Completa los datos y nos pondremos en contacto para programar tu demo.",
+    "labels": {
+      "fullName": "Nombre completo",
+      "schoolName": "Nombre de la escuela",
+      "email": "Correo electrónico",
+      "phone": "Teléfono / WhatsApp",
+      "schoolSize": "Capacidad de alumnado",
+      "message": "Notas adicionales"
+    },
+    "placeholders": {
+      "fullName": "María García",
+      "schoolName": "Academia Internacional",
+      "email": "tu@escuela.com",
+      "phone": "+34 600 00 00 00",
+      "schoolSize": "Seleccionar capacidad",
+      "message": "Cuéntanos las necesidades de tu escuela..."
+    },
+    "capacityOptions": ["Menos de 200", "200 – 500", "500 – 1.000", "Más de 1.000"],
+    "submit": "Reservar una demo",
+    "sending": "Enviando solicitud...",
+    "success": "¡Gracias! Nuestro equipo de incorporación se pondrá en contacto contigo en 12 horas por WhatsApp/correo.",
+    "sendAnother": "Enviar otro mensaje",
+    "selectedPlan": "Plan seleccionado:",
+    "clear": "Borrar",
+    "lockNote": "Tu información está segura y solo se usará para contactarte sobre una demo.",
+    "errors": {
+      "fullName": "Indica el nombre completo de la persona de contacto.",
+      "schoolName": "Indica el nombre de tu escuela.",
+      "email": "Indica tu correo electrónico.",
+      "emailInvalid": "Indica un correo electrónico válido.",
+      "phone": "Indica tu número de teléfono.",
+      "phoneDigits": "El número debe contener al menos 8 dígitos.",
+      "schoolSize": "Selecciona la capacidad de tu escuela."
+    }
+  },
+  "footer": {
+    "tagline": "La plataforma todo en uno para la educación global moderna.",
+    "byLine": "Un producto de Gemistra Tech",
+    "quickLinks": "Enlaces rápidos",
+    "legal": "Legal",
+    "contact": "Contacto",
+    "rights": "© 2026 Madrasio. Todos los derechos reservados.",
+    "status": "La V1 ya está disponible",
+    "policies": [
+      {
+        "label": "Política de privacidad"
+      },
+      {
+        "label": "Términos del servicio"
+      },
+      {
+        "label": "Política de cookies"
+      }
+    ],
+    "socials": [
+      "Madrasio en LinkedIn",
+      "Madrasio en Facebook",
+      "Madrasio en X",
+      "Madrasio en Instagram"
+    ]
+  },
+  "floating": {
+    "scrollTop": "Volver arriba",
+    "whatsapp": "Chatear con Madrasio en WhatsApp"
+  }
+}
