@@ -45,9 +45,9 @@ export default function GlobalEducation() {
           {CARDS.map(({ title, description, Icon }) => (
             <div
               key={title}
-              className="relative p-6 sm:p-8 rounded-2xl bg-[#14213D]/70 border border-[#FCA311]/20 hover:border-[#FCA311]/60 transition-all duration-300 shadow-xl backdrop-blur-md flex flex-col items-start text-left group"
+              className="relative p-6 sm:p-8 rounded-2xl bg-[#14213D]/70 border border-[#FCA311]/20 hover:border-[#FCA311]/60 transition-all duration-300 shadow-xl backdrop-blur-md flex flex-col items-start text-start group"
             >
-              <div className="absolute left-0 top-6 bottom-6 w-1 bg-[#FCA311] rounded-r" />
+              <div className="absolute start-0 top-6 bottom-6 w-1 bg-[#FCA311] rounded-e" />
               <span className="w-14 h-14 rounded-xl bg-[#000000]/60 border border-[#FCA311]/30 flex items-center justify-center text-[#FCA311] text-2xl mb-6 shadow-inner">
                 <Icon aria-hidden="true" />
               </span>

@@ -1,0 +1,286 @@
+{
+  "common": { "brand": "Madrasio" },
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "bookDemo": "Book a Demo",
+    "signIn": "Sign In",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "selectLanguage": "Select language"
+  },
+  "hero": {
+    "badge": "All-in-One School Management System",
+    "title": "Everything Your Private School Needs to Run",
+    "titleHighlight": "Smoothly EveryDay",
+    "subtitle": "Effortless control for directors, simplified daily tasks for teachers, and real-time updates that keep parents connected and informed — all in one powerful platform.",
+    "ctaPrimary": "Book a Demo",
+    "ctaSecondary": "Sign In",
+    "pillars": [
+      { "title": "For Directors", "subtext": "Full visibility and control" },
+      { "title": "For Teachers", "subtext": "Simplify daily tasks" },
+      { "title": "For Parents", "subtext": "Stay informed in real time" }
+    ],
+    "trustCaption": "— Trusted by over 100 private schools —",
+    "trustBefore": "Join",
+    "trustCount": "100+ schools",
+    "trustAfter": "building a brighter future with Madrasio."
+  },
+  "globalEducation": {
+    "badge": "🎓 BUILT FOR",
+    "titleA": "Built for",
+    "titleB": "Global Education",
+    "subtitle": "A flexible school management platform designed for different languages, curricula, and grade levels — anywhere in the world.",
+    "ticker": "FIRST MONTH FREE",
+    "cards": [
+      {
+        "title": "Native Multilingual",
+        "description": "Seamlessly operate in 12+ languages including English, Arabic, French, Spanish, Deutsch, Italian, and more."
+      },
+      {
+        "title": "Curriculum Agnostic",
+        "description": "Adapts to any grading system, track, or national academic structure with custom weighting."
+      },
+      {
+        "title": "Primary to High School",
+        "description": "Perfectly adapted to the specific operational and academic needs of Primary, Middle, and High Schools."
+      }
+    ]
+  },
+  "pillars": {
+    "badge": "🎓 BUILT FOR MODERN SCHOOLS",
+    "titleA": "Four Pillars for",
+    "titleB": "School Operations",
+    "subtitle": "Everything your private school needs to streamline academics, finance, communication, and administration.",
+    "cards": [
+      {
+        "title": "Academic Operations",
+        "description": "Manage timetables, gradebooks, attendance, and report cards in one streamlined workflow built for modern private schools."
+      },
+      {
+        "title": "Tuition Collection",
+        "description": "Simplify invoicing, track payments, and boost on-time tuition collection with clear financial oversight for administrators."
+      },
+      {
+        "title": "Parent Engagement",
+        "description": "Keep parents connected with real-time updates on grades, attendance, and announcements via a secure multilingual portal."
+      },
+      {
+        "title": "Secure Administration",
+        "description": "Control access by role, protect student data, and operate confidently on a secure platform built for global education."
+      }
+    ]
+  },
+  "roles": {
+    "badge": "DESIGNED FOR EVERY STAKEHOLDER",
+    "titleA": "Tailored Experiences for",
+    "titleB": "Every Role",
+    "subtitle": "Purpose-built workspaces that give administrators, educators, and families exactly what they need.",
+    "cards": [
+      {
+        "title": "School Administrators",
+        "tagline": "Complete operational control",
+        "points": [
+          "Real-time tuition collection and financial tracking",
+          "Configurable academic structure, tracks, and grading rules",
+          "Historical student enrollment and transcript preservation"
+        ]
+      },
+      {
+        "title": "Teachers & Educators",
+        "tagline": "Streamlined daily workflows",
+        "points": [
+          "Period-by-period attendance tracking in seconds",
+          "Flexible assessment gradebooks and custom weighting",
+          "Homework creation and class-targeted announcements"
+        ]
+      },
+      {
+        "title": "Parents & Guardians",
+        "tagline": "Real-time visibility & peace of mind",
+        "points": [
+          "Multi-child dashboard with instant profile switching",
+          "Direct visibility into published grades and attendance",
+          "Mobile-friendly school announcements and alerts"
+        ]
+      }
+    ]
+  },
+  "security": {
+    "badge": "🛡️ SECURITY FOUNDATION",
+    "titleA": "Enterprise-Grade",
+    "titleB": "Architecture & Security",
+    "subtitle": "Built on zero-trust principles. Your school's data is strictly isolated, encrypted, and preserved with immutable historical integrity.",
+    "cards": [
+      {
+        "title": "Strict Tenant Isolation",
+        "description": "Every query is securely isolated at the database level. Authorization is validated on every server request, ensuring zero cross-school data leakage."
+      },
+      {
+        "title": "Historical Data Preservation",
+        "description": "Academic history is immutable. Changing current class configurations or curriculum rules will never silently rewrite past student transcripts or published report cards."
+      },
+      {
+        "title": "Encrypted Storage & Backups",
+        "description": "Powered by enterprise relational databases and edge object storage. All sensitive documents, attachments, and records are private by default and encrypted at rest."
+      }
+    ]
+  },
+  "pricing": {
+    "badge": "TRANSPARENT PRICING",
+    "titleA": "Simple, Predictable Pricing for",
+    "titleB": "Private Schools",
+    "subtitle": "Run your entire private school with absolute clarity. Get your first month completely free. No hidden implementation fees, and all core features are included in every tier.",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "save": "SAVE 20%",
+    "checklistHeading": "Every plan includes full access to all Madrasio modules:",
+    "features": [
+      "24/7 Priority Support (Email & WhatsApp)",
+      "Automated Encrypted Backups",
+      "Multilingual Interface (Arabic, French, English)",
+      "Parent & Teacher Workspaces",
+      "Free Data Migration & Setup",
+      "Advanced Gradebooks & Transcripts"
+    ],
+    "perMonth": "/mo",
+    "billedAnnually": ", billed annually",
+    "choosePlan": "Choose Plan",
+    "startFree": "Start Free Month",
+    "popular": "👑 MOST POPULAR",
+    "plans": [
+      {
+        "name": "Foundation Campus",
+        "subtext": "For smaller primary or emerging private schools."
+      },
+      {
+        "name": "Growth Campus",
+        "subtext": "The optimal choice for standard K-12 private campuses."
+      },
+      {
+        "name": "Elite Campus",
+        "subtext": "Built for large private schools with high operational volume."
+      }
+    ],
+    "enterpriseTitle": "Enterprise & District",
+    "enterpriseSub": "For 1,500+ students and custom storage needs.",
+    "enterpriseCta": "Contact Us for Custom Pricing",
+    "value": [
+      {
+        "title": "Absolute historical integrity.",
+        "body": "Upgrading or changing tiers will never alter your school's past transcripts or archived records."
+      },
+      {
+        "title": "Flat-rate predictability.",
+        "body": "Welcome new students without worrying about immediate per-student software cost increases."
+      }
+    ]
+  },
+  "faq": {
+    "badge": "💬 QUESTIONS ?",
+    "titleA": "Frequently Asked",
+    "titleB": "Questions",
+    "subtitle": "Find quick answers to the most common questions about Madrasio, from data security to setup and support.",
+    "items": [
+      {
+        "q": "Is our school's data completely private and safe?",
+        "a": "Yes. Your school gets its own isolated, bank-grade secure environment. No outside person or other school can ever view or access your students' records, grades, or financial data."
+      },
+      {
+        "q": "Can we transfer our existing student lists without re-typing everything?",
+        "a": "Yes. Our team helps you import all your existing Excel lists, student files, and class rosters into Madrasio in minutes so you don't have to enter data manually."
+      },
+      {
+        "q": "Can Madrasio adapt to our school's specific grading scale and report cards?",
+        "a": "Yes. Whether your school uses percentage scales, letter grades, or custom evaluation systems, Madrasio customizes report cards and grading systems to match your exact academic standards."
+      },
+      {
+        "q": "Which languages are supported, and can parents set their own language?",
+        "a": "Madrasio supports over 12 languages—including Arabic, French, English, and Spanish—with full support for right-to-left (RTL) and left-to-right (LTR) reading. Directors, teachers, and parents can each choose their preferred language independently."
+      },
+      {
+        "q": "Do our teachers need technical skills to use Madrasio?",
+        "a": "Not at all. Madrasio is designed to be as simple as using a smartphone. If your staff knows how to browse the internet, they can learn Madrasio in under 30 minutes."
+      },
+      {
+        "q": "How does Madrasio help us manage tuition fees?",
+        "a": "Madrasio provides a clear financial overview of paid, pending, and overdue tuition. It can send automatic payment reminders to parents, saving your administration hours of manual follow-up."
+      },
+      {
+        "q": "How long does it take to set up Madrasio for our school?",
+        "a": "Your school can be completely set up and ready to go in less than 48 hours. Our setup team manages the configuration for you so your staff can start smoothly."
+      }
+    ]
+  },
+  "contact": {
+    "badge": "👥 LIMITED EARLY ACCESS",
+    "titleA": "Bring Modern Management",
+    "titleB": "to Your School",
+    "subtitle": "We are accepting a select group of global private schools for our v1 launch. Reserve your spot for dedicated setup and early partner pricing.",
+    "features": [
+      {
+        "title": "Dedicated Setup",
+        "subtext": "Personalized onboarding and data migration support."
+      },
+      {
+        "title": "Early Partner Pricing",
+        "subtext": "Exclusive rates for early schools."
+      },
+      {
+        "title": "Priority Support",
+        "subtext": "Direct access to our team during launch."
+      }
+    ],
+    "trustedBy": "TRUSTED BY SCHOOLS WORLDWIDE",
+    "formTitle": "Book a Demo",
+    "formSubtitle": "Fill in the details and we'll get in touch to schedule your demo.",
+    "labels": {
+      "fullName": "Full Name",
+      "schoolName": "School Name",
+      "email": "Email Address",
+      "phone": "Phone / WhatsApp",
+      "schoolSize": "School Student Capacity",
+      "message": "Additional Notes"
+    },
+    "placeholders": {
+      "fullName": "John Doe",
+      "schoolName": "International Academy",
+      "email": "you@school.com",
+      "phone": "+212 6 00 00 00 00",
+      "schoolSize": "Select capacity",
+      "message": "Tell us about your school's needs..."
+    },
+    "capacityOptions": ["Under 200", "200 – 500", "500 – 1,000", "1,000+"],
+    "submit": "Book a Demo",
+    "sending": "Sending request...",
+    "success": "Thank you! Our school onboarding team will contact you within 12 hours on WhatsApp/Email.",
+    "sendAnother": "Send another message",
+    "selectedPlan": "Selected plan:",
+    "clear": "Clear",
+    "lockNote": "Your information is secure and will only be used to contact you about a demo.",
+    "errors": {
+      "fullName": "Please enter the contact person’s full name.",
+      "schoolName": "Please enter your school name.",
+      "email": "Please enter your email address.",
+      "emailInvalid": "Please enter a valid email address.",
+      "phone": "Please enter your phone number.",
+      "phoneDigits": "Phone number must contain at least 8 digits.",
+      "schoolSize": "Please select your school student capacity."
+    }
+  },
+  "footer": {
+    "tagline": "The all-in-one school management platform for modern global education.",
+    "byLine": "A product by Gemistra Tech",
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "contact": "Contact",
+    "rights": "© 2026 Madrasio. All rights reserved.",
+    "status": "V1 is Live"
+  },
+  "floating": {
+    "scrollTop": "Scroll to top",
+    "whatsapp": "Chat with Madrasio on WhatsApp"
+  }
+}

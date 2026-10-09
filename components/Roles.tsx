@@ -61,7 +61,7 @@ export default function Roles() {
           families exactly what they need.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch w-full max-w-[1536px] mx-auto text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch w-full max-w-[1536px] mx-auto text-start">
           {roles.map(({ title, tagline, points, Icon }) => (
             <div
               key={title}
@@ -77,7 +77,7 @@ export default function Roles() {
                 <p className="text-[#FCA311] font-medium text-sm mb-6">
                   {tagline}
                 </p>
-                <ul className="space-y-4 text-left">
+                <ul className="space-y-4 text-start">
                   {points.map((point) => (
                     <li
                       key={point}

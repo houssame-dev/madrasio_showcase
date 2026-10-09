@@ -20,6 +20,27 @@
 const BASE = (process.argv[2] || 'https://www.madrasio.com').replace(/\/$/, '');
 const TIMEOUT_MS = 20000;
 
+// NOTE (Windows/undici): AbortSignal.timeout() leaves async handles behind
+// that abort the process on exit. Use a manual unref'd timer instead, send
+// `Connection: close` to avoid pooled keep-alive sockets, and exit via
+// exitCode (natural loop drain) rather than a forced process.exit().
+function fetchWithTimeout(url, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  if (typeof timer.unref === 'function') timer.unref();
+  return fetch(url, {
+    ...options,
+    signal: controller.signal,
+    headers: { Connection: 'close', ...(options.headers || {}) },
+  }).finally(() => clearTimeout(timer));
+}
+
+function finish(code) {
+  process.exitCode = code;
+  const killer = setTimeout(() => process.exit(code), 2000);
+  if (typeof killer.unref === 'function') killer.unref();
+}
+
 const CHECKS = [
   {
     name: '<title> present and non-empty',
@@ -72,8 +93,7 @@ async function main() {
   let html = '';
 
   try {
-    const res = await fetch(`${BASE}/`, {
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+    const res = await fetchWithTimeout(`${BASE}/`, {
       headers: { 'User-Agent': 'Madrasio-SEO-Audit/1.0' },
     });
     if (res.status !== 200) {
@@ -83,7 +103,8 @@ async function main() {
     html = await res.text();
   } catch (err) {
     console.log(`FAIL  could not fetch homepage: ${err.message}`);
-    process.exit(1);
+    finish(1);
+    return;
   }
 
   for (const { name, test, detail } of CHECKS) {
@@ -103,10 +124,10 @@ async function main() {
   console.log(
     failures === 0 ? '\nAll meta checks passed.' : `\n${failures} check(s) FAILED.`,
   );
-  process.exit(failures === 0 ? 0 : 1);
+  finish(failures === 0 ? 0 : 1);
 }
 
 main().catch((err) => {
   console.error(`Audit crashed: ${err.message}`);
-  process.exit(1);
+  finish(1);
 });

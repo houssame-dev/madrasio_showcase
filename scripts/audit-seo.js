@@ -21,10 +21,28 @@ const EXPECTED_SITEMAP_URL = 'https://www.madrasio.com/sitemap.xml';
 const EXPECTED_HOMEPAGE_URL = 'https://www.madrasio.com/';
 const EXPECTED_CANONICAL_HREF = 'https://www.madrasio.com';
 
+// See audit-meta.js: manual unref'd timers + Connection: close avoid a
+// Windows/undici abort crash on process exit.
+function fetchWithTimeout(url, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  if (typeof timer.unref === 'function') timer.unref();
+  return fetch(url, {
+    ...options,
+    signal: controller.signal,
+    headers: { Connection: 'close', ...(options.headers || {}) },
+  }).finally(() => clearTimeout(timer));
+}
+
+function finish(code) {
+  process.exitCode = code;
+  const killer = setTimeout(() => process.exit(code), 2000);
+  if (typeof killer.unref === 'function') killer.unref();
+}
+
 async function get(path) {
   const url = `${BASE}${path}`;
-  const res = await fetch(url, {
-    signal: AbortSignal.timeout(TIMEOUT_MS),
+  const res = await fetchWithTimeout(url, {
     headers: { 'User-Agent': 'Madrasio-SEO-Audit/1.0' },
   });
   const body = await res.text();
@@ -114,10 +132,10 @@ async function main() {
   console.log(
     failures === 0 ? '\nAll SEO checks passed.' : `\n${failures} check(s) FAILED.`,
   );
-  process.exit(failures === 0 ? 0 : 1);
+  finish(failures === 0 ? 0 : 1);
 }
 
 main().catch((err) => {
   console.error(`Audit crashed: ${err.message}`);
-  process.exit(1);
+  finish(1);
 });

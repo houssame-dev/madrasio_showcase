@@ -66,12 +66,12 @@ export default function Footer() {
       <div className="w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand Section (centered on mobile, left-aligned on desktop) */}
-          <div className="text-center md:text-left flex flex-col items-center md:items-start">
+          <div className="text-center md:text-start flex flex-col items-center md:items-start">
             <p className="text-2xl font-bold tracking-tight text-[#FFFFFF] flex items-center">
               <img
                 src="/logo-colored.png"
                 alt="Madrasio Logo"
-                className="w-12 h-12 object-contain inline-block mr-2"
+                className="w-12 h-12 object-contain inline-block me-2"
               />
               <span className="font-bold text-2xl tracking-tight">
                 <span className="text-[#14213D]">Ma</span>
@@ -94,7 +94,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex items-center justify-center w-10 h-10 rounded-md border border-[#E5E5E5]/20 hover:border-[#FCA311] hover:text-[#FCA311] transition-all"
+                  className="flex items-center justify-center w-10 h-10 min-h-[44px] min-w-[44px] rounded-md border border-[#E5E5E5]/20 hover:border-[#FCA311] hover:text-[#FCA311] transition-all"
                 >
                   <Icon aria-hidden="true" />
                 </a>
@@ -154,7 +154,7 @@ export default function Footer() {
         <div className="md:hidden w-full mt-8">
           <div className="border-b border-[#E5E5E5]/10 pb-6 mb-6">
             <p className="flex items-center font-bold text-[#FFFFFF]">
-              <FaCube className="text-[#FCA311] mr-3" aria-hidden="true" />
+              <FaCube className="text-[#FCA311] me-3" aria-hidden="true" />
               Quick Links
             </p>
             <ul className="flex flex-col space-y-3 text-sm text-[#E5E5E5] mt-4">
@@ -173,7 +173,7 @@ export default function Footer() {
           <div className="border-b border-[#E5E5E5]/10 pb-6 mb-6">
             <p className="flex items-center font-bold text-[#FFFFFF]">
               <FaShieldHalved
-                className="text-[#FCA311] mr-3"
+                className="text-[#FCA311] me-3"
                 aria-hidden="true"
               />
               Legal
@@ -193,7 +193,7 @@ export default function Footer() {
           </div>
           <div className="border-b border-[#E5E5E5]/10 pb-6 mb-6 last:border-b-0">
             <p className="flex items-center font-bold text-[#FFFFFF]">
-              <FaPhone className="text-[#FCA311] mr-3" aria-hidden="true" />
+              <FaPhone className="text-[#FCA311] me-3" aria-hidden="true" />
               Contact
             </p>
             <ul className="flex flex-col space-y-3 text-sm text-[#E5E5E5] mt-4">

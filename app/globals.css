@@ -39,4 +39,9 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+  /* High-visibility keyboard focus indicator (WCAG 2.4.7) for every
+     interactive element, including ones without per-component classes. */
+  :is(a, button, input, select, textarea, [role='button']):focus-visible {
+    @apply outline-none ring-2 ring-[#FCA311] ring-offset-2;
+  }
 }

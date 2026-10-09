@@ -43,7 +43,7 @@ export default function Hero() {
         <div className="absolute inset-0 z-0 pointer-events-none opacity-90 lg:opacity-100 ltr:scale-x-100 rtl:-scale-x-100 transition-transform duration-500">
           <span className="block sm:hidden absolute inset-0">
             <Image
-              src="/images/hero-bg-mobile.png"
+              src="/images/hero-bg-mobile.webp"
               alt="Hero Background Mobile"
               fill
               priority
@@ -52,7 +52,7 @@ export default function Hero() {
           </span>
           <span className="hidden sm:block lg:hidden absolute inset-0">
             <Image
-              src="/images/hero-bg-tablet.png"
+              src="/images/hero-bg-tablet.webp"
               alt="Hero Background Tablet"
               fill
               priority
@@ -61,7 +61,7 @@ export default function Hero() {
           </span>
           <span className="hidden lg:block absolute inset-0">
             <Image
-              src="/images/hero-bg-desktop.png"
+              src="/images/hero-bg-desktop.webp"
               alt="Hero Background Desktop"
               fill
               priority
@@ -69,7 +69,7 @@ export default function Hero() {
             />
           </span>
         </div>
-        <div className="relative z-10 w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-28 pb-12 lg:pt-36 lg:pb-20">
+        <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-28 pb-12 lg:pt-36 lg:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column Content */}
             <div className="lg:col-span-6 order-1">
@@ -99,7 +99,7 @@ export default function Hero() {
                   className="bg-[#FCA311] hover:bg-[#e0920f] text-[#14213D] font-bold px-0 py-3.5 rounded-xl shadow-md flex-1 flex justify-center items-center gap-2"
                 >
                   Book a Demo
-                  <FaArrowRight aria-hidden="true" />
+                  <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
                 </a>
                 <a
                   href="https://app.madrasio.com"
@@ -149,14 +149,14 @@ export default function Hero() {
                       src={src}
                       alt={`Parent testimonial portrait ${index + 1}`}
                       loading="lazy"
-                      className="w-10 h-10 rounded-full border-2 border-white -ml-2 first:ml-0 object-cover"
+                      className="w-10 h-10 rounded-full border-2 border-white -ms-2 first:ms-0 object-cover"
                     />
                   ))}
-                  <span className="w-10 h-10 rounded-full bg-blue-100 text-blue-900 text-xs font-bold flex items-center justify-center -ml-2 border-2 border-white">
+                  <span className="w-10 h-10 rounded-full bg-blue-100 text-blue-900 text-xs font-bold flex items-center justify-center -ms-2 border-2 border-white">
                     100+
                   </span>
                 </div>
-                <p className="text-sm text-[#14213D] font-medium text-center sm:text-left">
+                <p className="text-sm text-[#14213D] font-medium text-center sm:text-start">
                   Join <strong className="text-[#14213D]">100+ schools</strong>{' '}
                   building a brighter future with <span className="font-bold uppercase underline">Madrasio</span>.
                 </p>

@@ -65,11 +65,11 @@ export default function ValuePillars() {
           {pillars.map(({ title, description, Icon, iconBoxClassName }) => (
             <div
               key={title}
-              className="relative p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col items-start text-left overflow-hidden group"
+              className="relative p-6 sm:p-8 rounded-3xl bg-white border border-gray-100 shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col items-start text-start overflow-hidden group"
             >
               <div
                 aria-hidden="true"
-                className="absolute -bottom-10 -right-10 w-32 h-32 rounded-full bg-[#FCA311]/10 blur-2xl pointer-events-none"
+                className="absolute -bottom-10 -end-10 w-32 h-32 rounded-full bg-[#FCA311]/10 blur-2xl pointer-events-none"
               />
               <span
                 className={`p-3.5 rounded-2xl mb-6 flex items-center justify-center text-xl ${iconBoxClassName}`}

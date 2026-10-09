@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { FormEvent } from 'react';
 import {
   FaArrowRight,
@@ -15,6 +15,7 @@ import {
   FaMessage,
   FaPhone,
   FaRocket,
+  FaSpinner,
   FaUser,
   FaUsers,
 } from 'react-icons/fa6';
@@ -49,7 +50,7 @@ const FEATURES = [
 ];
 
 const inputClassName =
-  'bg-transparent border-none outline-none text-white w-full ml-3 placeholder-white/30 text-sm';
+  'bg-transparent border-none outline-none text-white w-full ms-3 placeholder-white/30 text-sm';
 
 const FRIENDLY_ERROR_MESSAGE =
   'Something went wrong. Please try again or contact us directly on WhatsApp.';
@@ -60,12 +61,14 @@ function FieldWrapper({
   icon,
   children,
   className = '',
+  error,
 }: {
   label: string;
   htmlFor: string;
   icon: React.ReactNode;
   children: React.ReactNode;
   className?: string;
+  error?: string;
 }) {
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
@@ -76,11 +79,19 @@ function FieldWrapper({
         {icon}
         {children}
       </div>
+      {error && (
+        <p role="alert" className="text-xs font-medium text-red-400">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
 
 const fieldIconClassName = 'text-white/50 text-sm shrink-0';
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const PLAN_SELECT_EVENT = 'madrasio:select-plan';
 
 export default function Contact() {
   const [fullName, setFullName] = useState('');
@@ -89,10 +100,52 @@ export default function Contact() {
   const [phone, setPhone] = useState('');
   const [schoolSize, setSchoolSize] = useState('');
   const [message, setMessage] = useState('');
+  const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
+
+  // Pre-select the plan chosen on a Pricing card ("Choose Plan" /
+  // "Start Free Month" / enterprise CTA dispatches this event).
+  useEffect(() => {
+    const onSelectPlan = (e: Event) => {
+      const plan = (e as CustomEvent<string>).detail;
+      if (typeof plan === 'string' && plan) {
+        setSelectedPlan(plan);
+        setIsSuccess(false);
+      }
+    };
+    window.addEventListener(PLAN_SELECT_EVENT, onSelectPlan);
+    return () => window.removeEventListener(PLAN_SELECT_EVENT, onSelectPlan);
+  }, []);
+
+  const clearFieldError = (key: string) =>
+    setFieldErrors((prev) => {
+      if (!(key in prev)) return prev;
+      const next = { ...prev };
+      delete next[key];
+      return next;
+    });
+
+  const validate = () => {
+    const errs: Record<string, string> = {};
+    if (!fullName.trim())
+      errs.fullName = 'Please enter the contact person’s full name.';
+    if (!schoolName.trim())
+      errs.schoolName = 'Please enter your school name.';
+    if (!email.trim()) errs.email = 'Please enter your email address.';
+    else if (!EMAIL_RE.test(email.trim()))
+      errs.email = 'Please enter a valid email address.';
+    const digitCount = (phone.match(/\d/g) || []).length;
+    if (!phone.trim()) errs.phone = 'Please enter your phone number.';
+    else if (digitCount < 8)
+      errs.phone = 'Phone number must contain at least 8 digits.';
+    if (!schoolSize)
+      errs.schoolSize = 'Please select your school student capacity.';
+    return errs;
+  };
 
   const resetForm = () => {
     setFullName('');
@@ -105,6 +158,9 @@ export default function Contact() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const errs = validate();
+    setFieldErrors(errs);
+    if (Object.keys(errs).length > 0) return;
     setIsSubmitting(true);
     setErrorMessage(null);
 
@@ -123,6 +179,7 @@ export default function Contact() {
           email,
           phone,
           schoolSize,
+          plan: selectedPlan ?? '',
           message,
         }),
       });
@@ -171,7 +228,7 @@ export default function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 mb-12 items-center">
               {FEATURES.map(({ title, subtext, Icon }) => (
-                <div key={title} className="flex-1 text-center sm:text-left">
+                <div key={title} className="flex-1 text-center sm:text-start">
                   <span className="inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white border border-[#14213D]/10 text-[#14213D] p-3 shadow-sm text-xl mb-3">
                     <Icon aria-hidden="true" />
                   </span>
@@ -195,14 +252,14 @@ export default function Contact() {
           {/* Right Column: Form Card */}
           <div className="bg-[#14213D] border border-[#14213D] shadow-2xl rounded-3xl p-6 sm:p-8 relative overflow-hidden">
             {isSuccess ? (
-              <div className="text-center py-10">
+              <div className="text-center py-10" aria-live="polite">
                 <FaCircleCheck
                   className="h-14 w-14 text-green-500 mx-auto mb-4"
                   aria-hidden="true"
                 />
                 <p className="text-lg font-bold text-white">
-                  Thank you! Your request has been received. Our team will
-                  contact you within 24 hours.
+                  Thank you! Our school onboarding team will contact you
+                  within 12 hours on WhatsApp/Email.
                 </p>
                 <button
                   type="button"
@@ -228,10 +285,31 @@ export default function Contact() {
                 </p>
 
                 <form onSubmit={handleSubmit}>
+                  <input
+                    type="hidden"
+                    name="plan"
+                    value={selectedPlan ?? ''}
+                  />
+                  {selectedPlan && (
+                    <div className="mb-5 flex items-center justify-between gap-3 rounded-xl border border-[#FCA311]/40 bg-[#FCA311]/10 px-4 py-3">
+                      <p className="text-sm font-semibold text-white">
+                        Selected plan:{' '}
+                        <span className="text-[#FCA311]">{selectedPlan}</span>
+                      </p>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedPlan(null)}
+                        className="text-xs font-bold text-white/60 hover:text-white transition-colors"
+                      >
+                        Clear
+                      </button>
+                    </div>
+                  )}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <FieldWrapper
                       label="Full Name"
                       htmlFor="fullName"
+                      error={fieldErrors.fullName}
                       icon={
                         <FaUser
                           className={fieldIconClassName}
@@ -245,7 +323,10 @@ export default function Contact() {
                         type="text"
                         required
                         value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
+                        onChange={(e) => {
+                          setFullName(e.target.value);
+                          clearFieldError('fullName');
+                        }}
                         placeholder="John Doe"
                         className={inputClassName}
                       />
@@ -254,6 +335,7 @@ export default function Contact() {
                     <FieldWrapper
                       label="School Name"
                       htmlFor="schoolName"
+                      error={fieldErrors.schoolName}
                       icon={
                         <FaBuilding
                           className={fieldIconClassName}
@@ -267,7 +349,10 @@ export default function Contact() {
                         type="text"
                         required
                         value={schoolName}
-                        onChange={(e) => setSchoolName(e.target.value)}
+                        onChange={(e) => {
+                          setSchoolName(e.target.value);
+                          clearFieldError('schoolName');
+                        }}
                         placeholder="International Academy"
                         className={inputClassName}
                       />
@@ -276,6 +361,7 @@ export default function Contact() {
                     <FieldWrapper
                       label="Email Address"
                       htmlFor="email"
+                      error={fieldErrors.email}
                       icon={
                         <FaEnvelope
                           className={fieldIconClassName}
@@ -289,7 +375,10 @@ export default function Contact() {
                         type="email"
                         required
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        onChange={(e) => {
+                          setEmail(e.target.value);
+                          clearFieldError('email');
+                        }}
                         placeholder="you@school.com"
                         className={inputClassName}
                       />
@@ -298,6 +387,7 @@ export default function Contact() {
                     <FieldWrapper
                       label="Phone / WhatsApp"
                       htmlFor="phone"
+                      error={fieldErrors.phone}
                       icon={
                         <FaPhone
                           className={fieldIconClassName}
@@ -311,7 +401,10 @@ export default function Contact() {
                         type="tel"
                         required
                         value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        onChange={(e) => {
+                          setPhone(e.target.value);
+                          clearFieldError('phone');
+                        }}
                         placeholder="+212 6 00 00 00 00"
                         className={inputClassName}
                       />
@@ -320,6 +413,7 @@ export default function Contact() {
                     <FieldWrapper
                       label="School Student Capacity"
                       htmlFor="schoolSize"
+                      error={fieldErrors.schoolSize}
                       icon={
                         <FaUsers
                           className={fieldIconClassName}
@@ -332,8 +426,11 @@ export default function Contact() {
                         name="schoolSize"
                         required
                         value={schoolSize}
-                        onChange={(e) => setSchoolSize(e.target.value)}
-                        className={`${inputClassName} appearance-none cursor-pointer pr-6 [&>option]:bg-[#14213D] [&>option]:text-white ${
+                        onChange={(e) => {
+                          setSchoolSize(e.target.value);
+                          clearFieldError('schoolSize');
+                        }}
+                        className={`${inputClassName} appearance-none cursor-pointer pe-6 [&>option]:bg-[#14213D] [&>option]:text-white ${
                           schoolSize ? 'text-white' : 'text-white/30'
                         }`}
                       >
@@ -347,7 +444,7 @@ export default function Contact() {
                         ))}
                       </select>
                       <FaChevronDown
-                        className="absolute right-4 text-white/40 text-xs pointer-events-none"
+                        className="absolute end-4 text-white/40 text-xs pointer-events-none"
                         aria-hidden="true"
                       />
                     </FieldWrapper>
@@ -390,11 +487,17 @@ export default function Contact() {
                     className="w-full mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_4px_14px_rgba(252,163,17,0.4)] disabled:opacity-70"
                   >
                     {isSubmitting ? (
-                      'Sending request...'
+                      <span className="inline-flex items-center gap-2">
+                        <FaSpinner
+                          className="animate-spin"
+                          aria-hidden="true"
+                        />
+                        Sending request...
+                      </span>
                     ) : (
                       <>
                         Book a Demo
-                        <FaArrowRight aria-hidden="true" />
+                        <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
                       </>
                     )}
                   </button>

@@ -17,6 +17,25 @@ const TARGET = process.argv[2] || 'https://www.madrasio.com/';
 const MAX_HOPS = 10;
 const TIMEOUT_MS = 20000;
 
+// See audit-meta.js: manual unref'd timers + Connection: close avoid a
+// Windows/undici abort crash on process exit.
+function fetchWithTimeout(url, options = {}) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+  if (typeof timer.unref === 'function') timer.unref();
+  return fetch(url, {
+    ...options,
+    signal: controller.signal,
+    headers: { Connection: 'close', ...(options.headers || {}) },
+  }).finally(() => clearTimeout(timer));
+}
+
+function finish(code) {
+  process.exitCode = code;
+  const killer = setTimeout(() => process.exit(code), 2000);
+  if (typeof killer.unref === 'function') killer.unref();
+}
+
 const USER_AGENTS = [
   {
     name: 'Chrome Desktop',
@@ -65,10 +84,9 @@ async function fetchWithTrace(startUrl, userAgent) {
 
     let res;
     try {
-      res = await fetch(url, {
+      res = await fetchWithTimeout(url, {
         method: 'GET',
         redirect: 'manual',
-        signal: AbortSignal.timeout(TIMEOUT_MS),
         headers: { 'User-Agent': userAgent, Accept: 'text/html' },
       });
     } catch (err) {
@@ -172,10 +190,10 @@ async function main() {
       ? `All ${USER_AGENTS.length} probes passed.`
       : `${failures}/${USER_AGENTS.length} probes FAILED.`,
   );
-  process.exit(failures === 0 ? 0 : 1);
+  finish(failures === 0 ? 0 : 1);
 }
 
 main().catch((err) => {
   console.error(`Audit crashed: ${err.message}`);
-  process.exit(1);
+  finish(1);
 });

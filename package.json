@@ -9,7 +9,12 @@
     "lint": "next lint",
     "audit:http": "node scripts/audit-http.js",
     "audit:seo": "node scripts/audit-seo.js",
-    "audit:meta": "node scripts/audit-meta.js"
+    "audit:meta": "node scripts/audit-meta.js",
+    "audit:perf": "node scripts/audit-perf.js",
+    "audit:flows": "node scripts/audit-flows.js",
+    "audit:rtl": "node scripts/audit-rtl.js",
+    "audit:a11y": "node scripts/audit-a11y.js",
+    "audit:all": "node scripts/audit-all.js"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",

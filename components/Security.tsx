@@ -62,7 +62,7 @@ export default function Security() {
           integrity.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch w-full text-left">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch w-full text-start">
           {cards.map(
             ({
               number,
@@ -74,7 +74,7 @@ export default function Security() {
             }) => (
               <div
                 key={number}
-                className="relative p-6 sm:p-8 rounded-3xl bg-white border border-gray-100/80 shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between text-left overflow-hidden group"
+                className="relative p-6 sm:p-8 rounded-3xl bg-white border border-gray-100/80 shadow-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between text-start overflow-hidden group"
               >
                 <div>
                   <span
@@ -84,7 +84,7 @@ export default function Security() {
                   </span>
                   <span
                     aria-hidden="true"
-                    className="absolute top-6 right-8 text-2xl font-bold text-gray-300 group-hover:text-[#FCA311] transition-colors"
+                    className="absolute top-6 end-8 text-2xl font-bold text-gray-300 group-hover:text-[#FCA311] transition-colors"
                   >
                     {number}
                   </span>

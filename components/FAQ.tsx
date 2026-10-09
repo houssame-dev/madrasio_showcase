@@ -92,13 +92,13 @@ export default function FAQ() {
               return (
                 <div
                   key={question}
-                  className="bg-[#14213D]/60 backdrop-blur-md border border-[#FCA311]/20 rounded-2xl p-4 sm:p-6 mb-4 hover:border-[#FCA311]/50 transition-colors shadow-lg w-full text-left flex flex-col"
+                  className="bg-[#14213D]/60 backdrop-blur-md border border-[#FCA311]/20 rounded-2xl p-4 sm:p-6 mb-4 hover:border-[#FCA311]/50 transition-colors shadow-lg w-full text-start flex flex-col"
                 >
                   <button
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
-                    className="flex items-center justify-between gap-4 w-full cursor-pointer group text-left"
+                    className="flex items-center justify-between gap-4 w-full cursor-pointer group text-start"
                   >
                     <span className="flex items-center gap-4">
                       <span className="w-10 h-10 shrink-0 rounded-xl bg-[#FCA311]/10 text-[#FCA311] flex items-center justify-center text-lg">
@@ -116,7 +116,7 @@ export default function FAQ() {
                     />
                   </button>
                   {isOpen && (
-                    <p className="text-[#E5E5E5] text-sm sm:text-base leading-relaxed mt-4 pl-14">
+                    <p className="text-[#E5E5E5] text-sm sm:text-base leading-relaxed mt-4 ps-14">
                       {answer}
                     </p>
                   )}

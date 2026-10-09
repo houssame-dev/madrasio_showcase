@@ -133,9 +133,20 @@ export default function Navbar() {
     return () => { document.body.style.overflow = 'unset'; };
   }, [isMenuOpen]);
 
+  // Never trap keyboard focus: Escape closes the mobile drawer and
+  // focus stays in the normal tab order (no focus lock is applied).
+  useEffect(() => {
+    if (!isMenuOpen) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setIsMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [isMenuOpen]);
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 transition-all duration-300 ${
+      className={`fixed top-0 start-0 end-0 transition-all duration-300 ${
         isMenuOpen ? 'z-[999]' : 'z-50'
       } ${
         navbarSolid
@@ -184,7 +195,7 @@ export default function Navbar() {
           <Select onValueChange={handleLanguageChange} value={currentLang}>
             <SelectTrigger
               aria-label="Select language"
-              className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer"
+              className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer min-h-[44px]"
             >
               <SelectValue placeholder="EN">
                 {(value: string | null) => {
@@ -240,7 +251,7 @@ export default function Navbar() {
           aria-expanded={isMenuOpen}
           aria-controls="mobile-menu"
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className={`inline-flex items-center justify-center p-2 rounded-md md:hidden transition-colors hover:text-[#FCA311] ${
+          className={`inline-flex items-center justify-center p-2 rounded-md md:hidden min-h-[44px] min-w-[44px] transition-colors hover:text-[#FCA311] ${
             isMenuOpen
               ? 'text-white'
               : isScrolled
@@ -287,7 +298,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-[#E5E5E5] hover:text-[#FCA311] transition-colors p-2 text-xl"
+                  className="text-[#E5E5E5] hover:text-[#FCA311] transition-colors p-2 text-xl min-h-[44px] min-w-[44px] inline-flex items-center justify-center"
                 >
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </a>
@@ -307,7 +318,7 @@ export default function Navbar() {
                   }}
                   aria-expanded={isLangOpen}
                   aria-label="Select language"
-                  className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer"
+                  className="inline-flex items-center justify-between gap-2 px-4 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer min-h-[44px]"
                 >
                   <span className="flex items-center gap-1.5">
                     {(() => {
@@ -331,7 +342,7 @@ export default function Navbar() {
                   />
                 </button>
                 {isLangOpen && (
-                  <ul className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 bg-[#14213D] border border-[#FCA311]/40 rounded-2xl p-2 shadow-2xl text-white z-[999] max-h-60 overflow-y-auto flex flex-col gap-0.5">
+                  <ul className="absolute bottom-full mb-2 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 w-48 bg-[#14213D] border border-[#FCA311]/40 rounded-2xl p-2 shadow-2xl text-white z-[999] max-h-60 overflow-y-auto flex flex-col gap-0.5">
                     {languages.map((lang) => {
                       const LangFlag = lang.Flag;
                       const isActive = lang.code === currentLang;

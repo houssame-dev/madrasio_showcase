@@ -50,6 +50,13 @@ const plans: Plan[] = [
   },
 ];
 
+export const PLAN_SELECT_EVENT = 'madrasio:select-plan';
+
+function selectPlanAndScroll(plan: string) {
+  if (typeof window !== 'undefined') {
+    window.dispatchEvent(new CustomEvent(PLAN_SELECT_EVENT, { detail: plan }));
+  }
+}
 
 export default function Pricing() {
   const [billingAnnually, setBillingAnnually] = useState(false);
@@ -90,7 +97,7 @@ export default function Pricing() {
             <span
               aria-hidden="true"
               className={`absolute top-1 h-6 w-6 rounded-full bg-white transition-all duration-300 ${
-                billingAnnually ? 'left-7' : 'left-1'
+                billingAnnually ? 'start-7' : 'start-1'
               }`}
             />
           </button>
@@ -107,7 +114,7 @@ export default function Pricing() {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 mt-12 text-left">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8 mt-12 text-start">
           {plans.map(
             ({
               name,
@@ -129,7 +136,7 @@ export default function Pricing() {
                   }
                 >
                   {highlighted && (
-                    <span className="absolute top-0 left-1/2 -translate-x-1/2 bg-[#FCA311] text-white text-xs font-bold px-4 py-1 rounded-b-lg whitespace-nowrap">
+                    <span className="absolute top-0 start-1/2 -translate-x-1/2 rtl:translate-x-1/2 bg-[#FCA311] text-white text-xs font-bold px-4 py-1 rounded-b-lg whitespace-nowrap">
                       👑 MOST POPULAR
                     </span>
                   )}
@@ -173,6 +180,7 @@ export default function Pricing() {
                   </ul>
                   <a
                     href="#contact"
+                    onClick={() => selectPlanAndScroll(name)}
                     className={
                       highlighted
                         ? 'w-full bg-[#14213D] text-white font-bold py-3 rounded-xl hover:bg-[#14213D]/80 transition-colors mt-6 flex items-center justify-center gap-2'
@@ -180,7 +188,7 @@ export default function Pricing() {
                     }
                   >
                     {highlighted ? 'Start Free Month' : 'Choose Plan'}
-                    <FaArrowRight aria-hidden="true" />
+                    <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
                   </a>
                 </div>
               );
@@ -189,7 +197,7 @@ export default function Pricing() {
         </div>
 
         {/* Enterprise Banner */}
-        <div className="bg-[#14213D] text-white rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 text-left">
+        <div className="bg-[#14213D] text-white rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 text-start">
           <div className="flex items-center gap-4">
             <span className="hidden sm:inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/10 text-[#FCA311] text-xl shrink-0">
               <FaUsers aria-hidden="true" />
@@ -203,10 +211,11 @@ export default function Pricing() {
           </div>
           <a
             href="#contact"
+            onClick={() => selectPlanAndScroll('Enterprise')}
             className="bg-[#FCA311] text-[#14213D] font-bold py-3 px-6 rounded-xl whitespace-nowrap flex items-center gap-2 hover:bg-white transition-colors"
           >
             Contact Us for Custom Pricing
-            <FaArrowRight aria-hidden="true" />
+            <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
           </a>
         </div>
 
