@@ -78,16 +78,16 @@ export default function Hero() {
             </div>
 
             {/* Dashboard Mockup */}
-            <div className="relative w-full max-w-5xl mx-auto rounded-2xl shadow-2xl overflow-hidden border border-gray-200/20 bg-white/5 backdrop-blur-sm mt-40">
+
               <Image
                 src="/images/dashboard-mockup.png"
                 alt="Madrasio dashboard preview"
                 width={1600}
                 height={900}
-                className="w-full h-auto object-cover aspect-video"
+                className="w-full h-auto object-cover aspect-video mt-40"
                 priority
               />
-            </div>
+           
           </div>
         </div>
       </section>
