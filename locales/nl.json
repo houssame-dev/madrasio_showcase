@@ -22,7 +22,7 @@
     "ctaSecondary": "Inloggen"
   },
   "globalEducation": {
-    "badge": "🎓 GEBOUWD VOOR",
+    "badge": "GEBOUWD VOOR",
     "titleA": "Gebouwd voor",
     "titleB": "wereldwijd onderwijs",
     "subtitle": "Een flexibel schoolbeheerplatform ontworpen voor verschillende talen, curricula en niveaus — overal ter wereld.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "🎓 GEBOUWD VOOR MODERNE SCHOLEN",
+    "badge": "GEBOUWD VOOR MODERNE SCHOLEN",
     "titleA": "Vier pijlers voor",
     "titleB": "schoolbeheer",
     "subtitle": "Alles wat jouw privéschool nodig heeft om onderwijs, financiën, communicatie en administratie te stroomlijnen.",
@@ -102,7 +102,7 @@
     ]
   },
   "security": {
-    "badge": "🛡️ BEVEILIGINGSFUNDAMENT",
+    "badge": "BEVEILIGINGSFUNDAMENT",
     "titleA": "Architectuur en beveiliging",
     "titleB": "op enterpriseniveau",
     "subtitle": "Gebouwd op zero-trust-principes. De gegevens van jouw school zijn strikt geïsoleerd, versleuteld en bewaard met onveranderlijke historische integriteit.",
@@ -174,7 +174,7 @@
     "storageGB": "{n} GB veilige opslag"
   },
   "faq": {
-    "badge": "💬 VRAGEN?",
+    "badge": "VRAGEN?",
     "titleA": "Veelgestelde",
     "titleB": "vragen",
     "subtitle": "Vind snelle antwoorden op de meest gestelde vragen over Madrasio, van gegevensbeveiliging tot installatie en support.",

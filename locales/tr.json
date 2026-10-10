@@ -22,7 +22,7 @@
     "ctaSecondary": "Giriş Yap"
   },
   "globalEducation": {
-    "badge": "🎓 KÜRESEL EĞİTİM İÇİN",
+    "badge": "KÜRESEL EĞİTİM İÇİN",
     "titleA": "Küresel Eğitim İçin",
     "titleB": "Tasarlandı",
     "subtitle": "Farklı diller, müfredatlar ve sınıf seviyeleri için tasarlanmış esnek bir okul yönetim platformu — dünyanın her yerinde.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "🎓 MODERN OKULLAR İÇİN",
+    "badge": "MODERN OKULLAR İÇİN",
     "titleA": "Okul Operasyonları İçin",
     "titleB": "Dört Temel Direk",
     "subtitle": "Akademik işleri, finansmanı, iletişimi ve yönetimi kolaylaştırmak için özel okulunuzun ihtiyacı olan her şey.",
@@ -102,7 +102,7 @@
     ]
   },
   "security": {
-    "badge": "🛡️ GÜVENLİK TEMELİ",
+    "badge": "GÜVENLİK TEMELİ",
     "titleA": "Kurumsal Düzeyde",
     "titleB": "Mimari ve Güvenlik",
     "subtitle": "Sıfır güven ilkeleriyle inşa edildi. Okulunuzun verileri kesinlikle izole edilir, şifrelenir ve değişmez tarihsel bütünlükle korunur.",
@@ -174,7 +174,7 @@
     "storageGB": "{n} GB Güvenli Depolama"
   },
   "faq": {
-    "badge": "💬 SORULARINIZ MI VAR?",
+    "badge": "SORULARINIZ MI VAR?",
     "titleA": "Sık Sorulan",
     "titleB": "Sorular",
     "subtitle": "Veri güvenliğinden kuruluma ve desteğe, Madrasio hakkında en sık sorulan soruların hızlı yanıtlarını bulun.",

@@ -208,7 +208,7 @@ export default function Contact() {
           {/* Left Column: Text & Value Props */}
           <div>
             <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap bg-[#FCA311] text-[#14213D] text-xs font-black tracking-widest uppercase mb-6 shadow-md">
-              <IoPeopleSharp size={18} />
+              <IoPeopleSharp size={20} />
               <span>{t('contact.badge')}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#14213D] tracking-tight mb-6 leading-tight">

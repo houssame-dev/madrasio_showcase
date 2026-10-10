@@ -22,7 +22,7 @@
     "ctaSecondary": "Accedi"
   },
   "globalEducation": {
-    "badge": "🎓 PENSATO PER",
+    "badge": "PENSATO PER",
     "titleA": "Pensato per",
     "titleB": "l'istruzione globale",
     "subtitle": "Una piattaforma flessibile di gestione scolastica progettata per lingue, curricoli e livelli di istruzione diversi — ovunque nel mondo.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "🎓 PENSATO PER LE SCUOLE MODERNE",
+    "badge": "PENSATO PER LE SCUOLE MODERNE",
     "titleA": "Quattro pilastri per",
     "titleB": "la gestione scolastica",
     "subtitle": "Tutto ciò di cui la tua scuola privata ha bisogno per ottimizzare didattica, finanze, comunicazione e amministrazione.",
@@ -102,7 +102,7 @@
     ]
   },
   "security": {
-    "badge": "🛡️ FONDAMENTA DI SICUREZZA",
+    "badge": "FONDAMENTA DI SICUREZZA",
     "titleA": "Architettura e sicurezza",
     "titleB": "di livello enterprise",
     "subtitle": "Costruita su principi zero-trust. I dati della tua scuola sono rigorosamente isolati, crittografati e conservati con integrità storica immutabile.",
@@ -174,7 +174,7 @@
     "storageGB": "{n} GB di archiviazione sicura"
   },
   "faq": {
-    "badge": "💬 DOMANDE?",
+    "badge": "DOMANDE?",
     "titleA": "Domande",
     "titleB": "frequenti",
     "subtitle": "Trova risposte rapide alle domande più comuni su Madrasio, dalla sicurezza dei dati alla configurazione e al supporto.",

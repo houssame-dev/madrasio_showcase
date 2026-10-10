@@ -6,6 +6,8 @@ import {
   FaPersonChalkboard,
   FaUserShield,
 } from 'react-icons/fa6';
+import { GrStakeholder } from "react-icons/gr";
+
 
 import { useLanguage } from '@/components/LanguageProvider';
 
@@ -20,7 +22,8 @@ export default function Roles() {
     <section id="roles" className="w-full bg-[#000000] overflow-hidden">
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap bg-[#FCA311]/15 border border-[#FCA311]/40 text-[#FCA311] text-xs font-black tracking-widest uppercase mb-4 shadow-[0_0_15px_rgba(252,163,17,0.2)]">
-          {t('roles.badge')}
+          <GrStakeholder size={20} />
+          <span>{t('roles.badge')}</span>
         </div>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-4">
           {t('roles.titleA')}{' '}

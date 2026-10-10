@@ -22,7 +22,7 @@
     "ctaSecondary": "Sign In"
   },
   "globalEducation": {
-    "badge": "🎓 BUILT FOR",
+    "badge": "BUILT FOR",
     "titleA": "Built for",
     "titleB": "Global Education",
     "subtitle": "A flexible school management platform designed for different languages, curricula, and grade levels — anywhere in the world.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "🎓 BUILT FOR MODERN SCHOOLS",
+    "badge": "BUILT FOR MODERN SCHOOLS",
     "titleA": "Four Pillars for",
     "titleB": "School Operations",
     "subtitle": "Everything your private school needs to streamline academics, finance, communication, and administration.",
@@ -102,7 +102,7 @@
     ]
   },
   "security": {
-    "badge": "🛡️ SECURITY FOUNDATION",
+    "badge": "SECURITY FOUNDATION",
     "titleA": "Enterprise-Grade",
     "titleB": "Architecture & Security",
     "subtitle": "Built on zero-trust principles. Your school's data is strictly isolated, encrypted, and preserved with immutable historical integrity.",
@@ -174,7 +174,7 @@
     "storageGB": "{n} GB Secure Storage"
   },
   "faq": {
-    "badge": "💬 QUESTIONS ?",
+    "badge": "QUESTIONS ?",
     "titleA": "Frequently Asked",
     "titleB": "Questions",
     "subtitle": "Find quick answers to the most common questions about Madrasio, from data security to setup and support.",

@@ -11,6 +11,7 @@ import {
   FaShieldHalved,
   FaUsers,
 } from 'react-icons/fa6';
+import { RiQuestionnaireFill } from "react-icons/ri";
 
 import { useLanguage } from '@/components/LanguageProvider';
 
@@ -36,7 +37,8 @@ export default function FAQ() {
           {/* Left Column: Header */}
           <div className="lg:col-span-5">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap bg-[#FCA311]/15 border border-[#FCA311]/40 text-[#FCA311] text-xs font-black tracking-widest uppercase mb-6">
-              {t('faq.badge')}
+              <RiQuestionnaireFill size={20} />
+              <span>{t('faq.badge')}</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
               {t('faq.titleA')}{' '}
