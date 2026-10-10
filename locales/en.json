@@ -14,7 +14,7 @@
     "selectLanguage": "Select language"
   },
   "hero": {
-    "badge": "— Built for Modern Private Schools —",
+    "badge": "School Management System",
     "title": "Everything Your Private School Needs to Run",
     "titleHighlight": "Smoothly EveryDay",
     "subtitle": "Effortless control for directors, simplified daily tasks for teachers, and real-time updates that keep parents connected and informed — all in one powerful platform.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "BUILT FOR MODERN SCHOOLS",
+    "badge": "FOR MODERN SCHOOLS",
     "titleA": "Four Pillars for",
     "titleB": "School Operations",
     "subtitle": "Everything your private school needs to streamline academics, finance, communication, and administration.",
@@ -67,7 +67,7 @@
     ]
   },
   "roles": {
-    "badge": "DESIGNED FOR EVERY STAKEHOLDER",
+    "badge": "3 ROLES",
     "titleA": "Tailored Experiences for",
     "titleB": "Every Role",
     "subtitle": "Purpose-built workspaces that give administrators, educators, and families exactly what they need.",
@@ -292,7 +292,7 @@
     "whatsapp": "Chat with Madrasio on WhatsApp"
   },
   "pricingCalculator": {
-    "badge": "SIMPLE & TRANSPARENT PRICING",
+    "badge": "SIMPLE PRICING",
     "subtitle": "Whether your school has 150 or 2,000 students, everyone gets access to the same powerful platform.",
     "monthly": "Monthly",
     "annually": "Annually",

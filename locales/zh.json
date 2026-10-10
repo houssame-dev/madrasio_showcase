@@ -14,7 +14,7 @@
     "selectLanguage": "选择语言"
   },
   "hero": {
-    "badge": "— 专为现代私立学校打造 —",
+    "badge": "学校管理系统",
     "title": "贵校顺畅运转所需的一切",
     "titleHighlight": "每天都轻松搞定",
     "subtitle": "校长轻松掌控全局，教师日常工作大幅简化，实时动态让家长随时了解、紧密相连——尽在一个强大的平台。",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "为现代学校打造",
+    "badge": "面向现代学校",
     "titleA": "学校运营的",
     "titleB": "四大支柱",
     "subtitle": "贵校简化教学、财务、沟通和管理所需的一切。",
@@ -67,7 +67,7 @@
     ]
   },
   "roles": {
-    "badge": "为每一位参与者设计",
+    "badge": "3 个角色",
     "titleA": "为每个角色",
     "titleB": "量身定制",
     "subtitle": "专用工作空间，为管理者、教育工作者和家庭精准提供所需功能。",
@@ -292,7 +292,7 @@
     "whatsapp": "在 WhatsApp 上联系 Madrasio"
   },
   "pricingCalculator": {
-    "badge": "简单透明定价",
+    "badge": "简单定价",
     "titleA": "一个价格。",
     "titleB": "所有功能。",
     "titleC": "所有学校。",

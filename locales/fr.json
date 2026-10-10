@@ -14,7 +14,7 @@
     "selectLanguage": "Choisir la langue"
   },
   "hero": {
-    "badge": "— Conçu pour les écoles privées modernes —",
+    "badge": "Système de gestion scolaire",
     "title": "Tout ce dont votre école privée a besoin pour fonctionner",
     "titleHighlight": "En Douceur Chaque Jour",
     "subtitle": "Un contrôle sans effort pour les directeurs, des tâches quotidiennes simplifiées pour les enseignants, et des mises à jour en temps réel qui tiennent les parents connectés et informés — le tout dans une seule plateforme puissante.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "CONÇU POUR LES ÉCOLES MODERNES",
+    "badge": "POUR ÉCOLES MODERNES",
     "titleA": "Quatre piliers pour",
     "titleB": "vos opérations scolaires",
     "subtitle": "Tout ce dont votre école privée a besoin pour rationaliser la pédagogie, les finances, la communication et l'administration.",
@@ -67,7 +67,7 @@
     ]
   },
   "roles": {
-    "badge": "CONÇU POUR CHAQUE ACTEUR",
+    "badge": "3 RÔLES",
     "titleA": "Des expériences sur mesure pour",
     "titleB": "chaque rôle",
     "subtitle": "Des espaces de travail conçus pour donner aux administrateurs, aux enseignants et aux familles exactement ce dont ils ont besoin.",
@@ -292,7 +292,7 @@
     "whatsapp": "Discuter avec Madrasio sur WhatsApp"
   },
   "pricingCalculator": {
-    "badge": "TARIFICATION SIMPLE ET TRANSPARENTE",
+    "badge": "TARIFICATION SIMPLE",
     "subtitle": "Que votre école compte 150 ou 2 000 élèves, tous accèdent à la même plateforme puissante.",
     "monthly": "Mensuel",
     "annually": "Annuel",

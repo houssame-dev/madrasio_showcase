@@ -14,7 +14,7 @@
     "selectLanguage": "Seleccionar idioma"
   },
   "hero": {
-    "badge": "— Diseñado para escuelas privadas modernas —",
+    "badge": "Sistema de gestión escolar",
     "title": "Todo lo que tu escuela privada necesita para funcionar",
     "titleHighlight": "con fluidez cada día",
     "subtitle": "Control sin esfuerzo para directores, tareas diarias simplificadas para docentes y actualizaciones en tiempo real que mantienen a las familias conectadas e informadas, todo en una plataforma potente.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "HECHO PARA ESCUELAS MODERNAS",
+    "badge": "PARA ESCUELAS MODERNAS",
     "titleA": "Cuatro pilares para",
     "titleB": "la gestión escolar",
     "subtitle": "Todo lo que tu escuela privada necesita para optimizar lo académico, las finanzas, la comunicación y la administración.",
@@ -67,7 +67,7 @@
     ]
   },
   "roles": {
-    "badge": "DISEÑADO PARA CADA ACTOR",
+    "badge": "3 ROLES",
     "titleA": "Experiencias a medida para",
     "titleB": "cada rol",
     "subtitle": "Espacios de trabajo diseñados para dar a la administración, al profesorado y a las familias exactamente lo que necesitan.",
@@ -292,7 +292,7 @@
     "whatsapp": "Chatear con Madrasio en WhatsApp"
   },
   "pricingCalculator": {
-    "badge": "PRECIOS SENCILLOS Y TRANSPARENTES",
+    "badge": "PRECIOS SENCILLOS",
     "titleA": "Un precio único.",
     "titleB": "Todas las funciones.",
     "titleC": "Todas las escuelas.",

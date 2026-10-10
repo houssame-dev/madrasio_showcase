@@ -14,7 +14,7 @@
     "selectLanguage": "Sprache wählen"
   },
   "hero": {
-    "badge": "— Gemacht für moderne Privatschulen —",
+    "badge": "Schulverwaltungssystem",
     "title": "Alles, was Ihre Privatschule für einen reibungslosen Betrieb braucht",
     "titleHighlight": "an jedem einzelnen Tag",
     "subtitle": "Mühelose Steuerung für Schulleitungen, vereinfachte Alltagsaufgaben für Lehrkräfte und Echtzeit-Updates, die Eltern verbunden und informiert halten — alles in einer leistungsstarken Plattform.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "GEMACHT FÜR MODERNE SCHULEN",
+    "badge": "FÜR MODERNE SCHULEN",
     "titleA": "Vier Säulen für",
     "titleB": "den Schulbetrieb",
     "subtitle": "Alles, was Ihre Privatschule braucht, um Unterricht, Finanzen, Kommunikation und Verwaltung zu optimieren.",
@@ -67,7 +67,7 @@
     ]
   },
   "roles": {
-    "badge": "FÜR JEDE ZIELGRUPPE GEMACHT",
+    "badge": "3 ROLLEN",
     "titleA": "Maßgeschneiderte Erlebnisse für",
     "titleB": "jede Rolle",
     "subtitle": "Zweckgebaute Arbeitsbereiche, die Verwaltung, Lehrkräften und Familien genau das geben, was sie brauchen.",
@@ -292,7 +292,7 @@
     "whatsapp": "Mit Madrasio auf WhatsApp chatten"
   },
   "pricingCalculator": {
-    "badge": "EINFACHE & TRANSPARENTE PREISE",
+    "badge": "EINFACHE PREISE",
     "titleA": "Ein Preis.",
     "titleB": "Alle Funktionen.",
     "titleC": "Alle Schulen.",

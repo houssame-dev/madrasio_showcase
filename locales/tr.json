@@ -14,7 +14,7 @@
     "selectLanguage": "Dil seçin"
   },
   "hero": {
-    "badge": "— Modern Özel Okullar İçin Tasarlandı —",
+    "badge": "Okul Yönetim Sistemi",
     "title": "Özel okulunuzun sorunsuz işlemesi için gereken her şey",
     "titleHighlight": "Her Gün Sorunsuzca",
     "subtitle": "Müdürler için zahmetsiz kontrol, öğretmenler için basitleştirilmiş günlük görevler ve velileri bağlı ve bilgili tutan gerçek zamanlı güncellemeler — hepsi tek güçlü platformda.",
@@ -67,7 +67,7 @@
     ]
   },
   "roles": {
-    "badge": "HER PAYDAŞ İÇİN TASARLANDI",
+    "badge": "3 ROL",
     "titleA": "Her Role Özel",
     "titleB": "Deneyimler",
     "subtitle": "Yöneticilere, eğitimcilere ve ailelere tam olarak ihtiyaç duydukları şeyi veren amaca yönelik çalışma alanları.",
@@ -292,7 +292,7 @@
     "whatsapp": "WhatsApp'ta Madrasio ile sohbet edin"
   },
   "pricingCalculator": {
-    "badge": "BASİT VE ŞEFFAF FİYATLAR",
+    "badge": "BASİT FİYATLAR",
     "titleA": "Tek Fiyat.",
     "titleB": "Tüm Özellikler.",
     "titleC": "Tüm Okullar.",

@@ -14,7 +14,7 @@
     "selectLanguage": "Taal selecteren"
   },
   "hero": {
-    "badge": "— Gebouwd voor moderne privéscholen —",
+    "badge": "Schoolbeheersysteem",
     "title": "Alles wat jouw privéschool nodig heeft om te draaien",
     "titleHighlight": "Vlot Elke Dag",
     "subtitle": "Moeiteloze controle voor directeuren, vereenvoudigde dagtaken voor docenten en realtime updates die ouders verbonden en geïnformeerd houden — allemaal in één krachtig platform.",
@@ -43,7 +43,7 @@
     ]
   },
   "pillars": {
-    "badge": "GEBOUWD VOOR MODERNE SCHOLEN",
+    "badge": "VOOR MODERNE SCHOLEN",
     "titleA": "Vier pijlers voor",
     "titleB": "schoolbeheer",
     "subtitle": "Alles wat jouw privéschool nodig heeft om onderwijs, financiën, communicatie en administratie te stroomlijnen.",
@@ -67,7 +67,7 @@
     ]
   },
   "roles": {
-    "badge": "ONTWORPEN VOOR ELKE BELANGHEBBENDE",
+    "badge": "3 ROLLEN",
     "titleA": "Ervaringen op maat voor",
     "titleB": "elke rol",
     "subtitle": "Doelgerichte werkruimtes die beheerders, docenten en gezinnen precies geven wat ze nodig hebben.",
@@ -292,7 +292,7 @@
     "whatsapp": "Chat met Madrasio op WhatsApp"
   },
   "pricingCalculator": {
-    "badge": "EENVOUDIGE & TRANSPARANTE PRIJZEN",
+    "badge": "EENVOUDIGE PRIJZEN",
     "titleA": "Eén prijs.",
     "titleB": "Alle functies.",
     "titleC": "Alle scholen.",
