@@ -18,7 +18,7 @@ export default function GlobalEducation() {
 
       {/* Section Header & Feature Cards */}
       <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 text-center py-16 lg:py-24">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#FCA311]/30 bg-[#14213D] text-[#FCA311] text-xs font-semibold tracking-widest uppercase mb-6">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap border border-[#FCA311]/30 bg-[#14213D] text-[#FCA311] text-xs font-semibold tracking-widest uppercase mb-6">
           {t('globalEducation.badge')}
         </div>
         <h2 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">

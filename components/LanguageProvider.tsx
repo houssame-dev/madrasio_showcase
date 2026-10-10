@@ -59,6 +59,11 @@ const LanguageContext = createContext<LanguageContextValue>({
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(DEFAULT_LOCALE);
+  // Becomes true only after the mount effect has resolved the initial
+  // locale. Rendering is intentionally NOT gated on it (the server HTML
+  // and the first client render must stay identical); it gates the
+  // DOM/storage writes below instead.
+  const [mounted, setMounted] = useState(false);
 
   // Resolve the initial locale once, client-side only (effects never run
   // on the server, so the SSR HTML always matches the first client render
@@ -68,9 +73,10 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   //   3. 'en' fallback for anything unsupported.
   useEffect(() => {
     try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved && isLocale(saved)) {
-        setLocaleState(saved);
+      const savedLang = window.localStorage.getItem(STORAGE_KEY);
+      if (savedLang && isLocale(savedLang)) {
+        setLocaleState(savedLang);
+        setMounted(true);
         return;
       }
     } catch {
@@ -83,11 +89,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
       '';
     const subtag = primarySubtag(browserTag);
     if (subtag && isLocale(subtag)) setLocaleState(subtag);
+    setMounted(true);
   }, []);
 
-  // Keep <html lang>/<html dir> in sync + persist. Every consumer
-  // re-renders through context, so switching never needs a reload.
+  // Keep <html lang>/<html dir> in sync + persist. Guarded by `mounted`
+  // so the default-locale first paint can never overwrite a saved
+  // preference (or flash the wrong lang/dir) before resolution finishes.
+  // Every consumer re-renders through context, so switching never needs
+  // a reload.
   useEffect(() => {
+    if (!mounted) return;
     document.documentElement.lang = locale;
     document.documentElement.dir = getDirection(locale);
     try {
@@ -95,7 +106,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } catch {
       /* ignore */
     }
-  }, [locale]);
+  }, [locale, mounted]);
 
   const setLocale = useCallback((code: string) => {
     if (isLocale(code)) setLocaleState(code);

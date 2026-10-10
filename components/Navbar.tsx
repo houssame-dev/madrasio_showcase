@@ -188,7 +188,9 @@ export default function Navbar() {
           <Select onValueChange={handleLanguageChange} value={locale}>
             <SelectTrigger
               aria-label={t('nav.selectLanguage')}
-              className="inline-flex items-center justify-between gap-2 px-2 py-4 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer"
+              className={`inline-flex items-center justify-between gap-2 text-sm font-semibold transition-colors cursor-pointer whitespace-nowrap border-none ${
+                    navbarSolid ? 'text-white' : 'text-[#14213D]'
+                  }`}
             >
               <SelectValue placeholder={locale.toUpperCase()}>
                 {(value: string | null) => {
@@ -208,8 +210,9 @@ export default function Navbar() {
               </SelectValue>
             </SelectTrigger>
             <SelectContent
+              side="bottom"
               sideOffset={8}
-              className="w-48 bg-[#14213D] border border-[#FCA311]/40 rounded-2xl p-2 shadow-2xl text-white z-[999] max-h-60 overflow-y-auto"
+              className="w-48 bg-[#14213D] border border-[#FCA311]/40 rounded-2xl p-2 shadow-2xl text-white z-[999] max-h-60 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
             >
               {languages.map((lang) => (
                 <SelectItem
@@ -228,7 +231,7 @@ export default function Navbar() {
           </Select>
           <a
             href="#contact"
-            className="inline-flex items-center rounded-md bg-[#FCA311] px-3 py-2 text-sm font-bold text-[#14213D] transition-colors hover:bg-[#e08f0a]"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#FCA311] px-3 py-2 text-sm font-bold text-[#14213D] transition-colors hover:bg-[#e08f0a]"
           >
             {t('nav.bookDemo')}
           </a>
@@ -311,7 +314,7 @@ export default function Navbar() {
                   }}
                   aria-expanded={isLangOpen}
                   aria-label={t('nav.selectLanguage')}
-                  className="inline-flex items-center justify-between gap-2 px-2 py-2 rounded-xl bg-[#14213D] border border-white/20 text-white text-sm font-semibold hover:border-[#FCA311]/50 transition-colors cursor-pointer min-h-[44px]"
+                  className="inline-flex items-center justify-between gap-2 text-white text-sm font-semibold transition-colors cursor-pointer min-h-[44px] whitespace-nowrap"
                 >
                   <span className="flex items-center gap-1.5">
                     {(() => {
@@ -370,7 +373,7 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={() => setIsMenuOpen(false)}
-              className="w-full bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold py-3 rounded-lg text-center text-lg"
+              className="w-full bg-[#FCA311] hover:bg-[#FCA311]/90 text-[#000000] font-bold py-3 rounded-lg text-center text-lg whitespace-nowrap"
             >
               {t('nav.bookDemo')}
             </a>

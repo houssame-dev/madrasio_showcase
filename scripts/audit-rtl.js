@@ -181,7 +181,10 @@ function auditIconMirroring() {
   const heroPath = path.join(COMPONENTS, 'Hero.tsx');
   if (fs.existsSync(heroPath)) {
     const hero = read(heroPath);
-    if (/rtl:-scale-x-100/.test(hero)) {
+    const hasBgLayer = /hero-bg|Hero Background|absolute inset-0 z-0/.test(hero);
+    if (!hasBgLayer) {
+      pass('Hero has no background image layer — nothing to mirror in RTL.');
+    } else if (/rtl:-scale-x-100/.test(hero)) {
       pass('Hero background layer keeps its rtl:-scale-x-100 flip.');
     } else {
       fail('Hero background layer is missing the rtl:-scale-x-100 flip.');

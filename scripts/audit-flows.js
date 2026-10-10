@@ -35,7 +35,7 @@ const CTA_FILES = [
   'FAQ.tsx',
 ];
 
-const LEAD_FIELDS = ['name', 'schoolName', 'email', 'phone', 'schoolSize'];
+const LEAD_FIELDS = ['name', 'schoolName', 'email', 'phone'];
 const PLAN_EVENT = 'madrasio:select-plan';
 
 let failures = 0;
@@ -173,6 +173,19 @@ function auditPlanPlumbing() {
     pass('Contact submits a hidden "plan" field.');
   } else {
     fail('Contact is missing the hidden "plan" field.');
+  }
+  if (/students/.test(pricing) && /dispatchEvent/.test(pricing)) {
+    pass('Pricing streams the slider student count with the plan event.');
+  } else {
+    fail('Pricing does not include the student count in its event.');
+  }
+  if (
+    /selectedStudents/.test(contact) &&
+    /schoolSize/.test(contact)
+  ) {
+    pass('Contact carries the streamed count into the schoolSize payload.');
+  } else {
+    fail('Contact does not pass the slider count into the payload.');
   }
 }
 

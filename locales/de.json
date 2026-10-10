@@ -210,7 +210,7 @@
     ]
   },
   "contact": {
-    "badge": "👥 BEGRENZTER FRÜHZUGANG",
+    "badge": "BEGRENZTER FRÜHZUGANG",
     "titleA": "Bringen Sie modernes Management",
     "titleB": "an Ihre Schule",
     "subtitle": "Wir nehmen eine ausgewählte Gruppe globaler Privatschulen in unseren V1-Launch auf. Sichern Sie sich Ihren Platz für dediziertes Setup und Partner-Frühbucherpreise.",
@@ -228,7 +228,7 @@
         "subtext": "Direkter Draht zu unserem Team während des Launches."
       }
     ],
-    "trustedBy": "SCHULEN WELTWEIT VERTRAUEN UNS",
+    "trustedBy": "BEREIT LOSZULEGEN?",
     "formTitle": "Demo buchen",
     "formSubtitle": "Tragen Sie Ihre Daten ein und wir melden uns zur Terminvereinbarung für Ihre Demo.",
     "labels": {
@@ -236,7 +236,6 @@
       "schoolName": "Name der Schule",
       "email": "E-Mail-Adresse",
       "phone": "Telefon / WhatsApp",
-      "schoolSize": "Schülerkapazität",
       "message": "Weitere Anmerkungen"
     },
     "placeholders": {
@@ -244,15 +243,8 @@
       "schoolName": "Internationale Akademie",
       "email": "sie@schule.com",
       "phone": "+49 170 000 0000",
-      "schoolSize": "Kapazität wählen",
       "message": "Erzählen Sie uns von den Bedürfnissen Ihrer Schule..."
     },
-    "capacityOptions": [
-      "Unter 200",
-      "200 – 500",
-      "500 – 1.000",
-      "Über 1.000"
-    ],
     "submit": "Demo buchen",
     "sending": "Anfrage wird gesendet...",
     "success": "Danke! Unser Onboarding-Team meldet sich innerhalb von 12 Stunden per WhatsApp/E-Mail.",
@@ -266,8 +258,7 @@
       "email": "Bitte geben Sie Ihre E-Mail-Adresse an.",
       "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse an.",
       "phone": "Bitte geben Sie Ihre Telefonnummer an.",
-      "phoneDigits": "Die Nummer muss mindestens 8 Ziffern enthalten.",
-      "schoolSize": "Bitte wählen Sie die Schülerkapazität Ihrer Schule."
+      "phoneDigits": "Die Nummer muss mindestens 8 Ziffern enthalten."
     }
   },
   "footer": {
@@ -299,5 +290,52 @@
   "floating": {
     "scrollTop": "Nach oben scrollen",
     "whatsapp": "Mit Madrasio auf WhatsApp chatten"
+  },
+  "pricingCalculator": {
+    "badge": "EINFACHE & TRANSPARENTE PREISE",
+    "titleA": "Ein Preis.",
+    "titleB": "Alle Funktionen.",
+    "titleC": "Alle Schulen.",
+    "subtitle": "Ob Ihre Schule 150 oder 2.000 Schüler hat – alle nutzen dieselbe leistungsstarke Plattform.",
+    "monthly": "Monatlich",
+    "annually": "Jährlich",
+    "save": "40 % SPAREN",
+    "baseMonthly": "$0,50 pro eingeschriebenem Schüler / Monat",
+    "baseAnnually": "$0,30 pro eingeschriebenem Schüler / Monat, jährlich abgerechnet",
+    "features": [
+      "Unbegrenzte Notenbücher und Zeugnisse",
+      "Anwesenheitserfassung",
+      "Schulgeld-Einzug und Erinnerungen",
+      "Eltern- und Lehrer-Arbeitsbereiche",
+      "Mehrsprachige Oberfläche (12+ Sprachen)",
+      "Automatisierte verschlüsselte Backups",
+      "Rollenbasierte Zugriffskontrolle",
+      "Kostenlose Datenmigration und Einrichtung"
+    ],
+    "sliderLabel": "Anzahl eingeschriebener Schüler",
+    "studentsCount": "{n} Schüler",
+    "monthlySub": "Monatsabo",
+    "annualTotal": "Jahressumme",
+    "perMonth": "/Monat",
+    "perYear": "/Jahr",
+    "examplesHeading": "Beliebte Beispiele",
+    "cta": "Persönliche Demo buchen",
+    "values": [
+      {
+        "title": "Keine Setup-Überraschungen.",
+        "body": "Migration und Onboarding inklusive."
+      },
+      {
+        "title": "Einfache Preise pro Schüler.",
+        "body": "Ein pauschaler, kalkulierbarer Tarif."
+      },
+      {
+        "title": "Wächst mit Ihrer Schule.",
+        "body": "Jederzeit Schüler hinzufügen."
+      }
+    ]
+  },
+  "banner": {
+    "freeMonth": "Erster Monat gratis"
   }
 }

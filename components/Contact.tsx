@@ -6,7 +6,6 @@ import {
   FaArrowRight,
   FaBuilding,
   FaCalendarDays,
-  FaChevronDown,
   FaCircleCheck,
   FaCrown,
   FaEnvelope,
@@ -17,7 +16,6 @@ import {
   FaRocket,
   FaSpinner,
   FaUser,
-  FaUsers,
 } from 'react-icons/fa6';
 import { IoPeopleSharp } from "react-icons/io5";
 
@@ -77,23 +75,41 @@ export default function Contact() {
   const [schoolName, setSchoolName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
-  const [schoolSize, setSchoolSize] = useState('');
   const [message, setMessage] = useState('');
   const [selectedPlan, setSelectedPlan] = useState<string | null>(null);
+  // Student count streamed live from the pricing calculator slider.
+  const [selectedStudents, setSelectedStudents] = useState<number | null>(
+    null,
+  );
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
-  // Pre-select the plan chosen on a Pricing card ("Choose Plan" /
-  // "Start Free Month" / enterprise CTA dispatches this event).
+  // Pre-select the plan + student count streamed from the pricing
+  // calculator (supports both the legacy string detail and the current
+  // { plan, students } object detail).
   useEffect(() => {
     const onSelectPlan = (e: Event) => {
-      const plan = (e as CustomEvent<string>).detail;
-      if (typeof plan === 'string' && plan) {
-        setSelectedPlan(plan);
+      const detail = (e as CustomEvent<unknown>).detail;
+      if (typeof detail === 'string' && detail) {
+        setSelectedPlan(detail);
         setIsSuccess(false);
+        return;
+      }
+      if (detail && typeof detail === 'object') {
+        const { plan, students } = detail as {
+          plan?: unknown;
+          students?: unknown;
+        };
+        if (typeof plan === 'string' && plan) {
+          setSelectedPlan(plan);
+          setIsSuccess(false);
+        }
+        if (typeof students === 'number' && Number.isFinite(students)) {
+          setSelectedStudents(students);
+        }
       }
     };
     window.addEventListener(PLAN_SELECT_EVENT, onSelectPlan);
@@ -112,7 +128,6 @@ export default function Contact() {
   const features = tp<Array<{ title: string; subtext: string }>>(
     'contact.features',
   );
-  const capacityOptions = tp<string[]>('contact.capacityOptions');
 
   const validate = () => {
     const errs: Record<string, string> = {};
@@ -125,7 +140,6 @@ export default function Contact() {
     if (!phone.trim()) errs.phone = t('contact.errors.phone');
     else if (digitCount < 8)
       errs.phone = t('contact.errors.phoneDigits');
-    if (!schoolSize) errs.schoolSize = t('contact.errors.schoolSize');
     return errs;
   };
 
@@ -134,7 +148,6 @@ export default function Contact() {
     setSchoolName('');
     setEmail('');
     setPhone('');
-    setSchoolSize('');
     setMessage('');
   };
 
@@ -160,7 +173,8 @@ export default function Contact() {
           schoolName,
           email,
           phone,
-          schoolSize,
+          schoolSize:
+            selectedStudents !== null ? `${selectedStudents} students` : '',
           plan: selectedPlan ?? '',
           message,
         }),
@@ -193,7 +207,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column: Text & Value Props */}
           <div>
-            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-[#FCA311] text-[#14213D] text-xs font-black tracking-widest uppercase mb-6 shadow-md">
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap bg-[#FCA311] text-[#14213D] text-xs font-black tracking-widest uppercase mb-6 shadow-md">
               <IoPeopleSharp size={18} />
               <span>{t('contact.badge')}</span>
             </div>
@@ -246,7 +260,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={handleSendAnother}
-                  className="mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold rounded-xl px-6 py-3 transition-all"
+                  className="mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold rounded-xl px-6 py-3 transition-all whitespace-nowrap"
                 >
                   {t('contact.sendAnother')}
                 </button>
@@ -276,11 +290,17 @@ export default function Contact() {
                       <p className="text-sm font-semibold text-white">
                         {t('contact.selectedPlan')}{' '}
                         <span className="text-[#FCA311]">{selectedPlan}</span>
+                        {selectedStudents !== null && (
+                          <span className="text-white/70">
+                            {' '}
+                            · {selectedStudents} students
+                          </span>
+                        )}
                       </p>
                       <button
                         type="button"
                         onClick={() => setSelectedPlan(null)}
-                        className="text-xs font-bold text-white/60 hover:text-white transition-colors"
+                        className="text-xs font-bold text-white/60 hover:text-white transition-colors whitespace-nowrap shrink-0"
                       >
                         {t('contact.clear')}
                       </button>
@@ -392,45 +412,6 @@ export default function Contact() {
                     </FieldWrapper>
 
                     <FieldWrapper
-                      label={t('contact.labels.schoolSize')}
-                      htmlFor="schoolSize"
-                      error={fieldErrors.schoolSize}
-                      icon={
-                        <FaUsers
-                          className={fieldIconClassName}
-                          aria-hidden="true"
-                        />
-                      }
-                    >
-                      <select
-                        id="schoolSize"
-                        name="schoolSize"
-                        required
-                        value={schoolSize}
-                        onChange={(e) => {
-                          setSchoolSize(e.target.value);
-                          clearFieldError('schoolSize');
-                        }}
-                        className={`${inputClassName} appearance-none cursor-pointer pe-6 [&>option]:bg-[#14213D] [&>option]:text-white ${
-                          schoolSize ? 'text-white' : 'text-white/30'
-                        }`}
-                      >
-                        <option value="" disabled>
-                          Select capacity
-                        </option>
-                        {capacityOptions.map((option: string) => (
-                          <option key={option} value={option}>
-                            {option}
-                          </option>
-                        ))}
-                      </select>
-                      <FaChevronDown
-                        className="absolute end-4 text-white/40 text-xs pointer-events-none"
-                        aria-hidden="true"
-                      />
-                    </FieldWrapper>
-
-                    <FieldWrapper
                       label={t('contact.labels.message')}
                       htmlFor="message"
                       icon={
@@ -465,7 +446,7 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_4px_14px_rgba(252,163,17,0.4)] disabled:opacity-70"
+                    className="w-full mt-6 bg-[#FCA311] hover:bg-[#E5930F] text-[#14213D] font-bold text-lg py-4 rounded-xl flex items-center justify-center gap-2 transition-all shadow-[0_4px_14px_rgba(252,163,17,0.4)] disabled:opacity-70 whitespace-nowrap px-5"
                   >
                     {isSubmitting ? (
                       <span className="inline-flex items-center gap-2">
@@ -478,7 +459,7 @@ export default function Contact() {
                     ) : (
                       <>
                         {t('contact.submit')}
-                        <FaArrowRight aria-hidden="true" className="rtl:rotate-180" />
+                        <FaArrowRight aria-hidden="true" className="rtl:rotate-180 shrink-0" />
                       </>
                     )}
                   </button>

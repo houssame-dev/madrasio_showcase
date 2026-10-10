@@ -210,7 +210,7 @@
     ]
   },
   "contact": {
-    "badge": "👥 BEPERKTE VROEGE TOEGANG",
+    "badge": "BEPERKTE VROEGE TOEGANG",
     "titleA": "Breng modern beheer",
     "titleB": "naar jouw school",
     "subtitle": "We accepteren een selecte groep wereldwijde privéscholen voor onze v1-lancering. Reserveer je plek voor toegewijde installatie en vroege partnerprijzen.",
@@ -228,7 +228,7 @@
         "subtext": "Directe toegang tot ons team tijdens de lancering."
       }
     ],
-    "trustedBy": "WERELDWIJD VERTROUWD DOOR SCHOLEN",
+    "trustedBy": "KLAAR OM TE BEGINNEN?",
     "formTitle": "Demo boeken",
     "formSubtitle": "Vul de gegevens in en we nemen contact op om je demo in te plannen.",
     "labels": {
@@ -236,7 +236,6 @@
       "schoolName": "Schoolnaam",
       "email": "E-mailadres",
       "phone": "Telefoon / WhatsApp",
-      "schoolSize": "Leerlingcapaciteit",
       "message": "Aanvullende opmerkingen"
     },
     "placeholders": {
@@ -244,15 +243,8 @@
       "schoolName": "Internationale Academie",
       "email": "jij@school.com",
       "phone": "+31 6 1234 5678",
-      "schoolSize": "Selecteer capaciteit",
       "message": "Vertel ons over de behoeften van je school..."
     },
-    "capacityOptions": [
-      "Minder dan 200",
-      "200 – 500",
-      "500 – 1.000",
-      "Meer dan 1.000"
-    ],
     "submit": "Demo boeken",
     "sending": "Aanvraag verzenden...",
     "success": "Bedankt! Ons onboardingteam neemt binnen 12 uur contact op via WhatsApp/e-mail.",
@@ -266,8 +258,7 @@
       "email": "Vul je e-mailadres in.",
       "emailInvalid": "Vul een geldig e-mailadres in.",
       "phone": "Vul je telefoonnummer in.",
-      "phoneDigits": "Het nummer moet minimaal 8 cijfers bevatten.",
-      "schoolSize": "Selecteer de capaciteit van je school."
+      "phoneDigits": "Het nummer moet minimaal 8 cijfers bevatten."
     }
   },
   "footer": {
@@ -299,5 +290,52 @@
   "floating": {
     "scrollTop": "Terug naar boven",
     "whatsapp": "Chat met Madrasio op WhatsApp"
+  },
+  "pricingCalculator": {
+    "badge": "EENVOUDIGE & TRANSPARANTE PRIJZEN",
+    "titleA": "Eén prijs.",
+    "titleB": "Alle functies.",
+    "titleC": "Alle scholen.",
+    "subtitle": "Of je school nu 150 of 2.000 leerlingen heeft, iedereen gebruikt hetzelfde krachtige platform.",
+    "monthly": "Maandelijks",
+    "annually": "Jaarlijks",
+    "save": "40% KORTING",
+    "baseMonthly": "$0,50 per ingeschreven leerling / maand",
+    "baseAnnually": "$0,30 per ingeschreven leerling / maand, jaarlijks gefactureerd",
+    "features": [
+      "Onbeperkte cijferlijsten en transcripten",
+      "Aanwezigheidsregistratie",
+      "Lesgeldinning en herinneringen",
+      "Ouder- en docentwerkruimtes",
+      "Meertalige interface (12+ talen)",
+      "Geautomatiseerde versleutelde back-ups",
+      "Rolgebaseerde toegangscontrole",
+      "Gratis datamigratie en installatie"
+    ],
+    "sliderLabel": "Aantal ingeschreven leerlingen",
+    "studentsCount": "{n} leerlingen",
+    "monthlySub": "Maandabonnement",
+    "annualTotal": "Jaartotaal",
+    "perMonth": "/mnd",
+    "perYear": "/jr",
+    "examplesHeading": "Populaire voorbeelden",
+    "cta": "Persoonlijke demo boeken",
+    "values": [
+      {
+        "title": "Geen installatieverrassingen.",
+        "body": "Gratis migratie en onboarding inbegrepen."
+      },
+      {
+        "title": "Eenvoudige prijs per leerling.",
+        "body": "Eén vast, voorspelbaar tarief."
+      },
+      {
+        "title": "Groeit mee met je school.",
+        "body": "Voeg altijd leerlingen toe."
+      }
+    ]
+  },
+  "banner": {
+    "freeMonth": "Eerste maand gratis"
   }
 }

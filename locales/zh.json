@@ -210,7 +210,7 @@
     ]
   },
   "contact": {
-    "badge": "👥 限量抢先体验",
+    "badge": "限量抢先体验",
     "titleA": "为贵校带来",
     "titleB": "现代化管理",
     "subtitle": "我们面向全球私立学校开放 V1 首批限量名额。预留席位，享受专属部署与早期合作伙伴优惠。",
@@ -228,7 +228,7 @@
         "subtext": "上线期间直达核心团队。"
       }
     ],
-    "trustedBy": "全球学校共同信赖",
+    "trustedBy": "准备好开始了吗？",
     "formTitle": "预约演示",
     "formSubtitle": "填写信息，我们将与您联系安排演示。",
     "labels": {
@@ -236,7 +236,6 @@
       "schoolName": "学校名称",
       "email": "电子邮箱",
       "phone": "电话 / WhatsApp",
-      "schoolSize": "学校规模",
       "message": "补充说明"
     },
     "placeholders": {
@@ -244,15 +243,8 @@
       "schoolName": "国际学校",
       "email": "you@school.com",
       "phone": "+86 138 0000 0000",
-      "schoolSize": "请选择规模",
       "message": "说说贵校的需求..."
     },
-    "capacityOptions": [
-      "200 人以下",
-      "200 – 500 人",
-      "500 – 1,000 人",
-      "1,000 人以上"
-    ],
     "submit": "预约演示",
     "sending": "正在发送...",
     "success": "谢谢！学校上线团队将在 12 小时内通过 WhatsApp/邮件联系您。",
@@ -266,8 +258,7 @@
       "email": "请填写电子邮箱。",
       "emailInvalid": "请填写有效的电子邮箱。",
       "phone": "请填写电话号码。",
-      "phoneDigits": "号码至少包含 8 位数字。",
-      "schoolSize": "请选择学校规模。"
+      "phoneDigits": "号码至少包含 8 位数字。"
     }
   },
   "footer": {
@@ -299,5 +290,52 @@
   "floating": {
     "scrollTop": "回到顶部",
     "whatsapp": "在 WhatsApp 上联系 Madrasio"
+  },
+  "pricingCalculator": {
+    "badge": "简单透明定价",
+    "titleA": "一个价格。",
+    "titleB": "所有功能。",
+    "titleC": "所有学校。",
+    "subtitle": "无论贵校有 150 还是 2,000 名学生，人人使用同一个强大平台。",
+    "monthly": "按月",
+    "annually": "按年",
+    "save": "立省 40%",
+    "baseMonthly": "每名在读学生每月 $0.50",
+    "baseAnnually": "每名在读学生每月 $0.30，按年计费",
+    "features": [
+      "无限成绩册与成绩单",
+      "考勤跟踪",
+      "学费收缴与提醒",
+      "家长与教师工作区",
+      "多语言界面（12+ 语言）",
+      "自动加密备份",
+      "基于角色的访问控制",
+      "免费数据迁移与部署"
+    ],
+    "sliderLabel": "在读学生人数",
+    "studentsCount": "{n} 名学生",
+    "monthlySub": "月度订阅",
+    "annualTotal": "年度总额",
+    "perMonth": "/月",
+    "perYear": "/年",
+    "examplesHeading": "热门示例",
+    "cta": "预约专属演示",
+    "values": [
+      {
+        "title": "无部署意外。",
+        "body": "免费迁移与上手陪伴。"
+      },
+      {
+        "title": "简单的按人单价。",
+        "body": "统一可预测的固定费率。"
+      },
+      {
+        "title": "随学校成长。",
+        "body": "随时新增学生。"
+      }
+    ]
+  },
+  "banner": {
+    "freeMonth": "首月免费"
   }
 }

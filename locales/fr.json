@@ -210,7 +210,7 @@
     ]
   },
   "contact": {
-    "badge": "👥 ACCÈS ANTICIPÉ LIMITÉ",
+    "badge": "ACCÈS ANTICIPÉ LIMITÉ",
     "titleA": "Apportez une gestion moderne",
     "titleB": "à votre école",
     "subtitle": "Nous acceptons un groupe restreint d'écoles privées mondiales pour notre lancement v1. Réservez votre place pour une installation dédiée et des tarifs partenaires préférentiels.",
@@ -228,7 +228,7 @@
         "subtext": "Accès direct à notre équipe pendant le lancement."
       }
     ],
-    "trustedBy": "ILS NOUS FONT CONFIANCE DANS LE MONDE ENTIER",
+    "trustedBy": "PRÊT À COMMENCER ?",
     "formTitle": "Réserver une démo",
     "formSubtitle": "Remplissez les détails et nous vous contacterons pour planifier votre démo.",
     "labels": {
@@ -236,7 +236,6 @@
       "schoolName": "Nom de l'école",
       "email": "Adresse e-mail",
       "phone": "Téléphone / WhatsApp",
-      "schoolSize": "Capacité d'accueil",
       "message": "Notes complémentaires"
     },
     "placeholders": {
@@ -244,15 +243,8 @@
       "schoolName": "Académie Internationale",
       "email": "vous@ecole.com",
       "phone": "+212 6 00 00 00 00",
-      "schoolSize": "Choisir la capacité",
       "message": "Parlez-nous des besoins de votre école..."
     },
-    "capacityOptions": [
-      "Moins de 200",
-      "200 – 500",
-      "500 – 1 000",
-      "1 000+"
-    ],
     "submit": "Réserver une démo",
     "sending": "Envoi en cours...",
     "success": "Merci ! Notre équipe d'intégration vous contactera dans les 12 heures sur WhatsApp/e-mail.",
@@ -266,8 +258,7 @@
       "email": "Veuillez saisir votre adresse e-mail.",
       "emailInvalid": "Veuillez saisir une adresse e-mail valide.",
       "phone": "Veuillez saisir votre numéro de téléphone.",
-      "phoneDigits": "Le numéro doit contenir au moins 8 chiffres.",
-      "schoolSize": "Veuillez sélectionner la capacité de votre école."
+      "phoneDigits": "Le numéro doit contenir au moins 8 chiffres."
     }
   },
   "footer": {
@@ -299,5 +290,52 @@
   "floating": {
     "scrollTop": "Retour en haut",
     "whatsapp": "Discuter avec Madrasio sur WhatsApp"
+  },
+  "pricingCalculator": {
+    "badge": "TARIFICATION SIMPLE ET TRANSPARENTE",
+    "subtitle": "Que votre école compte 150 ou 2 000 élèves, tous accèdent à la même plateforme puissante.",
+    "monthly": "Mensuel",
+    "annually": "Annuel",
+    "save": "Économisez 40 %",
+    "baseMonthly": "$0,50 par élève inscrit / mois",
+    "baseAnnually": "$0,30 par élève inscrit / mois, facturé annuellement",
+    "features": [
+      "Cahiers de notes et relevés illimités",
+      "Suivi des présences",
+      "Encaissement des frais et rappels",
+      "Espaces admin, parents et enseignants",
+      "Interface multilingue (12+ langues)",
+      "Sauvegardes automatiques chiffrées",
+      "Contrôle d'accès par rôle",
+      "Migration des données et installation gratuites"
+    ],
+    "sliderLabel": "Nombre d'élèves inscrits",
+    "studentsCount": "{n} élèves",
+    "monthlySub": "Abonnement mensuel",
+    "annualTotal": "Total annuel",
+    "perMonth": "/mois",
+    "perYear": "/an",
+    "examplesHeading": "Exemples populaires",
+    "cta": "Réserver une démo",
+    "values": [
+      {
+        "title": "Pas de surprises à l'installation.",
+        "body": "Migration et intégration gratuites incluses."
+      },
+      {
+        "title": "Une tarification simple par élève.",
+        "body": "Un tarif unique et prévisible."
+      },
+      {
+        "title": "Évolue avec votre école.",
+        "body": "Ajoutez des élèves à tout moment."
+      }
+    ],
+    "titleA": "Un prix unique.",
+    "titleB": "Toutes les fonctionnalités.",
+    "titleC": "Toutes les écoles."
+  },
+  "banner": {
+    "freeMonth": "Premier mois offert"
   }
 }

@@ -210,7 +210,7 @@
     ]
   },
   "contact": {
-    "badge": "👥 LIMITED EARLY ACCESS",
+    "badge": "LIMITED EARLY ACCESS",
     "titleA": "Bring Modern Management",
     "titleB": "to Your School",
     "subtitle": "We are accepting a select group of global private schools for our v1 launch. Reserve your spot for dedicated setup and early partner pricing.",
@@ -228,7 +228,7 @@
         "subtext": "Direct access to our team during launch."
       }
     ],
-    "trustedBy": "TRUSTED BY SCHOOLS WORLDWIDE",
+    "trustedBy": "READY TO GET STARTED?",
     "formTitle": "Book a Demo",
     "formSubtitle": "Fill in the details and we'll get in touch to schedule your demo.",
     "labels": {
@@ -236,7 +236,6 @@
       "schoolName": "School Name",
       "email": "Email Address",
       "phone": "Phone / WhatsApp",
-      "schoolSize": "School Student Capacity",
       "message": "Additional Notes"
     },
     "placeholders": {
@@ -244,15 +243,8 @@
       "schoolName": "International Academy",
       "email": "you@school.com",
       "phone": "+212 6 00 00 00 00",
-      "schoolSize": "Select capacity",
       "message": "Tell us about your school's needs..."
     },
-    "capacityOptions": [
-      "Under 200",
-      "200 – 500",
-      "500 – 1,000",
-      "1,000+"
-    ],
     "submit": "Book a Demo",
     "sending": "Sending request...",
     "success": "Thank you! Our school onboarding team will contact you within 12 hours on WhatsApp/Email.",
@@ -266,8 +258,7 @@
       "email": "Please enter your email address.",
       "emailInvalid": "Please enter a valid email address.",
       "phone": "Please enter your phone number.",
-      "phoneDigits": "Phone number must contain at least 8 digits.",
-      "schoolSize": "Please select your school student capacity."
+      "phoneDigits": "Phone number must contain at least 8 digits."
     }
   },
   "footer": {
@@ -299,5 +290,52 @@
   "floating": {
     "scrollTop": "Scroll to top",
     "whatsapp": "Chat with Madrasio on WhatsApp"
+  },
+  "pricingCalculator": {
+    "badge": "SIMPLE & TRANSPARENT PRICING",
+    "subtitle": "Whether your school has 150 or 2,000 students, everyone gets access to the same powerful platform.",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "save": "Save 40%",
+    "baseMonthly": "$0.50 per enrolled student / month",
+    "baseAnnually": "$0.30 per enrolled student / month, billed annually",
+    "features": [
+      "Unlimited gradebooks & transcripts",
+      "Attendance tracking",
+      "Tuition collection & reminders",
+      "Admin, Parent & teacher workspaces",
+      "Multilingual interface (12+ languages)",
+      "Automated encrypted backups",
+      "Role-based access control",
+      "Free data migration & setup"
+    ],
+    "sliderLabel": "Number of enrolled students",
+    "studentsCount": "{n} students",
+    "monthlySub": "Monthly subscription",
+    "annualTotal": "Annual total",
+    "perMonth": "/mo",
+    "perYear": "/yr",
+    "examplesHeading": "Popular examples",
+    "cta": "Book a Demo",
+    "values": [
+      {
+        "title": "No setup surprises.",
+        "body": "Free migration and onboarding included."
+      },
+      {
+        "title": "Simple per-student pricing.",
+        "body": "One flat, predictable rate."
+      },
+      {
+        "title": "Scales as your school grows.",
+        "body": "Add students anytime."
+      }
+    ],
+    "titleA": "One Price.",
+    "titleB": "Every Feature.",
+    "titleC": "Every School."
+  },
+  "banner": {
+    "freeMonth": "First Month FREE"
   }
 }

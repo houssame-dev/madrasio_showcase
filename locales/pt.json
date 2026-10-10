@@ -210,7 +210,7 @@
     ]
   },
   "contact": {
-    "badge": "👥 ACESSO ANTECIPADO LIMITADO",
+    "badge": "ACESSO ANTECIPADO LIMITADO",
     "titleA": "Traga uma gestão moderna",
     "titleB": "para sua escola",
     "subtitle": "Estamos aceitando um grupo seleto de escolas privadas globais para nosso lançamento v1. Reserve sua vaga para implantação dedicada e preços preferenciais de parceiro fundador.",
@@ -228,7 +228,7 @@
         "subtext": "Acesso direto à nossa equipe durante o lançamento."
       }
     ],
-    "trustedBy": "ESCOLAS DO MUNDO TODO CONFIAM EM NÓS",
+    "trustedBy": "PRONTO PARA COMEÇAR?",
     "formTitle": "Agendar demonstração",
     "formSubtitle": "Preencha os dados e entraremos em contato para agendar sua demonstração.",
     "labels": {
@@ -236,7 +236,6 @@
       "schoolName": "Nome da escola",
       "email": "E-mail",
       "phone": "Telefone / WhatsApp",
-      "schoolSize": "Capacidade de alunos",
       "message": "Observações adicionais"
     },
     "placeholders": {
@@ -244,15 +243,8 @@
       "schoolName": "Academia Internacional",
       "email": "voce@escola.com",
       "phone": "+55 11 90000 0000",
-      "schoolSize": "Selecionar capacidade",
       "message": "Conte-nos as necessidades da sua escola..."
     },
-    "capacityOptions": [
-      "Menos de 200",
-      "200 – 500",
-      "500 – 1.000",
-      "Mais de 1.000"
-    ],
     "submit": "Agendar demonstração",
     "sending": "Enviando solicitação...",
     "success": "Obrigado! Nossa equipe de implantação entrará em contato em 12 horas por WhatsApp/e-mail.",
@@ -266,8 +258,7 @@
       "email": "Informe seu e-mail.",
       "emailInvalid": "Informe um e-mail válido.",
       "phone": "Informe seu telefone.",
-      "phoneDigits": "O número deve conter pelo menos 8 dígitos.",
-      "schoolSize": "Selecione a capacidade da sua escola."
+      "phoneDigits": "O número deve conter pelo menos 8 dígitos."
     }
   },
   "footer": {
@@ -299,5 +290,52 @@
   "floating": {
     "scrollTop": "Voltar ao topo",
     "whatsapp": "Conversar com a Madrasio no WhatsApp"
+  },
+  "pricingCalculator": {
+    "badge": "PREÇOS SIMPLES E TRANSPARENTES",
+    "titleA": "Um preço único.",
+    "titleB": "Todos os recursos.",
+    "titleC": "Todas as escolas.",
+    "subtitle": "Com 150 ou 2.000 alunos, todos acessam a mesma plataforma poderosa.",
+    "monthly": "Mensal",
+    "annually": "Anual",
+    "save": "ECONOMIZE 40%",
+    "baseMonthly": "$0,50 por aluno matriculado / mês",
+    "baseAnnually": "$0,30 por aluno matriculado / mês, cobrado anualmente",
+    "features": [
+      "Diários e históricos ilimitados",
+      "Controle de frequência",
+      "Cobrança de mensalidades e lembretes",
+      "Espaços para famílias e professores",
+      "Interface multilíngue (mais de 12 idiomas)",
+      "Backups criptografados automáticos",
+      "Controle de acesso por perfil",
+      "Migração de dados e implantação gratuitas"
+    ],
+    "sliderLabel": "Número de alunos matriculados",
+    "studentsCount": "{n} alunos",
+    "monthlySub": "Assinatura mensal",
+    "annualTotal": "Total anual",
+    "perMonth": "/mês",
+    "perYear": "/ano",
+    "examplesHeading": "Exemplos populares",
+    "cta": "Agendar demonstração personalizada",
+    "values": [
+      {
+        "title": "Sem surpresas na implantação.",
+        "body": "Migração e integração gratuitas incluídas."
+      },
+      {
+        "title": "Tarifa simples por aluno.",
+        "body": "Uma tarifa única e previsível."
+      },
+      {
+        "title": "Cresce com sua escola.",
+        "body": "Adicione alunos a qualquer momento."
+      }
+    ]
+  },
+  "banner": {
+    "freeMonth": "Primeiro mês grátis"
   }
 }

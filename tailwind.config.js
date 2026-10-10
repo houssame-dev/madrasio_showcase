@@ -61,9 +61,17 @@ module.exports = {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
         },
+        // Rightward twin of `marquee`: starting one full track width to
+        // the left (-100% -> 0%) keeps the viewport covered at every
+        // frame, so the loop is seamless in RTL reading direction.
+        'marquee-rtl': {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(0%)' },
+        },
       },
       animation: {
         marquee: 'marquee 20s linear infinite',
+        'marquee-rtl': 'marquee-rtl 20s linear infinite',
       },
     },
   },

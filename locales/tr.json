@@ -210,7 +210,7 @@
     ]
   },
   "contact": {
-    "badge": "👥 SINIRLI ERKEN ERİŞİM",
+    "badge": "SINIRLI ERKEN ERİŞİM",
     "titleA": "Okulunuza Modern",
     "titleB": "Yönetim Getirin",
     "subtitle": "V1 lansmanımız için seçkin bir küresel özel okul grubunu kabul ediyoruz. Özel kurulum ve erken iş ortağı fiyatları için yerinizi ayırtın.",
@@ -228,7 +228,7 @@
         "subtext": "Lansman sırasında ekibimize doğrudan erişim."
       }
     ],
-    "trustedBy": "DÜNYA GENELİNDE OKULLARIN GÜVENİ",
+    "trustedBy": "BAŞLAMAYA HAZIR MISINIZ?",
     "formTitle": "Demo Talebi",
     "formSubtitle": "Bilgileri doldurun, demonuzu planlamak için sizinle iletişime geçelim.",
     "labels": {
@@ -236,7 +236,6 @@
       "schoolName": "Okul Adı",
       "email": "E-posta Adresi",
       "phone": "Telefon / WhatsApp",
-      "schoolSize": "Öğrenci Kapasitesi",
       "message": "Ek Notlar"
     },
     "placeholders": {
@@ -244,15 +243,8 @@
       "schoolName": "Uluslararası Akademi",
       "email": "siz@okul.com",
       "phone": "+90 532 000 00 00",
-      "schoolSize": "Kapasite seçin",
       "message": "Okulunuzun ihtiyaçlarından bahsedin..."
     },
-    "capacityOptions": [
-      "200'den az",
-      "200 – 500",
-      "500 – 1.000",
-      "1.000+"
-    ],
     "submit": "Demo Talebi",
     "sending": "İstek gönderiliyor...",
     "success": "Teşekkürler! Okul katılım ekibimiz 12 saat içinde WhatsApp/E-posta ile sizinle iletişime geçecek.",
@@ -266,8 +258,7 @@
       "email": "Lütfen e-posta adresinizi girin.",
       "emailInvalid": "Lütfen geçerli bir e-posta adresi girin.",
       "phone": "Lütfen telefon numaranızı girin.",
-      "phoneDigits": "Numara en az 8 rakam içermelidir.",
-      "schoolSize": "Lütfen okul kapasitenizi seçin."
+      "phoneDigits": "Numara en az 8 rakam içermelidir."
     }
   },
   "footer": {
@@ -299,5 +290,52 @@
   "floating": {
     "scrollTop": "Başa dön",
     "whatsapp": "WhatsApp'ta Madrasio ile sohbet edin"
+  },
+  "pricingCalculator": {
+    "badge": "BASİT VE ŞEFFAF FİYATLAR",
+    "titleA": "Tek Fiyat.",
+    "titleB": "Tüm Özellikler.",
+    "titleC": "Tüm Okullar.",
+    "subtitle": "Okulunuzda 150 veya 2.000 öğrenci olsun, herkes aynı güçlü platforma erişir.",
+    "monthly": "Aylık",
+    "annually": "Yıllık",
+    "save": "%40 İNDİRİM",
+    "baseMonthly": "Kayıtlı öğrenci başına aylık $0,50",
+    "baseAnnually": "Kayıtlı öğrenci başına aylık $0,30, yıllık faturalandırılır",
+    "features": [
+      "Sınırsız not defteri ve transkript",
+      "Yoklama takibi",
+      "Harç tahsilatı ve hatırlatmalar",
+      "Veli ve öğretmen çalışma alanları",
+      "Çok dilli arayüz (12+ dil)",
+      "Otomatik şifreli yedekler",
+      "Role dayalı erişim kontrolü",
+      "Ücretsiz veri taşıma ve kurulum"
+    ],
+    "sliderLabel": "Kayıtlı öğrenci sayısı",
+    "studentsCount": "{n} öğrenci",
+    "monthlySub": "Aylık abonelik",
+    "annualTotal": "Yıllık toplam",
+    "perMonth": "/ay",
+    "perYear": "/yıl",
+    "examplesHeading": "Popüler örnekler",
+    "cta": "Kişisel Demo Talep Edin",
+    "values": [
+      {
+        "title": "Kurulum sürprizi yok.",
+        "body": "Ücretsiz taşıma ve katılım dahil."
+      },
+      {
+        "title": "Öğrenci başına basit fiyat.",
+        "body": "Tek, öngörülebilir sabit ücret."
+      },
+      {
+        "title": "Okulunuzla birlikte büyür.",
+        "body": "Dilediğiniz zaman öğrenci ekleyin."
+      }
+    ]
+  },
+  "banner": {
+    "freeMonth": "İlk Ay Ücretsiz"
   }
 }

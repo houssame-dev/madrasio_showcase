@@ -35,7 +35,7 @@ export default function FAQ() {
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Header */}
           <div className="lg:col-span-5">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#FCA311]/15 border border-[#FCA311]/40 text-[#FCA311] text-xs font-black tracking-widest uppercase mb-6">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap bg-[#FCA311]/15 border border-[#FCA311]/40 text-[#FCA311] text-xs font-black tracking-widest uppercase mb-6">
               {t('faq.badge')}
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight mb-6 leading-tight">
