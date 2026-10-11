@@ -15,6 +15,10 @@ export default function Hero() {
           <div className="flex flex-col items-center justify-center text-center mx-auto w-full">
             {/* Category Badge */}
             <span className="inline-flex mx-auto items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-[#14213D]/15 text-[#14213D] text-xs sm:text-sm font-semibold tracking-wide uppercase shadow-sm mb-6 whitespace-nowrap">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-300 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+              </span>
               {t('hero.badge')}
             </span>
 
@@ -49,15 +53,24 @@ export default function Hero() {
             </div>
 
             {/* Dashboard Mockup */}
-
+            <div className="relative w-full overflow-hidden mt-16">
               <Image
-                src="/images/dashboard-mockup.png"
+                src="/images/dashboard-mockup-desktop.png"
                 alt="Madrasio dashboard preview"
-                width={1600}
-                height={900}
-                className="w-full h-auto object-cover aspect-video mt-32"
+                width={1672}
+                height={941}
+                className="hidden md:block w-full h-auto object-cover"
                 priority
               />
+              <Image
+                src="/images/dashboard-mockup-mobile.png"
+                alt="Madrasio dashboard preview"
+                width={941}
+                height={1672}
+                className="block md:hidden w-full h-auto max-w-sm mx-auto object-cover"
+                priority
+              />
+            </div>
            
           </div>
         </div>

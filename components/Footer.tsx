@@ -49,7 +49,7 @@ const SOCIAL_LINKS = [
 ];
 
 const CONTACT_ITEMS = [
-  { label: 'Phone', value: '+212 60 79 91 55 44', Icon: FaWhatsapp  },
+  { label: 'Phone', value: '+212 607 991544', Icon: FaWhatsapp  },
   { label: 'Email', value: 'contact@madrasio.com', Icon: FaEnvelope },
 ];
 
