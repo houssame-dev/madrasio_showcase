@@ -31,8 +31,75 @@ export default function FAQ() {
   const faqs = tp<Array<{ q: string; a: string }>>('faq.items');
 
   return (
-    <section id="faq" className="scroll-mt-16 w-full bg-[#000000] overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24">
+    <section id="faq" className="scroll-mt-16 relative overflow-hidden w-full bg-[#040713]">
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 900"
+        fill="none"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        {/* Top-Left Glowing Curved Accent with Subtle Lines */}
+        <path
+          d="M0 0 C400 40 700 180 0 320 V0 Z"
+          fill="url(#faqTopLeftGrad1)"
+          opacity="0.4"
+        />
+        <path
+          d="M0 0 C300 20 600 140 0 240 V0 Z"
+          stroke="url(#faqLineGrad)"
+          strokeWidth="1"
+          opacity="0.6"
+        />
+
+        {/* Bottom Sweeping Layered Waves with Accent Lines */}
+        <path
+          d="M1440 900 C1000 820 600 780 0 880 V900 H1440 Z"
+          fill="url(#faqBottomWave1)"
+          opacity="0.6"
+        />
+        <path
+          d="M1440 680 C1100 720 800 850 1440 900 V680 Z"
+          fill="url(#faqBottomWave2)"
+          opacity="0.5"
+        />
+        <path
+          d="M1440 680 C1100 720 800 850 1440 900"
+          stroke="url(#faqLineGrad)"
+          strokeWidth="1.5"
+          fill="none"
+          opacity="0.8"
+        />
+        {/* Additional faint accent lines in the waves */}
+        <path
+          d="M1440 780 C1100 800 900 880 1440 900"
+          stroke="url(#faqLineGrad)"
+          strokeWidth="0.75"
+          fill="none"
+          opacity="0.5"
+        />
+
+        <defs>
+          <linearGradient id="faqTopLeftGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#0F172A" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#040713" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="faqBottomWave1" x1="100%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="#1E3A8A" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#040713" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="faqBottomWave2" x1="100%" y1="50%" x2="50%" y2="100%">
+            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#040713" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="faqLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#1E3A8A" stopOpacity="0.2" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           {/* Left Column: Header */}
           <div className="lg:col-span-5">

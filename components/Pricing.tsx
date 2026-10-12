@@ -63,8 +63,60 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="scroll-mt-16 w-full bg-[#FCA311]">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
+    <section id="pricing" className="scroll-mt-16 relative overflow-hidden w-full bg-[#FCA311]">
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 800"
+        fill="none"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        {/* Top Soft Layered Waves */}
+        <path
+          d="M0 0 C400 80 800 120 1440 40 V0 H0 Z"
+          fill="url(#priceTopGrad1)"
+          opacity="0.6"
+        />
+        <path
+          d="M0 0 C500 140 1000 90 1440 120 V0 H0 Z"
+          fill="url(#priceTopGrad2)"
+          opacity="0.4"
+        />
+
+        {/* Bottom Layered Fluid Waves */}
+        <path
+          d="M0 620 C450 520 950 780 1440 600 V800 H0 V620 Z"
+          fill="url(#priceBottomGrad1)"
+          opacity="0.7"
+        />
+        <path
+          d="M0 700 C500 620 1000 740 1440 680 V800 H0 V700 Z"
+          fill="url(#priceBottomGrad2)"
+          opacity="0.8"
+        />
+
+        <defs>
+          <linearGradient id="priceTopGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#E59400" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#FCA311" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="priceTopGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#CC8400" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#FCA311" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="priceBottomGrad1" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#E59400" stopOpacity="0.6" />
+            <stop offset="50%" stopColor="#F29F05" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#D98200" stopOpacity="0.5" />
+          </linearGradient>
+          <linearGradient id="priceBottomGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#D98200" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#E59400" stopOpacity="0.4" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap bg-[#14213D] text-[#FCA311] text-xs font-black tracking-widest uppercase mb-6">
           <MdAttachMoney size={20} />
           <span>{t('pricingCalculator.badge')}</span>

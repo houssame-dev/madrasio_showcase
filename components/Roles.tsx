@@ -19,8 +19,67 @@ export default function Roles() {
     Array<{ title: string; tagline: string; points: string[] }>
   >('roles.cards');
   return (
-    <section id="roles" className="w-full bg-[#000000] overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
+    <section id="roles" className="relative overflow-hidden bg-[#0A1120] w-full">
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 600"
+        fill="none"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        {/* Top-Left Glowing Curved Accent */}
+        <path
+          d="M0 0 C400 30 700 180 0 320 V0 Z"
+          fill="url(#roleTopLeftGrad)"
+          opacity="0.4"
+        />
+        <path
+          d="M0 0 C300 10 500 120 0 200 V0 Z"
+          stroke="url(#roleLineGrad)"
+          strokeWidth="1.5"
+          opacity="0.6"
+        />
+
+        {/* Bottom Right Glowing Wave Layer */}
+        <path
+          d="M1440 600 C1000 520 600 480 0 580 V600 H1440 Z"
+          fill="url(#roleBottomWave1)"
+          opacity="0.5"
+        />
+        <path
+          d="M1440 380 C1100 420 800 550 1440 600 V380 Z"
+          fill="url(#roleBottomWave2)"
+          opacity="0.6"
+        />
+        <path
+          d="M1440 380 C1100 420 800 550 1440 600"
+          stroke="url(#roleLineGrad)"
+          strokeWidth="1.5"
+          fill="none"
+          opacity="0.8"
+        />
+
+        <defs>
+          <linearGradient id="roleTopLeftGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1E3A8A" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#0A1120" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="roleBottomWave1" x1="100%" y1="100%" x2="0%" y2="0%">
+            <stop offset="0%" stopColor="#1E40AF" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#0A1120" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="roleBottomWave2" x1="100%" y1="50%" x2="50%" y2="100%">
+            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#0A1120" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="roleLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#1E3A8A" stopOpacity="0.1" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24 text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full whitespace-nowrap bg-[#FCA311]/15 border border-[#FCA311]/40 text-[#FCA311] text-xs font-black tracking-widest uppercase mb-4 shadow-[0_0_15px_rgba(252,163,17,0.2)]">
           <GrStakeholder size={20} />
           <span>{t('roles.badge')}</span>

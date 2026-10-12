@@ -201,9 +201,44 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="scroll-mt-16 relative w-full bg-[#E5E5E5] overflow-hidden"
+      className="scroll-mt-16 relative w-full bg-white overflow-hidden"
     >
-      <div className="relative w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24">
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 600"
+        fill="none"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        {/* Top-left translucent wave */}
+        <path
+          d="M0 0 C400 40 700 180 0 320 V0 Z"
+          fill="#f1f5f9"
+          opacity="0.6"
+        />
+        {/* Bottom layered wave */}
+        <path
+          d="M1440 600 C1000 520 600 480 0 580 V600 H1440 Z"
+          fill="#ffffff"
+          opacity="0.8"
+        />
+        {/* Overlapping mid layer for depth */}
+        <path
+          d="M0 480 C420 420 900 560 1440 460 V600 H0 Z"
+          fill="#f1f5f9"
+          opacity="0.5"
+        />
+        {/* Soft drop-shadow wave outline */}
+        <path
+          d="M0 200 C300 220 500 350 0 450"
+          stroke="#f1f5f9"
+          strokeWidth="1.5"
+          fill="none"
+          filter="drop-shadow(0 2px 4px rgba(0,0,0,0.05))"
+        />
+      </svg>
+      <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-16 lg:py-24">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left Column: Text & Value Props */}
           <div>

@@ -72,8 +72,78 @@ export default function Footer() {
     ({ label }, index) => ({ label, href: LEGAL_HREFS[index] ?? '#' }),
   );
   return (
-    <footer className="w-full bg-[#000000] text-[#E5E5E5] overflow-hidden">
-      <div className="w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12">
+    <footer className="relative overflow-hidden w-full bg-[#030712] text-[#E5E5E5]">
+      <svg
+        className="absolute inset-0 w-full h-full pointer-events-none z-0"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 1440 400"
+        fill="none"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        {/* Top-Right Soft Wave Accent */}
+        <path
+          d="M1440 0 C1200 20 1000 120 1440 180 V0 H1440 Z"
+          fill="url(#footerTopRightGrad)"
+          opacity="0.5"
+        />
+        <path
+          d="M1440 0 C1200 20 1000 120 1440 180"
+          stroke="url(#footerLineGrad)"
+          strokeWidth="1.5"
+          fill="none"
+          opacity="0.8"
+        />
+
+        {/* Bottom Sweeping Layered Ribbon Waves */}
+        <path
+          d="M0 220 C400 380 900 320 1440 280 V400 H0 V220 Z"
+          fill="url(#footerBottomWave1)"
+          opacity="0.6"
+        />
+        <path
+          d="M0 160 C350 280 800 350 1440 200 V400 H0 V160 Z"
+          fill="url(#footerBottomWave2)"
+          opacity="0.4"
+        />
+
+        {/* Luminous High-Contrast Edge Lines */}
+        <path
+          d="M0 160 C350 280 800 350 1440 200"
+          stroke="url(#footerLineGrad)"
+          strokeWidth="1.5"
+          fill="none"
+          opacity="0.85"
+        />
+        <path
+          d="M0 240 C450 360 850 310 1440 290"
+          stroke="url(#footerLineGrad)"
+          strokeWidth="1"
+          fill="none"
+          opacity="0.6"
+        />
+
+        <defs>
+          <linearGradient id="footerTopRightGrad" x1="100%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stopColor="#1E3A8A" stopOpacity="0.8" />
+            <stop offset="100%" stopColor="#030712" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="footerBottomWave1" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#1E40AF" stopOpacity="0.7" />
+            <stop offset="100%" stopColor="#030712" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="footerBottomWave2" x1="0%" y1="50%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#2563EB" stopOpacity="0.5" />
+            <stop offset="100%" stopColor="#030712" stopOpacity="0" />
+          </linearGradient>
+          <linearGradient id="footerLineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#60A5FA" stopOpacity="0.9" />
+            <stop offset="50%" stopColor="#3B82F6" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="#1D4ED8" stopOpacity="0.1" />
+          </linearGradient>
+        </defs>
+      </svg>
+      <div className="relative z-10 w-full max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand Section (centered on mobile, left-aligned on desktop) */}
           <div className="text-center md:text-start flex flex-col items-center md:items-start">
