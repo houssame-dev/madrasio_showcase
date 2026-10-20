@@ -147,21 +147,18 @@ export default function Navbar() {
         aria-label="Main navigation"
         className="mx-auto max-w-[1536px] w-full grid grid-cols-3 items-center h-10 px-4 sm:px-8 lg:px-12 xl:px-16"
       >
-        {/* Column 1: Logo & Brand (start) */}
-        <div className="flex justify-start items-center">
+        {/* Column 1: Logo) */}
+        <div>
           <a
             href="#top"
             onClick={() => setIsMenuOpen(false)}
             className="flex items-center gap-2 font-bold text-xl tracking-tight"
           >
             <img
-              src={navbarSolid ? '/logo-white.png' : '/logo-colored.png'}
+              src={navbarSolid ? '/logo-white-wordmark.png' : '/logo-colored-wordmark.png'}
               alt="Madrasio Logo"
-              className="w-12 h-12 object-contain"
+              className="h-10 object-contain"
             />
-            <span className={navbarSolid ? 'text-white' : 'text-[#14213D]'}>
-              Madrasio
-            </span>
           </a>
         </div>
 

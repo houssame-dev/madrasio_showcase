@@ -147,15 +147,12 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-10">
           {/* Brand Section (centered on mobile, left-aligned on desktop) */}
           <div className="text-center md:text-start flex flex-col items-center md:items-start">
-            <p className="text-2xl font-bold tracking-tight text-[#FFFFFF] flex items-center">
+            <p className="text-2xl font-bold tracking-tight text-[#FFFFFF] flex items-center pb-4">
               <img
-                src="/logo-white.png"
+                src="/logo-white-wordmark.png"
                 alt="Madrasio Logo"
-                className="w-12 h-12 object-contain inline-block me-2"
+                className="h-16 object-contain inline-block"
               />
-              <span className="font-bold text-2xl tracking-tight">
-                <span className="text-[#FFFFFF]">Madrasio</span>
-              </span>
             </p>
             <p className="text-sm text-[#E5E5E5] mt-1 max-w-sm">
               {t('footer.tagline')}
